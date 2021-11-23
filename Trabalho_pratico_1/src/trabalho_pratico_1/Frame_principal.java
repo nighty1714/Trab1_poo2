@@ -29,127 +29,109 @@ public class Frame_principal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem19 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
+        menu_veiculos_cadastrados = new javax.swing.JMenuItem();
+        menu_cadastrar_veiculo_importado = new javax.swing.JMenuItem();
+        menu_cadastrar_veiculo_nacional = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem21 = new javax.swing.JMenuItem();
-        jMenuItem22 = new javax.swing.JMenuItem();
+        menu_funcionarios_cadastrados = new javax.swing.JMenuItem();
+        menu_funcionario_mes = new javax.swing.JMenuItem();
+        menu_clientes_cadastrados = new javax.swing.JMenuItem();
+        menu_historico_locacao_cliente = new javax.swing.JMenuItem();
+        menu_cadastrar_funcionario = new javax.swing.JMenuItem();
+        menu_cadastrar_cliente = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
-        jMenuItem16 = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
-        jMenuItem23 = new javax.swing.JMenuItem();
+        menu_clientes_locacoes_atrasadas = new javax.swing.JMenuItem();
+        menu_historico_locacoes = new javax.swing.JMenuItem();
+        menu_locacao_mes_lucro = new javax.swing.JMenuItem();
+        menu_locacoes_finalizadas = new javax.swing.JMenuItem();
+        menu_locacoes_atrasadas = new javax.swing.JMenuItem();
+        menu_locacoes_nao_finalizadas = new javax.swing.JMenuItem();
+        menu_criar_locacao = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem18 = new javax.swing.JMenuItem();
+        menu_seguros_cadastrados = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("1337");
 
         jMenu1.setText("Veiculos");
 
-        jMenuItem1.setText("Veiculos cadastrados");
-        jMenu1.add(jMenuItem1);
-
-        jMenuItem2.setText("Veiculos importados ");
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem3.setText("Veiculos nacionais");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menu_veiculos_cadastrados.setText("Verificar veiculos");
+        menu_veiculos_cadastrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menu_veiculos_cadastradosActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(menu_veiculos_cadastrados);
 
-        jMenuItem4.setText("Veiculos para locação");
-        jMenu1.add(jMenuItem4);
+        menu_cadastrar_veiculo_importado.setText("Cadastrar Veiculo importado");
+        jMenu1.add(menu_cadastrar_veiculo_importado);
 
-        jMenuItem5.setText("Veiculos alocados");
-        jMenu1.add(jMenuItem5);
-
-        jMenuItem6.setText("Veiculos com atraso na devolução");
-        jMenu1.add(jMenuItem6);
-
-        jMenuItem7.setText("Veiculos alocados por um cliente");
-        jMenu1.add(jMenuItem7);
-
-        jMenuItem19.setText("Cadastrar Veiculo importado");
-        jMenu1.add(jMenuItem19);
-
-        jMenuItem20.setText("Cadastrar Veiculo nacional");
-        jMenu1.add(jMenuItem20);
+        menu_cadastrar_veiculo_nacional.setText("Cadastrar Veiculo nacional");
+        jMenu1.add(menu_cadastrar_veiculo_nacional);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Pessoas");
 
-        jMenuItem8.setText("Funcionarios cadastrados");
-        jMenu2.add(jMenuItem8);
+        menu_funcionarios_cadastrados.setText("Funcionarios cadastrados");
+        jMenu2.add(menu_funcionarios_cadastrados);
 
-        jMenuItem9.setText("Funcionario do mes");
-        jMenu2.add(jMenuItem9);
+        menu_funcionario_mes.setText("Funcionario do mes");
+        jMenu2.add(menu_funcionario_mes);
 
-        jMenuItem10.setText("Clientes cadastrados");
-        jMenu2.add(jMenuItem10);
+        menu_clientes_cadastrados.setText("Clientes cadastrados");
+        jMenu2.add(menu_clientes_cadastrados);
 
-        jMenuItem11.setText("Historico de locação cliente");
-        jMenu2.add(jMenuItem11);
+        menu_historico_locacao_cliente.setText("Historico de locação cliente");
+        jMenu2.add(menu_historico_locacao_cliente);
 
-        jMenuItem21.setText("Cadastrar Funcionario");
-        jMenu2.add(jMenuItem21);
+        menu_cadastrar_funcionario.setText("Cadastrar Funcionario");
+        jMenu2.add(menu_cadastrar_funcionario);
 
-        jMenuItem22.setText("Cadastrar Cliente");
-        jMenu2.add(jMenuItem22);
+        menu_cadastrar_cliente.setText("Cadastrar Cliente");
+        menu_cadastrar_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_cadastrar_clienteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menu_cadastrar_cliente);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Locações");
 
-        jMenuItem12.setText("Clientes com locações atrasadas");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        menu_clientes_locacoes_atrasadas.setText("Clientes com locações atrasadas");
+        menu_clientes_locacoes_atrasadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                menu_clientes_locacoes_atrasadasActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem12);
+        jMenu3.add(menu_clientes_locacoes_atrasadas);
 
-        jMenuItem13.setText("Histórico de locações");
-        jMenu3.add(jMenuItem13);
+        menu_historico_locacoes.setText("Histórico de locações");
+        jMenu3.add(menu_historico_locacoes);
 
-        jMenuItem14.setText("Locação e lucro de um mês");
-        jMenu3.add(jMenuItem14);
+        menu_locacao_mes_lucro.setText("Locação e lucro de um mês");
+        jMenu3.add(menu_locacao_mes_lucro);
 
-        jMenuItem15.setText("Locações finalizadas");
-        jMenu3.add(jMenuItem15);
+        menu_locacoes_finalizadas.setText("Locações finalizadas");
+        jMenu3.add(menu_locacoes_finalizadas);
 
-        jMenuItem16.setText("Locações atrasadas");
-        jMenu3.add(jMenuItem16);
+        menu_locacoes_atrasadas.setText("Locações atrasadas");
+        jMenu3.add(menu_locacoes_atrasadas);
 
-        jMenuItem17.setText("Locações não finalizadas");
-        jMenu3.add(jMenuItem17);
+        menu_locacoes_nao_finalizadas.setText("Locações não finalizadas");
+        jMenu3.add(menu_locacoes_nao_finalizadas);
 
-        jMenuItem23.setText("Criar locação");
-        jMenu3.add(jMenuItem23);
+        menu_criar_locacao.setText("Criar locação");
+        jMenu3.add(menu_criar_locacao);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Tipos de seguro");
 
-        jMenuItem18.setText("Seguros cadastrados");
-        jMenu4.add(jMenuItem18);
+        menu_seguros_cadastrados.setText("Seguros cadastrados");
+        jMenu4.add(menu_seguros_cadastrados);
 
         jMenuBar1.add(jMenu4);
 
@@ -169,13 +151,27 @@ public class Frame_principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void menu_clientes_locacoes_atrasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clientes_locacoes_atrasadasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_menu_clientes_locacoes_atrasadasActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
+    private void menu_cadastrar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cadastrar_clienteActionPerformed
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_cadastro_cliente().setVisible(true);
+            }
+        });
+        
+    }//GEN-LAST:event_menu_cadastrar_clienteActionPerformed
+
+    private void menu_veiculos_cadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_veiculos_cadastradosActionPerformed
+         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_veiculos().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_menu_veiculos_cadastradosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,28 +215,22 @@ public class Frame_principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
-    private javax.swing.JMenuItem jMenuItem18;
-    private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem20;
-    private javax.swing.JMenuItem jMenuItem21;
-    private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem23;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem menu_cadastrar_cliente;
+    private javax.swing.JMenuItem menu_cadastrar_funcionario;
+    private javax.swing.JMenuItem menu_cadastrar_veiculo_importado;
+    private javax.swing.JMenuItem menu_cadastrar_veiculo_nacional;
+    private javax.swing.JMenuItem menu_clientes_cadastrados;
+    private javax.swing.JMenuItem menu_clientes_locacoes_atrasadas;
+    private javax.swing.JMenuItem menu_criar_locacao;
+    private javax.swing.JMenuItem menu_funcionario_mes;
+    private javax.swing.JMenuItem menu_funcionarios_cadastrados;
+    private javax.swing.JMenuItem menu_historico_locacao_cliente;
+    private javax.swing.JMenuItem menu_historico_locacoes;
+    private javax.swing.JMenuItem menu_locacao_mes_lucro;
+    private javax.swing.JMenuItem menu_locacoes_atrasadas;
+    private javax.swing.JMenuItem menu_locacoes_finalizadas;
+    private javax.swing.JMenuItem menu_locacoes_nao_finalizadas;
+    private javax.swing.JMenuItem menu_seguros_cadastrados;
+    private javax.swing.JMenuItem menu_veiculos_cadastrados;
     // End of variables declaration//GEN-END:variables
 }

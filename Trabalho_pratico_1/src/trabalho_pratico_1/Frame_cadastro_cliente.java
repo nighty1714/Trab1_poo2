@@ -16,6 +16,8 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
      */
     public Frame_cadastro_cliente() {
         initComponents();
+        
+        this.setTitle("Cadastro de cliente");
     }
 
     /**
@@ -53,8 +55,9 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         Text_cadastro_cliente_cliente_ouro = new javax.swing.JTextField();
         Button_cadastrar_cliente = new javax.swing.JButton();
+        Cadastro_cliente_text_resultado = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Nome:");
 
@@ -84,7 +87,7 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
 
         jLabel11.setText("Validade CNH:");
 
-        jLabel12.setText("Cadstro de cliente");
+        jLabel12.setText("Dados para o cadastro");
 
         jLabel13.setText("Cliente Ouro?");
 
@@ -106,57 +109,59 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Text_cadastro_cliente_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel4))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(106, 106, 106)
-                                            .addComponent(Text_cadastro_cliente_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(Text_cadastro_cliente_RG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(Text_cadastro_cliente_Codigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addGap(120, 120, 120)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Text_cadastro_cliente_data_nascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                        .addComponent(Text_cadastro_cliente_CEP))))
-                            .addComponent(jLabel5))
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel13))
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Text_cadastro_cliente_Categoria_CNH)
-                            .addComponent(Text_cadastro_cliente_Numero_CNH)
-                            .addComponent(Text_cadastro_cliente_validade_CNH)
-                            .addComponent(Text_cadastro_cliente_endereco)
-                            .addComponent(Text_cadastro_cliente_email, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Text_cadastro_cliente_cliente_ouro, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addComponent(jLabel12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(Button_cadastrar_cliente)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Cadastro_cliente_text_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Text_cadastro_cliente_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(106, 106, 106)
+                                                .addComponent(Text_cadastro_cliente_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(Text_cadastro_cliente_RG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(Text_cadastro_cliente_Codigo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(120, 120, 120)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(Text_cadastro_cliente_data_nascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                            .addComponent(Text_cadastro_cliente_CEP))))
+                                .addComponent(jLabel5))
+                            .addGap(46, 46, 46)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel13))
+                            .addGap(74, 74, 74)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Text_cadastro_cliente_Categoria_CNH)
+                                .addComponent(Text_cadastro_cliente_Numero_CNH)
+                                .addComponent(Text_cadastro_cliente_validade_CNH)
+                                .addComponent(Text_cadastro_cliente_endereco)
+                                .addComponent(Text_cadastro_cliente_email, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Text_cadastro_cliente_cliente_ouro, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(241, 241, 241)
+                            .addComponent(jLabel12))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(250, 250, 250)
+                            .addComponent(Button_cadastrar_cliente))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,7 +206,9 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
                     .addComponent(Text_cadastro_cliente_cliente_ouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Button_cadastrar_cliente)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(Cadastro_cliente_text_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -223,7 +230,7 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
         
         String rg_conta_cliente = Text_cadastro_cliente_RG.getText();
         
-        double codigo_conta_cliente = Double.parseDouble(Text_cadastro_cliente_Codigo.getText());
+        int codigo_conta_cliente = Integer.parseInt(Text_cadastro_cliente_Codigo.getText());
         
         String data_nascimento_conta_cliente = Text_cadastro_cliente_data_nascimento.getText();
         
@@ -243,7 +250,7 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
         
         System.out.println(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + Cliente_ouro_conta_cliente);
         
-        
+        Cadastro_cliente_text_resultado.setText(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + Cliente_ouro_conta_cliente);
     }//GEN-LAST:event_Button_cadastrar_clienteActionPerformed
 
     public static void main(String args[]) {
@@ -275,6 +282,7 @@ public class Frame_cadastro_cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_cadastrar_cliente;
+    private javax.swing.JTextField Cadastro_cliente_text_resultado;
     private javax.swing.JTextField Text_cadastro_cliente_CEP;
     private javax.swing.JTextField Text_cadastro_cliente_CPF;
     private javax.swing.JTextField Text_cadastro_cliente_Categoria_CNH;
