@@ -9,23 +9,21 @@
             <Property name="text" type="java.lang.String" value="Veiculos"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_veiculos_cadastrados">
+            <MenuItem class="javax.swing.JMenuItem" name="menu_verificar_veiculos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Verificar veiculos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_veiculos_cadastradosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_verificar_veiculosActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_veiculo_importado">
+            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_veiculos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar Veiculo importado"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar Veiculos"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_veiculo_nacional">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar Veiculo nacional"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_cadastrar_veiculosActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -34,37 +32,20 @@
             <Property name="text" type="java.lang.String" value="Pessoas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_funcionarios_cadastrados">
+            <MenuItem class="javax.swing.JMenuItem" name="menu_verificar_usuarios">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Funcionarios cadastrados"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_funcionario_mes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Funcionario do mes"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_clientes_cadastrados">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Clientes cadastrados"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_historico_locacao_cliente">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Historico de loca&#xe7;&#xe3;o cliente"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_funcionario">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar Funcionario"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_cliente">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar Cliente"/>
+                <Property name="text" type="java.lang.String" value="Verificar usuarios"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_cadastrar_clienteActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_verificar_usuariosActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_usuarios">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cadastrar usu&#xe1;rio"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_cadastrar_usuariosActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

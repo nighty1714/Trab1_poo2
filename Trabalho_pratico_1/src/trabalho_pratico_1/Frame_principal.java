@@ -29,16 +29,11 @@ public class Frame_principal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        menu_veiculos_cadastrados = new javax.swing.JMenuItem();
-        menu_cadastrar_veiculo_importado = new javax.swing.JMenuItem();
-        menu_cadastrar_veiculo_nacional = new javax.swing.JMenuItem();
+        menu_verificar_veiculos = new javax.swing.JMenuItem();
+        menu_cadastrar_veiculos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        menu_funcionarios_cadastrados = new javax.swing.JMenuItem();
-        menu_funcionario_mes = new javax.swing.JMenuItem();
-        menu_clientes_cadastrados = new javax.swing.JMenuItem();
-        menu_historico_locacao_cliente = new javax.swing.JMenuItem();
-        menu_cadastrar_funcionario = new javax.swing.JMenuItem();
-        menu_cadastrar_cliente = new javax.swing.JMenuItem();
+        menu_verificar_usuarios = new javax.swing.JMenuItem();
+        menu_cadastrar_usuarios = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         menu_clientes_locacoes_atrasadas = new javax.swing.JMenuItem();
         menu_historico_locacoes = new javax.swing.JMenuItem();
@@ -55,46 +50,41 @@ public class Frame_principal extends javax.swing.JFrame {
 
         jMenu1.setText("Veiculos");
 
-        menu_veiculos_cadastrados.setText("Verificar veiculos");
-        menu_veiculos_cadastrados.addActionListener(new java.awt.event.ActionListener() {
+        menu_verificar_veiculos.setText("Verificar veiculos");
+        menu_verificar_veiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu_veiculos_cadastradosActionPerformed(evt);
+                menu_verificar_veiculosActionPerformed(evt);
             }
         });
-        jMenu1.add(menu_veiculos_cadastrados);
+        jMenu1.add(menu_verificar_veiculos);
 
-        menu_cadastrar_veiculo_importado.setText("Cadastrar Veiculo importado");
-        jMenu1.add(menu_cadastrar_veiculo_importado);
-
-        menu_cadastrar_veiculo_nacional.setText("Cadastrar Veiculo nacional");
-        jMenu1.add(menu_cadastrar_veiculo_nacional);
+        menu_cadastrar_veiculos.setText("Cadastrar Veiculos");
+        menu_cadastrar_veiculos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_cadastrar_veiculosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_cadastrar_veiculos);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Pessoas");
 
-        menu_funcionarios_cadastrados.setText("Funcionarios cadastrados");
-        jMenu2.add(menu_funcionarios_cadastrados);
-
-        menu_funcionario_mes.setText("Funcionario do mes");
-        jMenu2.add(menu_funcionario_mes);
-
-        menu_clientes_cadastrados.setText("Clientes cadastrados");
-        jMenu2.add(menu_clientes_cadastrados);
-
-        menu_historico_locacao_cliente.setText("Historico de locação cliente");
-        jMenu2.add(menu_historico_locacao_cliente);
-
-        menu_cadastrar_funcionario.setText("Cadastrar Funcionario");
-        jMenu2.add(menu_cadastrar_funcionario);
-
-        menu_cadastrar_cliente.setText("Cadastrar Cliente");
-        menu_cadastrar_cliente.addActionListener(new java.awt.event.ActionListener() {
+        menu_verificar_usuarios.setText("Verificar usuarios");
+        menu_verificar_usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu_cadastrar_clienteActionPerformed(evt);
+                menu_verificar_usuariosActionPerformed(evt);
             }
         });
-        jMenu2.add(menu_cadastrar_cliente);
+        jMenu2.add(menu_verificar_usuarios);
+
+        menu_cadastrar_usuarios.setText("Cadastrar usuário");
+        menu_cadastrar_usuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_cadastrar_usuariosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menu_cadastrar_usuarios);
 
         jMenuBar1.add(jMenu2);
 
@@ -155,23 +145,39 @@ public class Frame_principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menu_clientes_locacoes_atrasadasActionPerformed
 
-    private void menu_cadastrar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cadastrar_clienteActionPerformed
+    private void menu_cadastrar_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cadastrar_usuariosActionPerformed
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_cadastro_cliente().setVisible(true);
+                new Frame_cadastro_usuario().setVisible(true);
             }
         });
         
-    }//GEN-LAST:event_menu_cadastrar_clienteActionPerformed
+    }//GEN-LAST:event_menu_cadastrar_usuariosActionPerformed
 
-    private void menu_veiculos_cadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_veiculos_cadastradosActionPerformed
+    private void menu_verificar_veiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_verificar_veiculosActionPerformed
          java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Frame_veiculos().setVisible(true);
             }
         });
-    }//GEN-LAST:event_menu_veiculos_cadastradosActionPerformed
+    }//GEN-LAST:event_menu_verificar_veiculosActionPerformed
+
+    private void menu_cadastrar_veiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cadastrar_veiculosActionPerformed
+       java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_cadastro_veiculo().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_menu_cadastrar_veiculosActionPerformed
+
+    private void menu_verificar_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_verificar_usuariosActionPerformed
+         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_pessoas().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_menu_verificar_usuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,22 +221,17 @@ public class Frame_principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem menu_cadastrar_cliente;
-    private javax.swing.JMenuItem menu_cadastrar_funcionario;
-    private javax.swing.JMenuItem menu_cadastrar_veiculo_importado;
-    private javax.swing.JMenuItem menu_cadastrar_veiculo_nacional;
-    private javax.swing.JMenuItem menu_clientes_cadastrados;
+    private javax.swing.JMenuItem menu_cadastrar_usuarios;
+    private javax.swing.JMenuItem menu_cadastrar_veiculos;
     private javax.swing.JMenuItem menu_clientes_locacoes_atrasadas;
     private javax.swing.JMenuItem menu_criar_locacao;
-    private javax.swing.JMenuItem menu_funcionario_mes;
-    private javax.swing.JMenuItem menu_funcionarios_cadastrados;
-    private javax.swing.JMenuItem menu_historico_locacao_cliente;
     private javax.swing.JMenuItem menu_historico_locacoes;
     private javax.swing.JMenuItem menu_locacao_mes_lucro;
     private javax.swing.JMenuItem menu_locacoes_atrasadas;
     private javax.swing.JMenuItem menu_locacoes_finalizadas;
     private javax.swing.JMenuItem menu_locacoes_nao_finalizadas;
     private javax.swing.JMenuItem menu_seguros_cadastrados;
-    private javax.swing.JMenuItem menu_veiculos_cadastrados;
+    private javax.swing.JMenuItem menu_verificar_usuarios;
+    private javax.swing.JMenuItem menu_verificar_veiculos;
     // End of variables declaration//GEN-END:variables
 }
