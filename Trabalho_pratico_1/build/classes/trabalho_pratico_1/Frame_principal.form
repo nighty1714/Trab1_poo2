@@ -55,55 +55,21 @@
             <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_clientes_locacoes_atrasadas">
+            <MenuItem class="javax.swing.JMenuItem" name="menu_locacoes_verificar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Clientes com loca&#xe7;&#xf5;es atrasadas"/>
+                <Property name="text" type="java.lang.String" value="Verificer loca&#xe7;&#xf5;es"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_clientes_locacoes_atrasadasActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_locacoes_verificarActionPerformed"/>
               </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_historico_locacoes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Hist&#xf3;rico de loca&#xe7;&#xf5;es"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_locacao_mes_lucro">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xe3;o e lucro de um m&#xea;s"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_locacoes_finalizadas">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es finalizadas"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_locacoes_atrasadas">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es atrasadas"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_locacoes_nao_finalizadas">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es n&#xe3;o finalizadas"/>
-              </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menu_criar_locacao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Criar loca&#xe7;&#xe3;o"/>
               </Properties>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tipos de seguro"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_seguros_cadastrados">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Seguros cadastrados"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_criar_locacaoActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
