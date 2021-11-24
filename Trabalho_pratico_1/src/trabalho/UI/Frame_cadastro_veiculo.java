@@ -58,7 +58,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de veiculo nacional");
+        setTitle("Cadastro de veiculos");
 
         jLabel1.setText("Modelo do veiculo:");
 

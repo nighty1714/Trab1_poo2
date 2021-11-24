@@ -35,15 +35,8 @@ public class Frame_principal extends javax.swing.JFrame {
         menu_verificar_usuarios = new javax.swing.JMenuItem();
         menu_cadastrar_usuarios = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        menu_clientes_locacoes_atrasadas = new javax.swing.JMenuItem();
-        menu_historico_locacoes = new javax.swing.JMenuItem();
-        menu_locacao_mes_lucro = new javax.swing.JMenuItem();
-        menu_locacoes_finalizadas = new javax.swing.JMenuItem();
-        menu_locacoes_atrasadas = new javax.swing.JMenuItem();
         menu_locacoes_nao_finalizadas = new javax.swing.JMenuItem();
         menu_criar_locacao = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        menu_seguros_cadastrados = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Locadora");
@@ -90,40 +83,23 @@ public class Frame_principal extends javax.swing.JFrame {
 
         jMenu3.setText("Locações");
 
-        menu_clientes_locacoes_atrasadas.setText("Clientes com locações atrasadas");
-        menu_clientes_locacoes_atrasadas.addActionListener(new java.awt.event.ActionListener() {
+        menu_locacoes_nao_finalizadas.setText("Verificar Locações");
+        menu_locacoes_nao_finalizadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu_clientes_locacoes_atrasadasActionPerformed(evt);
+                menu_locacoes_nao_finalizadasActionPerformed(evt);
             }
         });
-        jMenu3.add(menu_clientes_locacoes_atrasadas);
-
-        menu_historico_locacoes.setText("Histórico de locações");
-        jMenu3.add(menu_historico_locacoes);
-
-        menu_locacao_mes_lucro.setText("Locação e lucro de um mês");
-        jMenu3.add(menu_locacao_mes_lucro);
-
-        menu_locacoes_finalizadas.setText("Locações finalizadas");
-        jMenu3.add(menu_locacoes_finalizadas);
-
-        menu_locacoes_atrasadas.setText("Locações atrasadas");
-        jMenu3.add(menu_locacoes_atrasadas);
-
-        menu_locacoes_nao_finalizadas.setText("Locações não finalizadas");
         jMenu3.add(menu_locacoes_nao_finalizadas);
 
         menu_criar_locacao.setText("Criar locação");
+        menu_criar_locacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_criar_locacaoActionPerformed(evt);
+            }
+        });
         jMenu3.add(menu_criar_locacao);
 
         jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Tipos de seguro");
-
-        menu_seguros_cadastrados.setText("Seguros cadastrados");
-        jMenu4.add(menu_seguros_cadastrados);
-
-        jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
@@ -140,10 +116,6 @@ public class Frame_principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void menu_clientes_locacoes_atrasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clientes_locacoes_atrasadasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menu_clientes_locacoes_atrasadasActionPerformed
 
     private void menu_cadastrar_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cadastrar_usuariosActionPerformed
         
@@ -178,6 +150,22 @@ public class Frame_principal extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_menu_verificar_usuariosActionPerformed
+
+    private void menu_criar_locacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_criar_locacaoActionPerformed
+       java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_criar_locacao().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_menu_criar_locacaoActionPerformed
+
+    private void menu_locacoes_nao_finalizadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_locacoes_nao_finalizadasActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_locacoes().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_menu_locacoes_nao_finalizadasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,18 +207,11 @@ public class Frame_principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem menu_cadastrar_usuarios;
     private javax.swing.JMenuItem menu_cadastrar_veiculos;
-    private javax.swing.JMenuItem menu_clientes_locacoes_atrasadas;
     private javax.swing.JMenuItem menu_criar_locacao;
-    private javax.swing.JMenuItem menu_historico_locacoes;
-    private javax.swing.JMenuItem menu_locacao_mes_lucro;
-    private javax.swing.JMenuItem menu_locacoes_atrasadas;
-    private javax.swing.JMenuItem menu_locacoes_finalizadas;
     private javax.swing.JMenuItem menu_locacoes_nao_finalizadas;
-    private javax.swing.JMenuItem menu_seguros_cadastrados;
     private javax.swing.JMenuItem menu_verificar_usuarios;
     private javax.swing.JMenuItem menu_verificar_veiculos;
     // End of variables declaration//GEN-END:variables
