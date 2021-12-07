@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package trabalho.modeloDeDados;
-
+import java.util.Calendar;
 /**
  *
  * @author gabri
@@ -12,74 +12,46 @@ package trabalho.modeloDeDados;
 public class Funcionario extends Usuario{
     
     //--- atributos ---
-    
     protected float salario;
-    
     protected String pis;
-    
-    protected int data_adimissao;
+    protected Calendar dataAdmissao;
     
     //--- construtores ---
-    
-    public Funcionario(String nome, String cpf, String rg, int data, String endereco, String cep, String email, float salario, String pis, int data_adimissao){
-        
-        super(nome, cpf, rg, data, endereco, cep, email);
-        
+    public Funcionario(float salario, String pis, Calendar dataAdmissao, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email) {
+        super(codigoUsuario, nome, cpf, rg, data_nascimento, endereco, cep, email);
         this.salario = salario;
-        
         this.pis = pis;
-        
-        this.data_adimissao = data_adimissao;
-        
+        this.dataAdmissao = dataAdmissao;
     }
     
-    @Override
-    public String toString() {
-        
-        return("Funcionario:\n Nome:" + nome + "RG:" + rg + "CPF:" + cpf + "Data de nascimento:" + data_nascimento + "Endereço:" + endereco + "CEP:" + cep + "Email:" + email + "Salario:" + salario + "PIS:" + pis + "Data de adimissão:" + data_adimissao);
-        
+    //--- get e set ---
+    public void setSalario( float salario){
+        this.salario = salario;
+    }
+    
+    public float getSalario(){
+        return this.salario;
+    }
+    
+    public void setPis(String pis){
+        this.pis = pis;
+    }
+    
+    public String getPis(){
+        return this.pis;
+    }
+    
+    public void setDataAdmissao(Calendar dataAdmissao){
+        this.dataAdmissao = dataAdmissao;
+    }
+    
+    public Calendar getDataAdmissao(){
+        return this.dataAdmissao;
     }
     
     //--- metodos ---
-    
-    
-    
-    //--- get e set ---
-    
-    public void setsalario( float salario){
-        
-        this.salario = salario;
-        
+    @Override
+    public String toString() {
+        return("Funcionario:\n Nome:" + nome + "RG:" + rg + "CPF:" + cpf + "Data de nascimento:" + dataNascimento + "Endereço:" + endereco + "CEP:" + cep + "Email:" + email + "Salario:" + salario + "PIS:" + pis + "Data de adimissão:" + dataAdmissao);
     }
-    
-    public float getsalario(){
-        
-        return this.salario;
-        
-    }
-    
-    public void setpis(String pis){
-        
-        this.pis = pis;
-        
-    }
-    
-    public String getpis(){
-        
-        return this.pis;
-        
-    }
-    
-    public void setdataadimissao(int data){
-        
-        this.data_adimissao = data;
-        
-    }
-    
-    public int getdataadimissao(){
-        
-        return this.data_adimissao;
-        
-    }
-    
 }
