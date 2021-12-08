@@ -9,13 +9,6 @@ package trabalho.modeloDeDados;
  *
  * @author Nozawa
  */
-public class Dinheiro extends Pagamento{
-    public Dinheiro(){
-        super("Dinheiro");
-    }
+public class Configuracao {
     
-    @Override
-    public String toString(){
-        return "Pagamento: Dinheiro\n";
-    }
 }

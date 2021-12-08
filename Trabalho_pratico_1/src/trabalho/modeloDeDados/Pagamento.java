@@ -9,7 +9,7 @@ package trabalho.modeloDeDados;
  *
  * @author Nozawa
  */
-public class Pagamento {
+public abstract class Pagamento {
     private String tipoPagamento;
 
     public Pagamento(String tipoPagamento) {
