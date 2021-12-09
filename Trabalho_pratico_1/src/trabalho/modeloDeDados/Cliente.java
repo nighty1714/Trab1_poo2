@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package trabalho.modeloDeDados;
-
+import java.util.Calendar;
 /**
  *
  * @author gabri
@@ -12,90 +12,56 @@ package trabalho.modeloDeDados;
 public class Cliente extends Usuario{
     
     //--- atributos ---
-    
-    protected String categoriacnh;
-    
-    protected int vencimentocnh;
-    
-    protected int numerocnh;
-    
-    protected boolean ouro;
+    protected String categoriaCNH;
+    protected String numeroCNH;
+    protected Calendar vencimentoCNH;
+    protected boolean clienteOuro;
     
     //--- construtores ---
-    
-    public Cliente(String nome, String cpf, String rg, int data, String endereco, String cep, String email, int vencimentocnh, int numerocnh, boolean ouro, String categoriacnh){
-        
-        super(nome,cpf,rg,data,endereco, cep,email);
-        
-        this.numerocnh = numerocnh;
-        
-        this.categoriacnh = categoriacnh;
-        
-        this.vencimentocnh = vencimentocnh;
-        
-        this.ouro = ouro;
-        
+    public Cliente(String categoriaCNH, String numeroCNH, Calendar vencimentoCNH, boolean clienteOuro, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email) {
+        super(codigoUsuario, nome, cpf, rg, data_nascimento, endereco, cep, email);
+        this.categoriaCNH = categoriaCNH;
+        this.numeroCNH = numeroCNH;
+        this.vencimentoCNH = vencimentoCNH;
+        this.clienteOuro = clienteOuro;
     }
     
-    @Override
-    public String toString() {
+    //--- get e set ---
+    public String getcategoriaCNH(){
+        return this.categoriaCNH;
+    }
     
-    return("Cliente:\nNome:" + nome + "RG:" + rg + "CPF:" + cpf + "Data de nascimento:" + data_nascimento + "Endereço:" + endereco + "CEP:" + cep + "Email:" + email + "Categoria CNH:" + categoriacnh + "Numero CNH:" + numerocnh + "Data de validade CNH:" + vencimentocnh + "Cliente ouro:" + ouro);
+   public void setcategoriacnh(String categoriaCNH){
+       this.categoriaCNH = categoriaCNH;
+   }
+   
+   public void setvencimentoCNH(Calendar vencimentoCNH){
+       this.vencimentoCNH = vencimentoCNH;
+   }
     
+    public Calendar getvencimentoCNH(){
+        return this.vencimentoCNH;
+    }
+    
+    public void setnumeroCNH(String numeroCNH){
+        this.numeroCNH = numeroCNH;
+    }
+    
+    public String getnumeroCNH(){
+        return this.numeroCNH;
+    }
+    
+    public boolean getClienteOuro(){
+        return this.clienteOuro;
+    }
+    
+    public void setClienteOuro(boolean clienteOuro){
+        this.clienteOuro = clienteOuro;
     }
     
     //--- metodos ---
-    
-    
-    
-    //--- get e set ---
-    
-    public String getcategoriacnh(){
-        
-        return this.categoriacnh;
-        
+    @Override
+    public String toString() {
+        return("Código de usuário: " + Integer.toString(codigoUsuario) + "\nNome:" + nome + "\nRG:" + rg + "\nCPF:" + cpf + "\nData de nascimento: " + dataNascimento.get(Calendar.DATE) + "/" + dataNascimento.get(Calendar.MONTH) + "/" + dataNascimento.get(Calendar.YEAR) + "Endereço:" + endereco + "\nCEP:" + cep + "\nEmail:" + email + "\nCategoria CNH:" + categoriaCNH + "\nNumero CNH:" + numeroCNH + "\nValidade CNH:" + vencimentoCNH + "\nCliente ouro: " + Boolean.toString(clienteOuro));
     }
-    
-   public void setcategoriacnh(String categoriacnh){
-       
-       this.categoriacnh = categoriacnh;
-       
-   }
-   
-   public void setvencimentocnh(int vencimentocnh){
-       
-       this.vencimentocnh = vencimentocnh;
-       
-   }
-    
-    public int getvencimentocnh(){
-        
-        return this.vencimentocnh;
-        
-    }
-    
-    public void setnumerocnh(int numerocnh){
-        
-        this.numerocnh = numerocnh;
-        
-    }
-    
-    public int getnumerocnh(){
-        
-        return this.numerocnh;
-        
-    }
-    
-    public boolean getouro(){
-        
-        return this.ouro;
-        
-    }
-    
-    public void setouro(boolean ouro){
-        
-        this.ouro = ouro;
-        
-    }
-    
 }

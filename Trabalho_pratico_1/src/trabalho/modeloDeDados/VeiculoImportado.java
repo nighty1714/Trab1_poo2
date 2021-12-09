@@ -9,11 +9,11 @@ package trabalho.modeloDeDados;
  *
  * @author Nozawa
  */
-public class VeiculoInternacional extends Veiculo {
+public class VeiculoImportado extends Veiculo {
     protected float taxaImpostoEstadual;
     protected float taxaImpostoFederal;
 
-    public VeiculoInternacional(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado) {
+    public VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado) {
         super(codigoVeiculo, nomeModelo, montadora, anoFabricacao, placa, categoria, valorFipe, valorDiaria, alugado);
         this.taxaImpostoEstadual = taxaImpostoEstadual;
         this.taxaImpostoFederal = taxaImpostoFederal;
@@ -38,7 +38,7 @@ public class VeiculoInternacional extends Veiculo {
     @Override
     public float calcularValorDiaria(){
         //
-        return valorDiaria;
+        return valorDiaria*(1+taxaImpostoEstadual+taxaImpostoFederal);
     }
 
     @Override

@@ -28,7 +28,7 @@ public class VeiculoNacional extends Veiculo{
     @Override
     public float calcularValorDiaria(){
         //
-        return valorDiaria;
+        return valorDiaria*(1+taxaImposto);
     }
 
     @Override
