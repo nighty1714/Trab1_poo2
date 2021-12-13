@@ -16,6 +16,6 @@ public class Dinheiro extends Pagamento{
     
     @Override
     public String toString(){
-        return "Pagamento: Dinheiro\n";
+        return "Pagamento: \n" + this.getTipoPagamento();
     }
 }

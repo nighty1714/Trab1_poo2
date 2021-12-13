@@ -44,10 +44,10 @@ public class Cartao extends Pagamento{
     public void setNumero(String numero) {
         this.numero = numero;
     }
-    
+        
     @Override
     public String toString() {
-        return "Tipo de pagamento: Cartão" + "\nNome: " + nome + "\nBandeira: " + bandeira + "\nNúmero: " + numero;
+        return "Tipo de pagamento: " + this.getTipoPagamento() + "\nNome: " + nome + "\nBandeira: " + bandeira + "\nNúmero: " + numero;
     }
     
 }

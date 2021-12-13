@@ -22,6 +22,54 @@ public class Controle {
     private ArrayList<Seguro> seguros;
     
     private Configuracao configuracoes;
+
+    public ArrayList<Locacao> getLocacoes() {
+        return locacoes;
+    }
+
+    public ArrayList<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public ArrayList<Usuario> getClientes() {
+        return clientes;
+    }
+
+    public ArrayList<Usuario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public ArrayList<Seguro> getSeguros() {
+        return seguros;
+    }
+
+    public Configuracao getConfiguracoes() {
+        return configuracoes;
+    }
+
+    public void setLocacoes(ArrayList<Locacao> locacoes) {
+        this.locacoes = locacoes;
+    }
+
+    public void setVeiculos(ArrayList<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+
+    public void setClientes(ArrayList<Usuario> clientes) {
+        this.clientes = clientes;
+    }
+
+    public void setFuncionarios(ArrayList<Usuario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public void setSeguros(ArrayList<Seguro> seguros) {
+        this.seguros = seguros;
+    }
+
+    public void setConfiguracoes(Configuracao configuracoes) {
+        this.configuracoes = configuracoes;
+    }
     
     Controle(){
         
