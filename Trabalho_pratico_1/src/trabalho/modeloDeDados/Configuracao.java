@@ -11,4 +11,6 @@ package trabalho.modeloDeDados;
  */
 public class Configuracao {
     
+    
+    
 }
