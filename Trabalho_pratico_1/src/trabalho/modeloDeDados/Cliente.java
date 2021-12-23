@@ -27,37 +27,39 @@ public class Cliente extends Usuario{
     }
     
     //--- get e set ---
-    public String getcategoriaCNH(){
-        return this.categoriaCNH;
+
+    public String getCategoriaCNH() {
+        return categoriaCNH;
     }
-    
-   public void setcategoriacnh(String categoriaCNH){
-       this.categoriaCNH = categoriaCNH;
-   }
-   
-   public void setvencimentoCNH(Calendar vencimentoCNH){
-       this.vencimentoCNH = vencimentoCNH;
-   }
-    
-    public Calendar getvencimentoCNH(){
-        return this.vencimentoCNH;
+
+    public void setCategoriaCNH(String categoriaCNH) {
+        this.categoriaCNH = categoriaCNH;
     }
-    
-    public void setnumeroCNH(String numeroCNH){
+
+    public String getNumeroCNH() {
+        return numeroCNH;
+    }
+
+    public void setNumeroCNH(String numeroCNH) {
         this.numeroCNH = numeroCNH;
     }
-    
-    public String getnumeroCNH(){
-        return this.numeroCNH;
+
+    public Calendar getVencimentoCNH() {
+        return vencimentoCNH;
     }
-    
-    public boolean getClienteOuro(){
-        return this.clienteOuro;
+
+    public void setVencimentoCNH(Calendar vencimentoCNH) {
+        this.vencimentoCNH = vencimentoCNH;
     }
-    
-    public void setClienteOuro(boolean clienteOuro){
+
+    public boolean isClienteOuro() {
+        return clienteOuro;
+    }
+
+    public void setClienteOuro(boolean clienteOuro) {
         this.clienteOuro = clienteOuro;
     }
+    
     
     //--- metodos ---
     @Override

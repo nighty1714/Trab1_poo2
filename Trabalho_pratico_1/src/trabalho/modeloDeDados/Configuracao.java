@@ -5,11 +5,13 @@
  */
 package trabalho.modeloDeDados;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nozawa
  */
-public class Configuracao {
+public class Configuracao implements Serializable{
     private String arquivoLocacoes;
     private String arquivoVeiculos;
     private String arquivoClientes;

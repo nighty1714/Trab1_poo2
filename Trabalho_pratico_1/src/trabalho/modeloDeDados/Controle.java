@@ -4,285 +4,166 @@
  * and open the template in the editor.
  */
 package trabalho.modeloDeDados;
+import trabalho.armazenamento.Armazenamento;
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  *
  * @author Nozawa
  */
-public class Controle {
+public class Controle implements Serializable{
+    private Armazenamento armazenamento;
     
-    private ArrayList<Locacao> locacoes;
-    
-    private ArrayList<Veiculo> veiculos;
-    
-    private ArrayList<Usuario> clientes;
-    
-    private ArrayList<Usuario> funcionarios;
-    
-    private ArrayList<Seguro> seguros;
-    
-    private Configuracao configuracoes;
-
     public ArrayList<Locacao> getLocacoes() {
-        return locacoes;
+        return armazenamento.getLocacoes();
     }
 
     public ArrayList<Veiculo> getVeiculos() {
-        return veiculos;
+        return armazenamento.getVeiculos();
     }
 
     public ArrayList<Usuario> getClientes() {
-        return clientes;
+        return armazenamento.getClientes();
     }
 
     public ArrayList<Usuario> getFuncionarios() {
-        return funcionarios;
+        return armazenamento.getFuncionarios();
     }
 
     public ArrayList<Seguro> getSeguros() {
-        return seguros;
+        return armazenamento.getSeguros();
     }
 
     public Configuracao getConfiguracoes() {
-        return configuracoes;
+        return armazenamento.getConfiguracoes();
     }
 
     public void setLocacoes(ArrayList<Locacao> locacoes) {
-        this.locacoes = locacoes;
+        armazenamento.setLocacoes(locacoes);
     }
 
     public void setVeiculos(ArrayList<Veiculo> veiculos) {
-        this.veiculos = veiculos;
+        armazenamento.setVeiculos(veiculos);
     }
 
     public void setClientes(ArrayList<Usuario> clientes) {
-        this.clientes = clientes;
+        armazenamento.setClientes(clientes);
     }
 
     public void setFuncionarios(ArrayList<Usuario> funcionarios) {
-        this.funcionarios = funcionarios;
+        armazenamento.setFuncionarios(funcionarios);
     }
 
     public void setSeguros(ArrayList<Seguro> seguros) {
-        this.seguros = seguros;
+        armazenamento.setSeguros(seguros);
     }
 
     public void setConfiguracoes(Configuracao configuracoes) {
-        this.configuracoes = configuracoes;
+        armazenamento.setConfiguracoes(configuracoes);
     }
     
     Controle(){
-        
-        locacoes = new ArrayList();
-        
-        veiculos = new ArrayList();
-        
-        clientes = new ArrayList();
-        
-        funcionarios = new ArrayList();
-        
-        seguros = new ArrayList();
-        
+        armazenamento = Armazenamento.getInstance();
     }
     
     public int controler_locacao_valor_total(int codigo){
-        
         int a = -1;
-        
-        for (int i = 0; i < locacoes.size(); i++){
-     
-          if(locacoes.get(i).getCodigoLocacao() == codigo){
-              
-             a = codigo;
-              
-             }
-         
+        for (Locacao locacao: armazenamento.getLocacoes()){
+            if(locacao.getCodigoLocacao() == codigo){
+                return codigo;
+            }
         }
-        
         return a;
-   
     }
     
     public boolean controlador_locacao_possui_seguro(int codigo){
-        
-        boolean a = false;
-        
-        for (int i = 0; i < locacoes.size(); i++){
-     
-          if(locacoes.get(i).getCodigoLocacao() == codigo){
-              
-             a = locacoes.get(i).possuiSeguro();
-              
-             }
-         
+        for (Locacao locacao: armazenamento.getLocacoes()){
+            if(locacao.getCodigoLocacao() == codigo){
+                return locacao.possuiSeguro();
+            }
         }
-        
-        return a;
-        
+        return false;
     }
     
     public boolean controlador_locacao_verificar_atraso(int codigo){
-        
-        boolean a = false;
-        
-        for (int i = 0; i < locacoes.size(); i++){
-     
-          if(locacoes.get(i).getCodigoLocacao() == codigo){
-              
-             a = locacoes.get(i).verificarAtraso();
-              
-             }
-         
+        for (Locacao locacao: armazenamento.getLocacoes()){
+            if(locacao.getCodigoLocacao() == codigo){
+                return locacao.verificarAtraso();
+            }
         }
-        
-        return a;
-        
+        return false;
     }
     
-     public String controlador_locacao_dados_locacao(int codigo){
-        
-         String a = "a";
-         
-        for (int i = 0; i < locacoes.size(); i++){
-     
-          if(locacoes.get(i).getCodigoLocacao() == codigo){
-              
-             a = locacoes.get(i).toString();
-              
-             }
-         
+    public String controlador_locacao_dados_locacao(int codigo){ 
+        for (Locacao locacao: armazenamento.getLocacoes()){
+            if(locacao.getCodigoLocacao() == codigo){
+                return locacao.toString();
+            }
         }
-        
-        return a;
-        
+        return "";
     }
      
     public boolean controle_veiculo_alugado(int codigo){
-        
-        boolean a = false;
-        
-        for (int i = 0; i < veiculos.size(); i++){
-     
-          if(veiculos.get(i).getCodigoVeiculo() == codigo){
-              
-             
-              a = veiculos.get(i).isAlugado();
-              
-             }
-         
+        for (Veiculo veiculo: armazenamento.getVeiculos()){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo.isAlugado();
+            }
         }
-        
-        return a;
-        
+        return false;
     }
      
     public void controle_veiculo_alugar(Veiculo veiculo){
-        
        veiculo.alugar();
-        
     }
     
     public void controle_veiculo_devolver(Veiculo veiculo){
-        
        veiculo.devolver();
-        
     }
     
     public String controle_veiculo_dados_veiculo(int codigo){
-        
-        String a = "a";
-        
-        for (int i = 0; i < veiculos.size(); i++){
-     
-          if(veiculos.get(i).getCodigoVeiculo() == codigo){
-              
-             
-              a = veiculos.get(i).toString();
-              
-             }
-         
+        for (Veiculo veiculo: armazenamento.getVeiculos()){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo.toString();
+            } 
         }
-        
-        return a;
-        
+        return "";
     }
     
     public float controle_veiculo_calcular_diaria(int codigo){
-        
         float a = 0;
-        
-        for (int i = 0; i < veiculos.size(); i++){
-     
-          if(veiculos.get(i).getCodigoVeiculo() == codigo){
-              
-             
-              a = veiculos.get(i).calcularValorDiaria();
-              
-             }
-         
+        for(Veiculo veiculo: armazenamento.getVeiculos()){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo.calcularValorDiaria();
+            }
         }
-        
-        return a;
-        
+        return 0;
     }
     
      public String controle_usuarios_dados_cliente(String codigo){
-        
-        String a = "a";
-        
-        for (int i = 0; i < clientes.size(); i++){
-     
-          if(clientes.get(i).getcpf().equals(codigo)){
-              
-             
-              a = clientes.get(i).toString();
-              
-             }
-         
+        for (Usuario cliente: armazenamento.getClientes()){
+            if(cliente.getCPF().equals(codigo)){
+                return cliente.toString();
+            } 
         }
-        
-        return a;
-        
+        return "";
     }
      
     public String controle_usuarios_dados_funcionarios(String codigo){
-        
-        String a = "a";
-        
-        for (int i = 0; i < funcionarios.size(); i++){
-     
-          if(funcionarios.get(i).getcpf().equals(codigo)){
-              
-             
-              a = funcionarios.get(i).toString();
-              
-             }
-         
+        for (Usuario funcionario: armazenamento.getFuncionarios()){
+            if(funcionario.getCPF().equals(codigo)){
+                return funcionario.toString();
+            }
         }
-        
-        return a;
-        
+        return "";
     }
-    
     
     public String controle_usuarios_dados_seguro(int codigo){
-        
-        String a = "a";
-        
-        for (int i = 0; i < seguros.size(); i++){
-     
-          if(seguros.get(i).getCodigoSeguro() == codigo){
-              
-             
-              a = seguros.get(i).toString();
-              
-             }
-         
+        for (Seguro seguro: armazenamento.getSeguros()){
+            if(seguro.getCodigoSeguro() == codigo){
+                return seguro.toString();      
+            }
         }
-        
-        return a;
-        
+        return "";   
     }
-    
 }
     

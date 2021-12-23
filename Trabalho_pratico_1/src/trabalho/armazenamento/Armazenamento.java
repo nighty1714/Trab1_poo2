@@ -19,7 +19,6 @@ import java.util.logging.Logger;
  * @author Nozawa
  */
 public class Armazenamento {
-    private Controle controle;
     private ArrayList<Locacao> locacoes;
     private ArrayList<Veiculo> veiculos;
     private ArrayList<Usuario> clientes;
@@ -30,11 +29,62 @@ public class Armazenamento {
 
     public Armazenamento(Configuracao configuracoes, Controle controle) {
         this.configuracoes = configuracoes;
-        this.controle = controle;
     }
 
     public static Armazenamento getInstance() {
         return instance;
+    }
+
+    public ArrayList<Locacao> getLocacoes() {
+        return locacoes;
+    }
+
+    public ArrayList<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public ArrayList<Usuario> getClientes() {
+        return clientes;
+    }
+
+    public ArrayList<Usuario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public ArrayList<Seguro> getSeguros() {
+        return seguros;
+    }
+
+    public Configuracao getConfiguracoes() {
+        return configuracoes;
+    }
+
+    public void setLocacoes(ArrayList<Locacao> locacoes) {
+        this.locacoes = locacoes;
+    }
+
+    public void setVeiculos(ArrayList<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+
+    public void setClientes(ArrayList<Usuario> clientes) {
+        this.clientes = clientes;
+    }
+
+    public void setFuncionarios(ArrayList<Usuario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public void setSeguros(ArrayList<Seguro> seguros) {
+        this.seguros = seguros;
+    }
+
+    public void setConfiguracoes(Configuracao configuracoes) {
+        this.configuracoes = configuracoes;
+    }
+
+    public static void setInstance(Armazenamento instance) {
+        Armazenamento.instance = instance;
     }
     
     public void salvarLocacoes(){
@@ -43,7 +93,7 @@ public class Armazenamento {
         try{
             fos = new FileOutputStream(configuracoes.getArquivoLocacoes());
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(controle.getLocacoes());
+            oos.writeObject(locacoes);
         }catch(FileNotFoundException ex){
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -66,7 +116,7 @@ public class Armazenamento {
         try{
             fos = new FileOutputStream(configuracoes.getArquivoVeiculos());
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(controle.getVeiculos());
+            oos.writeObject(veiculos);
         }catch(FileNotFoundException ex){
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -89,7 +139,7 @@ public class Armazenamento {
         try{
             fos = new FileOutputStream(configuracoes.getArquivoClientes());
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(controle.getClientes());
+            oos.writeObject(clientes);
         }catch(FileNotFoundException ex){
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -112,7 +162,7 @@ public class Armazenamento {
         try{
             fos = new FileOutputStream(configuracoes.getArquivoFuncionarios());
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(controle.getFuncionarios());
+            oos.writeObject(funcionarios);
         }catch(FileNotFoundException ex){
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -135,7 +185,7 @@ public class Armazenamento {
         try{
             fos = new FileOutputStream(configuracoes.getArquivoSeguros());
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(controle.getSeguros());
+            oos.writeObject(seguros);
         }catch(FileNotFoundException ex){
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -160,7 +210,126 @@ public class Armazenamento {
         salvarSeguros();
     }
     
+    public void carregarLocacoes(){
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(configuracoes.getArquivoLocacoes());
+            ois = new ObjectInputStream(fis);
+            this.locacoes = (ArrayList<Locacao>) ois.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fis.close();
+                ois.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public void carregarVeiculos(){
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(configuracoes.getArquivoVeiculos());
+            ois = new ObjectInputStream(fis);
+            this.veiculos = (ArrayList<Veiculo>) ois.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fis.close();
+                ois.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public void carregarClientes(){
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(configuracoes.getArquivoClientes());
+            ois = new ObjectInputStream(fis);
+            this.clientes = (ArrayList<Usuario>) ois.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fis.close();
+                ois.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public void carregarFuncionarios(){
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(configuracoes.getArquivoFuncionarios());
+            ois = new ObjectInputStream(fis);
+            this.funcionarios = (ArrayList<Usuario>) ois.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fis.close();
+                ois.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public void carregarSeguros(){
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(configuracoes.getArquivoSeguros());
+            ois = new ObjectInputStream(fis);
+            this.seguros = (ArrayList<Seguro>) ois.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fis.close();
+                ois.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
     public void carregar(){
-        
+        carregarLocacoes();
+        carregarVeiculos();
+        carregarFuncionarios();
+        carregarClientes();
+        carregarSeguros();
     }
 }

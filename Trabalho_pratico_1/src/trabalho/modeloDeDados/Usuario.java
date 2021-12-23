@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package trabalho.modeloDeDados;
+import java.io.Serializable;
 import java.util.Calendar;
 /**
  *
  * @author gabri
  */
-public abstract class Usuario {
+public abstract class Usuario implements Serializable{
 
     //--- atributos ---
     protected int codigoUsuario;
@@ -34,59 +35,68 @@ public abstract class Usuario {
     }
     
     //--- get e set ---
-    public String getnome(){
-        return this.nome;
+
+    public int getCodigoUsuario() {
+        return codigoUsuario;
     }
-    
-    public void setnome(String nome){
+
+    public void setCodigoUsuario(int codigoUsuario) {
+        this.codigoUsuario = codigoUsuario;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public String getrg(){
-        return this.rg;
+
+    public String getCPF() {
+        return cpf;
     }
-    
-    public void setrg(String rg){
-        this.rg = rg;
-    }
-    
-    public String getcpf(){
-        return this.cpf;
-    }
-    
-    public void setcpf(String cpf){
+
+    public void setCPF(String cpf) {
         this.cpf = cpf;
     }
-    
-    public Calendar getdata(){
-        return this.dataNascimento;
+
+    public String getRG() {
+        return rg;
     }
-    
-    public void setdata(Calendar dataNascimento ){
+
+    public void setRG(String rg) {
+        this.rg = rg;
+    }
+
+    public Calendar getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Calendar dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-    
-    public String getendereco(){
-        return this.endereco;
+
+    public String getEndereco() {
+        return endereco;
     }
-    
-    public void setendereco(String endereco){
+
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    
-    public String getcep(){
-        return this.cep;
+
+    public String getCEP() {
+        return cep;
     }
-    
-    public void setcep(String cep){
+
+    public void setCEP(String cep) {
         this.cep = cep;
     }
-    
-    public String getemail(){
-        return this.email;
+
+    public String getEmail() {
+        return email;
     }
-    
-    public void setemail(String email){
+
+    public void setEmail(String email) {
         this.email = email;
     }
     

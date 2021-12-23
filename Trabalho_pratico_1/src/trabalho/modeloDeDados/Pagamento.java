@@ -5,11 +5,13 @@
  */
 package trabalho.modeloDeDados;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nozawa
  */
-public abstract class Pagamento {
+public abstract class Pagamento implements Serializable{
     private String tipoPagamento;
 
     public Pagamento(String tipoPagamento) {

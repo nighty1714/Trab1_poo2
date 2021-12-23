@@ -5,11 +5,13 @@
  */
 package trabalho.modeloDeDados;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nozawa
  */
-public abstract class Veiculo {
+public abstract class Veiculo implements Serializable{
     protected int codigoVeiculo;
     protected String nomeModelo;
     protected String montadora;

@@ -5,11 +5,13 @@
  */
 package trabalho.modeloDeDados;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nozawa
  */
-public class Seguro {
+public class Seguro implements Serializable{
     private int codigoSeguro;
     private String nome;
     private String tipo;
