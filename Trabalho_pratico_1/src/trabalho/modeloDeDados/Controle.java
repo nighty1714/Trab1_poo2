@@ -62,6 +62,10 @@ public class Controle implements Serializable{
         armazenamento.setConfiguracoes(configuracoes);
     }
     
+    public void salvar(){
+        armazenamento.salvar();
+    }
+    
     Controle(){
         armazenamento = Armazenamento.getInstance();
     }

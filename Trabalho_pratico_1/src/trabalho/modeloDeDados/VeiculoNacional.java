@@ -12,8 +12,9 @@ package trabalho.modeloDeDados;
 public class VeiculoNacional extends Veiculo{
     protected float taxaImposto;
 
-    public VeiculoNacional(float taxaImposto, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado) {
-        super(codigoVeiculo, nomeModelo, montadora, anoFabricacao, placa, categoria, valorFipe, valorDiaria, alugado);
+    public VeiculoNacional(float taxaImposto, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro) {
+        super(codigoVeiculo, nomeModelo, montadora, anoFabricacao, placa, categoria, valorFipe, alugado, taxaLucro);
+        this.valorDiaria = calcularValorDiaria();
         this.taxaImposto = taxaImposto;
     }
 
@@ -27,8 +28,8 @@ public class VeiculoNacional extends Veiculo{
     
     @Override
     public float calcularValorDiaria(){
-        //
-        return valorDiaria*(1+taxaImposto);
+        float total = valorFipe*(1+taxaImposto+taxaLucro);
+        return total;
     }
 
     @Override

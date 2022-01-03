@@ -22,7 +22,17 @@ public abstract class Veiculo implements Serializable{
     protected float valorDiaria;
     protected boolean alugado;
 
-    public Veiculo(int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado) {
+    protected float taxaLucro;
+
+    public float getTaxaLucro() {
+        return taxaLucro;
+    }
+
+    public void setTaxaLucro(float taxaLucro) {
+        this.taxaLucro = taxaLucro;
+    }
+
+    public Veiculo(int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro) {
         this.codigoVeiculo = codigoVeiculo;
         this.nomeModelo = nomeModelo;
         this.montadora = montadora;
@@ -30,8 +40,21 @@ public abstract class Veiculo implements Serializable{
         this.placa = placa;
         this.categoria = categoria;
         this.valorFipe = valorFipe;
-        this.valorDiaria = valorDiaria;
+        this.valorDiaria = calcularValorDiaria();
         this.alugado = alugado;
+        this.taxaLucro = taxaLucro;
+    }
+    
+    public Veiculo(){
+        this.codigoVeiculo = 0;
+        this.nomeModelo = "";
+        this.montadora = "";
+        this.anoFabricacao = 0;
+        this.placa = "";
+        this.categoria = "";
+        this.valorFipe = 0;
+        this.valorDiaria = 0;
+        this.alugado = false;
     }
     
     public int getCodigoVeiculo() {

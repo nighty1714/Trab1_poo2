@@ -6,6 +6,7 @@
 package trabalho.modeloDeDados;
 import java.util.Calendar;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 /**
  *
  * @author Nozawa
@@ -20,17 +21,27 @@ public class Locacao {
     private Pagamento formaPagamento;
     private ArrayList<Seguro> segurosContratados;
     private boolean finalizada;
+    private Veiculo veiculo;
 
-    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, Calendar dataLocacao, Calendar dataDevolucao, float valorTotal, Pagamento formaPagamento, boolean finalizada) {
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
+
+    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, Calendar dataLocacao, Calendar dataDevolucao, float valorTotal, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
         this.codigoLocacao = codigoLocacao;
         this.codigoCliente = codigoCliente;
         this.codigoFuncionario = codigoFuncionario;
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
-        this.valorTotal = valorTotal;
+        this.valorTotal = getValorTotal();
         this.formaPagamento = formaPagamento;
         this.segurosContratados = new ArrayList();
         this.finalizada = finalizada;
+        this.veiculo = veiculo;
     }
 
     public int getCodigoLocacao() {
@@ -106,7 +117,14 @@ public class Locacao {
     }
     
     public float calcularValorTotal(){
-        return valorTotal;
+        float total = 0;
+        for(Seguro seguro:segurosContratados){
+            total += seguro.getValor();
+        }
+        long diff = dataLocacao.compareTo(dataDevolucao);
+        long dias = TimeUnit.MILLISECONDS.toDays(diff);
+        total += (float)dias*veiculo.getValorDiaria();
+        return total;
     }
     
     public boolean possuiSeguro(){
