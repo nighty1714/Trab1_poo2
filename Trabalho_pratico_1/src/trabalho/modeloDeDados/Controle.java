@@ -62,22 +62,47 @@ public class Controle implements Serializable{
         armazenamento.setConfiguracoes(configuracoes);
     }
     
-    public void salvar(){
-        armazenamento.salvar();
+    public void salvar(String path){
+        armazenamento.salvar(path);
     }
     
+    public void carregar(String path){
+        armazenamento.carregar(path);
+    }
+    
+    /*
+    public void setArquivoLocacoes(String path){
+        armazenamento.setArquivoLocacoes(path);
+    }
+    
+    public void setArquivoVeiculos(String path){
+        armazenamento.setArquivoVeiculos(path);
+    }
+    
+    public void setArquivoClientes(String path){
+        armazenamento.setArquivoClientes(path);
+    }
+    
+    public void setArquivoFuncionarios(String path){
+        armazenamento.setArquivoFuncionarios(path);
+    }
+    
+    public void setArquivoSeguros(String path){
+        armazenamento.setArquivoSeguros(path);
+    }
+    */
+
     Controle(){
-        armazenamento = Armazenamento.getInstance();
+        this.armazenamento = Armazenamento.getInstance();
     }
     
-    public int controler_locacao_valor_total(int codigo){
-        int a = -1;
+    public float controler_locacao_valor_total(int codigo){
         for (Locacao locacao: armazenamento.getLocacoes()){
             if(locacao.getCodigoLocacao() == codigo){
-                return codigo;
+                return locacao.getValorTotal();
             }
         }
-        return a;
+        return 0;
     }
     
     public boolean controlador_locacao_possui_seguro(int codigo){
@@ -134,7 +159,6 @@ public class Controle implements Serializable{
     }
     
     public float controle_veiculo_calcular_diaria(int codigo){
-        float a = 0;
         for(Veiculo veiculo: armazenamento.getVeiculos()){
             if(veiculo.getCodigoVeiculo() == codigo){
                 return veiculo.calcularValorDiaria();

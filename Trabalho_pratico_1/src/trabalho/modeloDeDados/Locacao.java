@@ -37,7 +37,7 @@ public class Locacao {
         this.codigoFuncionario = codigoFuncionario;
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
-        this.valorTotal = getValorTotal();
+        this.valorTotal = calcularValorTotal();
         this.formaPagamento = formaPagamento;
         this.segurosContratados = new ArrayList();
         this.finalizada = finalizada;
