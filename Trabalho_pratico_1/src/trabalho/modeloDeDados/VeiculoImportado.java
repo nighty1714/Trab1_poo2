@@ -37,7 +37,7 @@ public class VeiculoImportado extends Veiculo {
     
     @Override
     public float calcularValorDiaria(){
-        float total = valorFipe*(1+taxaImpostoEstadual+taxaImpostoFederal+taxaLucro);
+        float total = valorFipe*(1+taxaImpostoEstadual+taxaImpostoFederal+taxaLucro)/365.0f;
         return total;
     }
 

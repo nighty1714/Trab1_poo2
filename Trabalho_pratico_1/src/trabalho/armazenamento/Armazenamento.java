@@ -27,7 +27,7 @@ public class Armazenamento {
     private Configuracao configuracoes;
     private static Armazenamento instance;
 
-    public Armazenamento(Configuracao configuracoes, Controle controle) {
+    public Armazenamento(Configuracao configuracoes) {
         this.configuracoes = configuracoes;
     }
 
@@ -202,7 +202,31 @@ public class Armazenamento {
         }
     }
     
-    public void salvar(){
+    public void salvarConfiguracoes(String path){
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            fos = new FileOutputStream(path);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(configuracoes);
+        }catch(FileNotFoundException ex){
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try {
+                fos.flush();
+                fos.close();
+                oos.flush();
+                oos.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public void salvar(String path){
+        salvarConfiguracoes(path);
         salvarLocacoes();
         salvarVeiculos();
         salvarClientes();
@@ -325,11 +349,56 @@ public class Armazenamento {
         }
     }
     
-    public void carregar(){
+    public void carregarConfiguracoes(String path){
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream(path);
+            ois = new ObjectInputStream(fis);
+            this.configuracoes = (Configuracao) ois.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fis.close();
+                ois.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public void carregar(String path){
+        carregarConfiguracoes(path);
         carregarLocacoes();
         carregarVeiculos();
         carregarFuncionarios();
         carregarClientes();
         carregarSeguros();
     }
+    
+    public void setArquivoLocacoes(String arquivoLocacoes){
+        this.configuracoes.setArquivoLocacoes(arquivoLocacoes);
+    }
+    
+    public void setArquivoVeiculos(String arquivoVeiculos){
+        this.configuracoes.setArquivoVeiculos(arquivoVeiculos);
+    }
+    
+    public void setArquivoClientes(String arquivoClientes){
+        this.configuracoes.setArquivoClientes(arquivoClientes);
+    }
+    
+    public void setArquivoFuncionarios(String arquivoFuncionarios){
+        this.configuracoes.setArquivoFuncionarios(arquivoFuncionarios);
+    }
+    
+    public void setArquivoSeguros(String arquivoSeguros){
+        this.configuracoes.setArquivoSeguros(arquivoSeguros);
+    }
+    
 }
