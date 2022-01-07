@@ -70,6 +70,26 @@ public class Controle implements Serializable{
         armazenamento.carregar(path);
     }
     
+    public void adicionarCliente(Cliente cliente){
+        armazenamento.adicionarCliente(cliente);
+    }
+    
+    public void adicionarVeiculo(Veiculo veiculo){
+        armazenamento.adicionarVeiculo(veiculo);
+    }
+    
+    public void adicionarLocacao(Locacao locacao){
+        armazenamento.adicionarLocacao(locacao);
+    }
+    
+    public void adicionarFuncionario(Funcionario funcionario){
+        armazenamento.adicionarFuncionario(funcionario);
+    }
+    
+    public void adicionarSeguro(Seguro seguro){
+        armazenamento.adicionarSeguro(seguro);
+    }
+    
     /*
     public void setArquivoLocacoes(String path){
         armazenamento.setArquivoLocacoes(path);

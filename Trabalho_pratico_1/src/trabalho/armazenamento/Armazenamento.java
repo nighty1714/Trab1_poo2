@@ -87,6 +87,26 @@ public class Armazenamento {
         Armazenamento.instance = instance;
     }
     
+    public void adicionarCliente(Cliente cliente){
+        this.clientes.add(cliente);
+    }
+    
+    public void adicionarVeiculo(Veiculo veiculo){
+        this.veiculos.add(veiculo);
+    }
+    
+    public void adicionarLocacao(Locacao locacao){
+        this.locacoes.add(locacao);
+    }
+    
+    public void adicionarFuncionario(Funcionario funcionario){
+        this.funcionarios.add(funcionario);
+    }
+    
+    public void adicionarSeguro(Seguro seguro){
+        this.seguros.add(seguro);
+    }
+    
     public void salvarLocacoes(){
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
