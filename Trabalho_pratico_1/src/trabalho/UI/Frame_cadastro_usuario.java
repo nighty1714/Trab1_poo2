@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import trabalho.armazenamento.Armazenamento;
 import trabalho.modeloDeDados.Cliente;
 import trabalho.modeloDeDados.Configuracao;
 
@@ -73,7 +74,6 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
         Cadastro_usuario_adimicao = new javax.swing.JTextField();
         button_cadastrar_funcionario = new javax.swing.JButton();
         jCheckBox_sim = new javax.swing.JCheckBox();
-        jCheckBoxnao = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -135,8 +135,6 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             }
         });
 
-        jCheckBoxnao.setText("Não");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -155,15 +153,13 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
                                             .addComponent(jLabel10)
                                             .addComponent(jLabel11))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(Text_cadastro_cliente_Categoria_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(Text_cadastro_cliente_Numero_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(Text_cadastro_cliente_validade_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Text_cadastro_cliente_Categoria_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Text_cadastro_cliente_Numero_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Text_cadastro_cliente_validade_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addComponent(jCheckBox_sim, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBoxnao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                                .addGap(26, 26, 26)))
                                         .addGap(82, 82, 82))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -261,8 +257,7 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
                     .addComponent(jLabel13)
                     .addComponent(jLabel16)
                     .addComponent(Cadastro_usuario_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox_sim)
-                    .addComponent(jCheckBoxnao))
+                    .addComponent(jCheckBox_sim))
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -331,17 +326,29 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             
             String Email_conta_cliente = Text_cadastro_cliente_email.getText();
             
-            String Cliente_ouro_conta_cliente = Text_cadastro_cliente_cliente_ouro.getText();
+            boolean ouro = false;
             
-            System.out.println(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + Cliente_ouro_conta_cliente);
+            if (jCheckBox_sim.isSelected()){
+                
+                ouro = true;
+            }
             
-            Cadastro_cliente_text_resultado.setText(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + Cliente_ouro_conta_cliente);
+            System.out.println(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + ouro);
+            
+            Cadastro_cliente_text_resultado.setText(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + ouro);
             
             //(String categoriaCNH, String numeroCNH, Calendar vencimentoCNH, boolean clienteOuro, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email)
             
-            Cliente aaaa = new Cliente(Categoria_CNH_conta_cliente, Numero_CNH_conta_cliente, cal2, Cliente_ouro_conta_cliente, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, cal, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente);
+            Cliente teste = new Cliente(Categoria_CNH_conta_cliente, Numero_CNH_conta_cliente, cal2, ouro, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, cal, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente);
             
-            Configuracao oq_eu_to_fazendo = new Configuracao();
+            Configuracao config_teste = new Configuracao();
+            
+            config_teste.setArquivoClientes(teste.toString());
+            
+            Armazenamento armazenamento_teste = new Armazenamento(config_teste);
+            
+            armazenamento_teste.salvarClientes();
+            
             
         } catch (ParseException ex) {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
@@ -400,7 +407,6 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
     private javax.swing.JTextField Text_cadastro_cliente_validade_CNH;
     private javax.swing.JButton button_cadastrar_funcionario;
     private javax.swing.JCheckBox jCheckBox_sim;
-    private javax.swing.JCheckBox jCheckBoxnao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
