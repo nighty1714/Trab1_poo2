@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import trabalho.armazenamento.Armazenamento;
 import trabalho.modeloDeDados.Cartao;
 import trabalho.modeloDeDados.Dinheiro;
 
@@ -253,9 +254,11 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
             
             Cartao cart = new Cartao(nome_c, bandeira, numero);
             
+            //aqui
             
             
-            //função para verificar se o veiculo digitado esta disponivel
+            
+            //função para verificar se o veiculo digitado esta disponivel  carregarVeiculos
             
            
             
