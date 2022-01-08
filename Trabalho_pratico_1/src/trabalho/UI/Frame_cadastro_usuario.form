@@ -344,6 +344,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar funcionario"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_cadastrar_funcionarioActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBox_sim">
       <Properties>

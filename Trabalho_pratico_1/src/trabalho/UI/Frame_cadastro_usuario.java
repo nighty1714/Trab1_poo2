@@ -13,6 +13,8 @@ import java.util.logging.Logger;
 import trabalho.armazenamento.Armazenamento;
 import trabalho.modeloDeDados.Cliente;
 import trabalho.modeloDeDados.Configuracao;
+import trabalho.modeloDeDados.Controle;
+import trabalho.modeloDeDados.Funcionario;
 
 /**
  *
@@ -127,6 +129,11 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
         jLabel18.setText("Data de adimição:");
 
         button_cadastrar_funcionario.setText("Cadastrar funcionario");
+        button_cadastrar_funcionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_cadastrar_funcionarioActionPerformed(evt);
+            }
+        });
 
         jCheckBox_sim.setText("Sim");
         jCheckBox_sim.addActionListener(new java.awt.event.ActionListener() {
@@ -341,14 +348,17 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             
             Cliente teste = new Cliente(Categoria_CNH_conta_cliente, Numero_CNH_conta_cliente, cal2, ouro, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, cal, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente);
             
-            Configuracao config_teste = new Configuracao();
+            Configuracao config_cliente = new Configuracao();
             
-            config_teste.setArquivoClientes(teste.toString());
+            config_cliente.setArquivoClientes(teste.toString());
             
-            Armazenamento armazenamento_teste = new Armazenamento(config_teste);
+            Controle controle_cliente = new Controle();
             
-            armazenamento_teste.salvarClientes();
+            controle_cliente.adicionarCliente(teste);
             
+            controle_cliente.setConfiguracoes(config_cliente);
+            
+            controle_cliente.salvar_cliente();
             
         } catch (ParseException ex) {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
@@ -360,6 +370,60 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
         
         
     }//GEN-LAST:event_jCheckBox_simActionPerformed
+
+    private void button_cadastrar_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_cadastrar_funcionarioActionPerformed
+        try {
+            //Funcionario(float salario, String pis, Calendar dataAdmissao, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email)
+            
+            float salario = Float.parseFloat(Cadastro_usuario_salario.getText());
+            
+            String pis = Cadastro_usuario_PIS.getText();
+            
+            String adimicao = Cadastro_usuario_adimicao.getText();
+            
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Calendar adimi = Calendar.getInstance();
+            
+            int codigo_conta_cliente = Integer.parseInt(Text_cadastro_cliente_Codigo.getText());
+            
+            String nome_conta_cliente = Text_cadastro_cliente_nome.getText();
+            
+            String cpf_conta_cliente = Text_cadastro_cliente_CPF.getText();
+            
+            String rg_conta_cliente = Text_cadastro_cliente_RG.getText();
+            
+            String data_nascimento_conta_cliente = Text_cadastro_cliente_data_nascimento.getText();
+            
+            Calendar nascimento = Calendar.getInstance();
+            
+            nascimento.setTime(sdf.parse(data_nascimento_conta_cliente));
+            
+            String CEP_conta_cliente = Text_cadastro_cliente_CEP.getText();
+            
+            String Endereco_conta_cliente = Text_cadastro_cliente_endereco.getText();
+            
+            String Email_conta_cliente = Text_cadastro_cliente_email.getText();
+            
+            Funcionario teste = new Funcionario(salario, pis, adimi, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, nascimento, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente  );
+            
+            Configuracao config_funcionario = new Configuracao();
+            
+            config_funcionario.setArquivoFuncionarios(teste.toString());
+            
+            Controle controle_cliente = new Controle();
+            
+            controle_cliente.adicionarFuncionario(teste);
+            
+            controle_cliente.setConfiguracoes(config_funcionario);
+            
+            controle_cliente.salvar_funcionario();
+            
+            adimi.setTime(sdf.parse(adimicao));
+        } catch (ParseException ex) {
+            Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_button_cadastrar_funcionarioActionPerformed
 
     public static void main(String args[]) {
         

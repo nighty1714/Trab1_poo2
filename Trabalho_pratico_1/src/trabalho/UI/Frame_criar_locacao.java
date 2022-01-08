@@ -5,6 +5,14 @@
  */
 package trabalho.UI;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import trabalho.modeloDeDados.Cartao;
+import trabalho.modeloDeDados.Dinheiro;
+
 /**
  *
  * @author gabri
@@ -39,15 +47,18 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
         text_field_data_locacao = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         text_field_valor = new javax.swing.JTextField();
-        text_field_pagamento = new javax.swing.JTextField();
-        text_field_finalizada = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel9 = new javax.swing.JLabel();
-        check_box_seguro_furto = new javax.swing.JCheckBox();
-        check_box_seguro_saude = new javax.swing.JCheckBox();
         Button_criar_locacao = new javax.swing.JButton();
+        Cartao = new javax.swing.JCheckBox();
+        Dinheiro = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
+        Text_field_nome_cartao = new javax.swing.JTextField();
+        Text_field_numero_cartao = new javax.swing.JTextField();
+        Text_field_bandeira_cartao = new javax.swing.JTextField();
+        Finalizada = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar locação");
@@ -66,26 +77,31 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
 
         jLabel7.setText("Forma pagamento:");
 
-        jLabel8.setText("Finalizada:");
-
-        jCheckBox1.setText("Seguro Acidente");
-
-        jLabel9.setText("Seguros cadastrados");
-
-        check_box_seguro_furto.setText("Seguro furto");
-
-        check_box_seguro_saude.setText("Seguro acidente");
-
         Button_criar_locacao.setText("Cadastrar");
+        Button_criar_locacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_criar_locacaoActionPerformed(evt);
+            }
+        });
+
+        Cartao.setText("Cartão");
+
+        Dinheiro.setText("Dinheiro");
+
+        jLabel8.setText("Para o cartão:");
+
+        Finalizada.setText("Finalizada");
+
+        jLabel9.setText("Veiculo selecionado:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -96,38 +112,54 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
                                     .addComponent(text_field_codigo_locacao)
                                     .addComponent(text_field_codigo_funcionario, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCheckBox1)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(text_field_data_locacao)
-                                    .addComponent(text_field_codigo_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(text_field_codigo_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(text_field_data_devolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(text_field_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(Text_field_numero_cartao)
+                                        .addComponent(text_field_data_locacao, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
+                        .addContainerGap(56, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Dinheiro)
+                            .addComponent(Text_field_nome_cartao, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Cartao)
+                            .addComponent(Text_field_bandeira_cartao, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(204, 204, 204)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Button_criar_locacao)
-                            .addComponent(check_box_seguro_furto))))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(check_box_seguro_saude)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(text_field_data_devolucao)
-                        .addComponent(text_field_valor)
-                        .addComponent(text_field_pagamento)
-                        .addComponent(text_field_finalizada, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
-                .addContainerGap(27, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(184, 184, 184))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Finalizada)
+                            .addComponent(Button_criar_locacao)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,28 +181,89 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(text_field_codigo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(text_field_pagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(text_field_data_locacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(text_field_finalizada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(jLabel9)
+                    .addComponent(text_field_data_locacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(check_box_seguro_furto)
-                    .addComponent(jCheckBox1)
-                    .addComponent(check_box_seguro_saude))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                    .addComponent(jLabel7)
+                    .addComponent(Dinheiro)
+                    .addComponent(Cartao))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(Text_field_nome_cartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Text_field_numero_cartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Text_field_bandeira_cartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(Finalizada)
+                .addGap(18, 18, 18)
                 .addComponent(Button_criar_locacao)
-                .addContainerGap())
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Button_criar_locacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_criar_locacaoActionPerformed
+        try {
+            // Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, Calendar dataLocacao, Calendar dataDevolucao, float valorTotal, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
+            
+            int codigo = Integer.parseInt(text_field_codigo_locacao.getText());
+            
+            int codigo_u = Integer.parseInt(text_field_codigo_funcionario.getText());
+            
+            int codigo_c = Integer.parseInt(text_field_codigo_cliente.getText());
+            
+            String data_l = text_field_data_locacao.getText();
+            
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Calendar data_lo = Calendar.getInstance();
+            
+            data_lo.setTime(sdf.parse(data_l));
+            
+            String data_d = text_field_data_devolucao.getText();
+            
+            Calendar data_de = Calendar.getInstance();
+            
+            data_de.setTime(sdf.parse(data_d));
+            
+            float valor = Float.parseFloat(text_field_valor.getText());
+            
+            boolean finalizada = false;
+            
+            if (Finalizada.isSelected()){
+                
+                finalizada = true;
+                
+            }
+            
+            String nome_c = Text_field_nome_cartao.getText();
+            
+            String bandeira = Text_field_bandeira_cartao.getText();
+            
+            String numero = Text_field_numero_cartao.getText();
+            
+            Dinheiro d = new Dinheiro();
+            
+            Cartao cart = new Cartao(nome_c, bandeira, numero);
+            
+            
+            
+            //função para verificar se o veiculo digitado esta disponivel
+            
+           
+            
+            
+        } catch (ParseException ex) {
+            Logger.getLogger(Frame_criar_locacao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Button_criar_locacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,9 +302,12 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_criar_locacao;
-    private javax.swing.JCheckBox check_box_seguro_furto;
-    private javax.swing.JCheckBox check_box_seguro_saude;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox Cartao;
+    private javax.swing.JCheckBox Dinheiro;
+    private javax.swing.JCheckBox Finalizada;
+    private javax.swing.JTextField Text_field_bandeira_cartao;
+    private javax.swing.JTextField Text_field_nome_cartao;
+    private javax.swing.JTextField Text_field_numero_cartao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -221,13 +317,13 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField text_field_codigo_cliente;
     private javax.swing.JTextField text_field_codigo_funcionario;
     private javax.swing.JTextField text_field_codigo_locacao;
     private javax.swing.JTextField text_field_data_devolucao;
     private javax.swing.JTextField text_field_data_locacao;
-    private javax.swing.JTextField text_field_finalizada;
-    private javax.swing.JTextField text_field_pagamento;
     private javax.swing.JTextField text_field_valor;
     // End of variables declaration//GEN-END:variables
 }

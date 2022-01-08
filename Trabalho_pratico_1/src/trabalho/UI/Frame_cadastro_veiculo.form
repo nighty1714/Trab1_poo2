@@ -25,26 +25,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
-                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                      <Component id="Cadastro_veiculo_nacional_button" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="Cadastro_veiculo_nacional_imposto_estadual" alignment="1" min="-2" pref="126" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="Cadastro_veiculo_nacional_imposto_estadual" alignment="1" min="-2" pref="126" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
@@ -52,74 +39,89 @@
                                       <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel5" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="Cadastro_veiculo_nacional_codigo" max="32767" attributes="0"/>
-                                      <Component id="Cadastro_veiculo_nacional_modelo" max="32767" attributes="0"/>
-                                      <Component id="Cadastro_veiculo_nacional_Montadora" max="32767" attributes="0"/>
-                                      <Component id="Cadastro_veiculo_nacional_ano_fabricacao" max="32767" attributes="0"/>
-                                      <Component id="Cadastro_veiculo_nacional_ano_modelo" pref="144" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Text_field_lucro" max="32767" attributes="0"/>
+                                  <Component id="Cadastro_veiculo_nacional_codigo" max="32767" attributes="0"/>
+                                  <Component id="Cadastro_veiculo_nacional_modelo" max="32767" attributes="0"/>
+                                  <Component id="Cadastro_veiculo_nacional_Montadora" max="32767" attributes="0"/>
+                                  <Component id="Cadastro_veiculo_nacional_ano_fabricacao" max="32767" attributes="0"/>
+                                  <Component id="Cadastro_veiculo_nacional_ano_modelo" pref="144" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="97" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="Cadastro_veiculo_nacional_imposto_federal" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel8" max="32767" attributes="0"/>
+                                  <Component id="jLabel6" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel7" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel9" alignment="1" pref="100" max="32767" attributes="0"/>
+                                  <Component id="jLabel10" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Cadastro_veiculo_nacional_diaria" min="-2" pref="144" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="Cadastro_veiculo_nacional_imposto_federal" min="-2" pref="137" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel8" max="32767" attributes="0"/>
-                                          <Component id="jLabel6" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel7" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel9" alignment="1" pref="100" max="32767" attributes="0"/>
-                                          <Component id="jLabel10" alignment="1" max="32767" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="Cadastro_veiculo_nacional_diaria" max="32767" attributes="0"/>
-                                                  <Component id="Cadastro_veiculo_nacional_alugado" pref="144" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                              <Component id="Cadastro_veiculo_nacional_categoria" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                              <Component id="Cadastro_veiculo_nacional_placa" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                              <Component id="Cadastro_veiculo_nacional_fipe" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="Cadastro_veiculo_nacional_categoria" max="32767" attributes="0"/>
+                                          <Component id="Cadastro_veiculo_nacional_placa" max="32767" attributes="0"/>
+                                          <Component id="Cadastro_veiculo_nacional_fipe" max="32767" attributes="0"/>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="CheckBox_alugado" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="93" max="32767" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Component id="Cadastro_veiculo_nacional_button" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
+                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -140,7 +142,7 @@
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Cadastro_veiculo_nacional_codigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Cadastro_veiculo_nacional_alugado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CheckBox_alugado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -163,12 +165,17 @@
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Cadastro_veiculo_nacional_fipe" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Text_field_lucro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Cadastro_veiculo_nacional_imposto_estadual" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -176,9 +183,12 @@
                   <Component id="Cadastro_veiculo_nacional_imposto_federal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="Cadastro_veiculo_nacional_button" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Cadastro_veiculo_nacional_button" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -249,8 +259,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Cadastro_veiculo_nacional_diaria">
     </Component>
-    <Component class="javax.swing.JTextField" name="Cadastro_veiculo_nacional_alugado">
-    </Component>
     <Component class="javax.swing.JTextField" name="Cadastro_veiculo_nacional_categoria">
     </Component>
     <Component class="javax.swing.JTextField" name="Cadastro_veiculo_nacional_placa">
@@ -259,8 +267,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="Cadastro_veiculo_nacional_button">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar Veiculo nacional"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cadastro_veiculo_nacional_buttonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
@@ -291,6 +302,26 @@
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>
         <Property name="text" type="java.lang.String" value="Taxa imposto federal:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="CheckBox_alugado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sim"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadastrar Veiculo Internacional"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="Text_field_lucro">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel17">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lucro:"/>
       </Properties>
     </Component>
   </SubComponents>

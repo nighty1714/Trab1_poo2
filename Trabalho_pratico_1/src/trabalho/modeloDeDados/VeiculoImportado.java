@@ -13,10 +13,11 @@ public class VeiculoImportado extends Veiculo {
     protected float taxaImpostoEstadual;
     protected float taxaImpostoFederal;
 
-    public VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
+    public VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro) {
         super(codigoVeiculo, nomeModelo, montadora, anoFabricacao, placa, categoria, valorFipe, alugado, taxaLucro);
         this.taxaImpostoEstadual = taxaImpostoEstadual;
         this.taxaImpostoFederal = taxaImpostoFederal;
+        this.valorDiaria = calcularValorDiaria();
     }
 
     public float getTaxaImpostoEstadual() {

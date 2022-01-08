@@ -5,6 +5,16 @@
  */
 package trabalho.UI;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import trabalho.modeloDeDados.Configuracao;
+import trabalho.modeloDeDados.Controle;
+import trabalho.modeloDeDados.VeiculoImportado;
+import trabalho.modeloDeDados.VeiculoNacional;
+
 /**
  *
  * @author gabri
@@ -43,7 +53,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         Cadastro_veiculo_nacional_ano_fabricacao = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_ano_modelo = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_diaria = new javax.swing.JTextField();
-        Cadastro_veiculo_nacional_alugado = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_categoria = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_placa = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_fipe = new javax.swing.JTextField();
@@ -56,6 +65,10 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         Cadastro_veiculo_nacional_imposto_federal = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        CheckBox_alugado = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        Text_field_lucro = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de veiculos");
@@ -86,7 +99,12 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
             }
         });
 
-        Cadastro_veiculo_nacional_button.setText("Cadastrar");
+        Cadastro_veiculo_nacional_button.setText("Cadastrar Veiculo nacional");
+        Cadastro_veiculo_nacional_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadastro_veiculo_nacional_buttonActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Dados de cadastro comuns");
 
@@ -98,81 +116,96 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
 
         jLabel16.setText("Taxa imposto federal:");
 
+        CheckBox_alugado.setText("Sim");
+
+        jButton1.setText("Cadastrar Veiculo Internacional");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Lucro:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(Cadastro_veiculo_nacional_button)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Cadastro_veiculo_nacional_imposto_estadual, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Cadastro_veiculo_nacional_imposto_estadual, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Cadastro_veiculo_nacional_codigo)
-                                        .addComponent(Cadastro_veiculo_nacional_modelo)
-                                        .addComponent(Cadastro_veiculo_nacional_Montadora)
-                                        .addComponent(Cadastro_veiculo_nacional_ano_fabricacao)
-                                        .addComponent(Cadastro_veiculo_nacional_ano_modelo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))))
-                            .addComponent(jLabel12))
+                                    .addComponent(jLabel17))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Text_field_lucro)
+                                    .addComponent(Cadastro_veiculo_nacional_codigo)
+                                    .addComponent(Cadastro_veiculo_nacional_modelo)
+                                    .addComponent(Cadastro_veiculo_nacional_Montadora)
+                                    .addComponent(Cadastro_veiculo_nacional_ano_fabricacao)
+                                    .addComponent(Cadastro_veiculo_nacional_ano_modelo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addContainerGap(97, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Cadastro_veiculo_nacional_imposto_federal, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(Cadastro_veiculo_nacional_imposto_federal, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Cadastro_veiculo_nacional_diaria, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(11, 11, 11)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(Cadastro_veiculo_nacional_diaria)
-                                                    .addComponent(Cadastro_veiculo_nacional_alugado, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(11, 11, 11)
-                                                .addComponent(Cadastro_veiculo_nacional_categoria))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(11, 11, 11)
-                                                .addComponent(Cadastro_veiculo_nacional_placa))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(11, 11, 11)
-                                                .addComponent(Cadastro_veiculo_nacional_fipe)))))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(Cadastro_veiculo_nacional_categoria)
+                                            .addComponent(Cadastro_veiculo_nacional_placa)
+                                            .addComponent(Cadastro_veiculo_nacional_fipe)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CheckBox_alugado)
+                                        .addGap(55, 55, 55)))))
+                        .addContainerGap(23, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addGap(150, 150, 150)
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel16)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel16))
+                        .addContainerGap(93, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(Cadastro_veiculo_nacional_button)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(42, 42, 42))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(244, 244, 244)
+                        .addComponent(jLabel11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel12)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +223,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel10)
                     .addComponent(Cadastro_veiculo_nacional_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cadastro_veiculo_nacional_alugado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CheckBox_alugado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -209,20 +242,26 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
                     .addComponent(Cadastro_veiculo_nacional_ano_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(Cadastro_veiculo_nacional_fipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Text_field_lucro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(Cadastro_veiculo_nacional_imposto_estadual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15)
                     .addComponent(Cadastro_veiculo_nacional_imposto_federal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
-                .addGap(36, 36, 36)
-                .addComponent(Cadastro_veiculo_nacional_button)
-                .addGap(27, 27, 27))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cadastro_veiculo_nacional_button)
+                    .addComponent(jButton1))
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -231,6 +270,131 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
     private void Cadastro_veiculo_nacional_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_veiculo_nacional_codigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Cadastro_veiculo_nacional_codigoActionPerformed
+
+    private void Cadastro_veiculo_nacional_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_veiculo_nacional_buttonActionPerformed
+       
+        try {
+            String modelo = Cadastro_veiculo_nacional_modelo.getText();
+            
+            int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
+            
+            String montadora = Cadastro_veiculo_nacional_Montadora.getText();
+            
+            int ano_fab = Integer.parseInt(Cadastro_veiculo_nacional_ano_fabricacao.getText());
+            
+            String ano_mod = Cadastro_veiculo_nacional_ano_modelo.getText();
+            
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Calendar data_mod = Calendar.getInstance();
+            
+            data_mod.setTime(sdf.parse(ano_mod));
+            
+            int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
+            
+            boolean alugado = false;
+            
+            if (CheckBox_alugado.isSelected()){
+                
+                alugado = true;
+                
+            }
+            
+            String categoria = Cadastro_veiculo_nacional_categoria.getText();
+            
+            String placa = Cadastro_veiculo_nacional_placa.getText();
+            
+            float fipe = Float.parseFloat( Cadastro_veiculo_nacional_fipe.getText());
+            
+            float imposto_estadual = Float.parseFloat(Cadastro_veiculo_nacional_imposto_estadual.getText());
+            
+            float lucro = Float.parseFloat(Text_field_lucro.getText());
+            
+            //VeiculoNacional(float taxaImposto, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro)
+            
+            VeiculoNacional teste = new VeiculoNacional(imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
+            
+            Configuracao veiculo_nacional = new Configuracao();
+            
+            veiculo_nacional.setArquivoVeiculos(teste.toString());
+            
+            Controle controle_veiculo = new Controle();
+            
+            controle_veiculo.adicionarVeiculo(teste);
+            
+            controle_veiculo.setConfiguracoes(veiculo_nacional);
+            
+            controle_veiculo.salvar_veiculo();
+            
+        } catch (ParseException ex) {
+            Logger.getLogger(Frame_cadastro_veiculo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_Cadastro_veiculo_nacional_buttonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
+         try {
+            String modelo = Cadastro_veiculo_nacional_modelo.getText();
+            
+            int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
+            
+            String montadora = Cadastro_veiculo_nacional_Montadora.getText();
+            
+            int ano_fab = Integer.parseInt(Cadastro_veiculo_nacional_ano_fabricacao.getText());
+            
+            String ano_mod = Cadastro_veiculo_nacional_ano_modelo.getText();
+            
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Calendar data_mod = Calendar.getInstance();
+            
+            data_mod.setTime(sdf.parse(ano_mod));
+            
+            int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
+            
+            boolean alugado = false;
+            
+            if (CheckBox_alugado.isSelected()){
+                
+                alugado = true;
+                
+            }
+            
+            String categoria = Cadastro_veiculo_nacional_categoria.getText();
+            
+            String placa = Cadastro_veiculo_nacional_placa.getText();
+            
+            float fipe = Float.parseFloat( Cadastro_veiculo_nacional_fipe.getText());
+            
+            float imposto_estadual = Float.parseFloat(Cadastro_veiculo_nacional_imposto_estadual.getText());
+            
+            float lucro = Float.parseFloat(Text_field_lucro.getText());
+            
+            float Imposto_federal = Float.parseFloat(Cadastro_veiculo_nacional_imposto_federal.getText());
+            
+            //VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
+            
+            VeiculoImportado teste = new VeiculoImportado(Imposto_federal, imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
+            
+            Configuracao veiculo_importado = new Configuracao();
+            
+            veiculo_importado.setArquivoVeiculos(teste.toString());
+            
+            Controle controle_veiculo = new Controle();
+            
+            controle_veiculo.adicionarVeiculo(teste);
+            
+            controle_veiculo.setConfiguracoes(veiculo_importado);
+            
+            controle_veiculo.salvar_veiculo();
+            
+        } catch (ParseException ex) {
+            Logger.getLogger(Frame_cadastro_veiculo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,7 +434,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cadastro_veiculo_nacional_Montadora;
-    private javax.swing.JTextField Cadastro_veiculo_nacional_alugado;
     private javax.swing.JTextField Cadastro_veiculo_nacional_ano_fabricacao;
     private javax.swing.JTextField Cadastro_veiculo_nacional_ano_modelo;
     private javax.swing.JButton Cadastro_veiculo_nacional_button;
@@ -282,6 +445,9 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
     private javax.swing.JTextField Cadastro_veiculo_nacional_imposto_federal;
     private javax.swing.JTextField Cadastro_veiculo_nacional_modelo;
     private javax.swing.JTextField Cadastro_veiculo_nacional_placa;
+    private javax.swing.JCheckBox CheckBox_alugado;
+    private javax.swing.JTextField Text_field_lucro;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -290,6 +456,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

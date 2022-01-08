@@ -112,7 +112,7 @@ public class Controle implements Serializable{
     }
     */
 
-    Controle(){
+    public Controle(){
         this.armazenamento = Armazenamento.getInstance();
     }
     
@@ -212,6 +212,24 @@ public class Controle implements Serializable{
             }
         }
         return "";   
+    }
+    
+    public void salvar_cliente(){
+        
+        armazenamento.salvarClientes();
+        
+    }
+    
+    public void salvar_funcionario(){
+        
+        armazenamento.salvarFuncionarios();
+        
+    }
+    
+    public void salvar_veiculo(){
+        
+        armazenamento.salvarVeiculos();
+        
     }
 }
     
