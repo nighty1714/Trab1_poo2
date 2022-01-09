@@ -7,6 +7,7 @@ package trabalho.modeloDeDados;
 import trabalho.armazenamento.Armazenamento;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 /**
  *
  * @author Nozawa
@@ -114,6 +115,18 @@ public class Controle implements Serializable{
 
     public Controle(){
         this.armazenamento = Armazenamento.getInstance();
+    }
+    
+    public ArrayList<Usuario> clientesAtrasados(){
+        return armazenamento.clientesAtrasados();
+    }
+    
+    public ArrayList<Veiculo> veiculosDoUsuario(int codigo){
+        return armazenamento.veiculosDoUsuario(codigo);
+    }
+    
+    public ArrayList<Locacao> locacoesDoMes(int mes, int ano){
+        return armazenamento.locacoesDoMes(mes, ano);
     }
     
     public float controler_locacao_valor_total(int codigo){

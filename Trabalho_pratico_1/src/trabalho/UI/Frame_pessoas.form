@@ -32,7 +32,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Pessoas_textfield" min="-2" pref="246" max="-2" attributes="0"/>
+              <Component id="textPessoas" min="-2" pref="246" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="Button_listar_funcionarios" max="32767" attributes="0"/>
@@ -50,7 +50,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Pessoas_textfield" max="32767" attributes="0"/>
+                  <Component id="textPessoas" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="Button_listar_funcionarios" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -69,12 +69,15 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="Pessoas_textfield">
+    <Component class="javax.swing.JTextField" name="textPessoas">
     </Component>
     <Component class="javax.swing.JButton" name="Button_listar_funcionarios">
       <Properties>
         <Property name="text" type="java.lang.String" value="Listar todos funcionarios"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_listar_funcionariosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="button_funcionario_mes">
       <Properties>
@@ -85,6 +88,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Clientes cadastrados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_clientes_cadastradosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="button_historico_locacao">
       <Properties>
@@ -95,6 +101,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Clientes com loca&#xe7;&#xf5;es atrasadas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_locacoes_atrasadasActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
