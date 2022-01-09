@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package trabalho.UI;
-
+import trabalho.modeloDeDados.Controle;
+import trabalho.modeloDeDados.Locacao;
+import trabalho.modeloDeDados.Seguro;
 /**
  *
  * @author gabri
  */
 public class Frame_locacoes extends javax.swing.JFrame {
-
+    Controle controle = new Controle();
     /**
      * Creates new form Frame_locacoes
      */
@@ -45,16 +47,41 @@ public class Frame_locacoes extends javax.swing.JFrame {
         setTitle("Verificação de locações");
 
         Locacoes_button_locaces_cadastradas.setText("Locações cadastradas");
+        Locacoes_button_locaces_cadastradas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Locacoes_button_locaces_cadastradasActionPerformed(evt);
+            }
+        });
 
         Locacoes_button_locaces_atraso.setText("Locações em atraso");
+        Locacoes_button_locaces_atraso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Locacoes_button_locaces_atrasoActionPerformed(evt);
+            }
+        });
 
         Locacoes_button_locacoes_lucro_mes.setText("Locações e lucro de um mês");
 
         Locacoes_button_locaces_finalizadas.setText("Locações finalizadas");
+        Locacoes_button_locaces_finalizadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Locacoes_button_locaces_finalizadasActionPerformed(evt);
+            }
+        });
 
         Locacoes_button_locaces_nao_finalizadas.setText("Locações não finalizadas");
+        Locacoes_button_locaces_nao_finalizadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Locacoes_button_locaces_nao_finalizadasActionPerformed(evt);
+            }
+        });
 
         Locacoes_button_seguros_cadastrados.setText("Seguros cadastrados");
+        Locacoes_button_seguros_cadastrados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Locacoes_button_seguros_cadastradosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,12 +93,11 @@ public class Frame_locacoes extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Locacoes_button_seguros_cadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Locacoes_button_locaces_cadastradas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Locacoes_button_locacoes_lucro_mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Locacoes_button_locaces_atraso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Locacoes_button_locaces_finalizadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Locacoes_button_locaces_nao_finalizadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(Locacoes_button_locaces_cadastradas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Locacoes_button_locacoes_lucro_mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Locacoes_button_locaces_atraso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Locacoes_button_locaces_finalizadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Locacoes_button_locaces_nao_finalizadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -97,6 +123,54 @@ public class Frame_locacoes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Locacoes_button_locaces_cadastradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Locacoes_button_locaces_cadastradasActionPerformed
+        String locacoes = "";
+        for(Locacao locacao: controle.getLocacoes()){
+            locacoes += locacao.toString();
+        }
+        locacoes_text_field.setText(locacoes);
+    }//GEN-LAST:event_Locacoes_button_locaces_cadastradasActionPerformed
+
+    private void Locacoes_button_locaces_atrasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Locacoes_button_locaces_atrasoActionPerformed
+        String locacoesAtrasadas = "";
+        for (Locacao locacao: controle.getLocacoes()){
+            if(locacao.verificarAtraso()){
+                locacoesAtrasadas += locacao.toString();
+            }
+        }
+        locacoes_text_field.setText(locacoesAtrasadas);
+    }//GEN-LAST:event_Locacoes_button_locaces_atrasoActionPerformed
+
+    private void Locacoes_button_locaces_finalizadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Locacoes_button_locaces_finalizadasActionPerformed
+        String locacoes = "";
+        for(Locacao locacao: controle.getLocacoes()){
+            if(locacao.isFinalizada()){
+                locacoes += locacao.toString();
+            }
+        }
+        locacoes_text_field.setText(locacoes);
+    }//GEN-LAST:event_Locacoes_button_locaces_finalizadasActionPerformed
+
+    private void Locacoes_button_locaces_nao_finalizadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Locacoes_button_locaces_nao_finalizadasActionPerformed
+        String locacoes = "";
+        for(Locacao locacao: controle.getLocacoes()){
+            if(!locacao.isFinalizada()){
+                if(!locacao.verificarAtraso()){
+                    locacoes += locacao.toString();
+                }
+            }
+        }
+        locacoes_text_field.setText(locacoes);
+    }//GEN-LAST:event_Locacoes_button_locaces_nao_finalizadasActionPerformed
+
+    private void Locacoes_button_seguros_cadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Locacoes_button_seguros_cadastradosActionPerformed
+        String seguros = "";
+        for(Seguro seguro: controle.getSeguros()){
+            seguros += seguro.toString();
+        }
+        locacoes_text_field.setText(seguros);
+    }//GEN-LAST:event_Locacoes_button_seguros_cadastradosActionPerformed
 
     /**
      * @param args the command line arguments

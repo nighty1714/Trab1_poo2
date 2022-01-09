@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -105,6 +106,48 @@ public class Armazenamento {
     
     public void adicionarSeguro(Seguro seguro){
         this.seguros.add(seguro);
+    }
+    
+    public ArrayList<Usuario> clientesAtrasados(){
+        ArrayList<Integer> listaAtrasos = new ArrayList();
+        ArrayList<Usuario> listaClientes = new ArrayList();
+        for(Locacao locacao: locacoes){
+            if(locacao.verificarAtraso()){
+                int codigo = locacao.getCodigoCliente();
+                if(listaAtrasos.contains(codigo)){
+                    listaAtrasos.add(codigo);
+                    for(Usuario cliente: clientes){
+                        if(cliente.getCodigoUsuario() == codigo){
+                            listaClientes.add(cliente);
+                        }
+                    }
+                }
+            }
+        }
+        return listaClientes;
+    }
+    
+    public ArrayList<Locacao> locacoesDoMes(int mes, int ano){
+        ArrayList<Locacao> listaLocacoes = new ArrayList();
+        for(Locacao locacao: locacoes){
+            Calendar data = locacao.getDataLocacao();
+            if(data.get(Calendar.YEAR) == ano){
+                if(data.get(Calendar.MONTH) == mes){
+                    listaLocacoes.add(locacao);
+                }
+            }
+        }
+        return listaLocacoes;
+    }
+    
+    public ArrayList<Veiculo> veiculosDoUsuario(int codigo){
+        ArrayList<Veiculo> listaVeiculos = new ArrayList();
+        for(Locacao locacao: locacoes){
+            if(locacao.getCodigoCliente() == codigo){
+                listaVeiculos.add(locacao.getVeiculo());
+            }
+        }
+        return listaVeiculos;
     }
     
     public void salvarLocacoes(){

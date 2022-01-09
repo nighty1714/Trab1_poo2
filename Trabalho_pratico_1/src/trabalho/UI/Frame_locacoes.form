@@ -42,13 +42,11 @@
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="Locacoes_button_seguros_cadastrados" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="Locacoes_button_locaces_cadastradas" alignment="1" max="32767" attributes="0"/>
-                      <Component id="Locacoes_button_locacoes_lucro_mes" max="32767" attributes="0"/>
-                      <Component id="Locacoes_button_locaces_atraso" alignment="1" max="32767" attributes="0"/>
-                      <Component id="Locacoes_button_locaces_finalizadas" alignment="0" max="32767" attributes="0"/>
-                      <Component id="Locacoes_button_locaces_nao_finalizadas" alignment="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="Locacoes_button_locaces_cadastradas" alignment="1" max="32767" attributes="0"/>
+                  <Component id="Locacoes_button_locacoes_lucro_mes" max="32767" attributes="0"/>
+                  <Component id="Locacoes_button_locaces_atraso" alignment="1" max="32767" attributes="0"/>
+                  <Component id="Locacoes_button_locaces_finalizadas" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Locacoes_button_locaces_nao_finalizadas" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="29" max="32767" attributes="0"/>
           </Group>
@@ -86,11 +84,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es cadastradas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_cadastradasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Locacoes_button_locaces_atraso">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es em atraso"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_atrasoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Locacoes_button_locacoes_lucro_mes">
       <Properties>
@@ -101,16 +105,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es finalizadas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_finalizadasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Locacoes_button_locaces_nao_finalizadas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es n&#xe3;o finalizadas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_nao_finalizadasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Locacoes_button_seguros_cadastrados">
       <Properties>
         <Property name="text" type="java.lang.String" value="Seguros cadastrados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_seguros_cadastradosActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

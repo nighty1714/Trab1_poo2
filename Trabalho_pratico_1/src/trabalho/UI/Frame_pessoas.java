@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package trabalho.UI;
-
+import trabalho.modeloDeDados.Controle;
+import trabalho.modeloDeDados.Usuario;
 /**
  *
  * @author gabri
  */
 public class Frame_pessoas extends javax.swing.JFrame {
-
+    Controle controle = new Controle();
     /**
      * Creates new form Frame_pessoas
      */
@@ -28,7 +29,7 @@ public class Frame_pessoas extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
-        Pessoas_textfield = new javax.swing.JTextField();
+        textPessoas = new javax.swing.JTextField();
         Button_listar_funcionarios = new javax.swing.JButton();
         button_funcionario_mes = new javax.swing.JButton();
         button_clientes_cadastrados = new javax.swing.JButton();
@@ -40,14 +41,29 @@ public class Frame_pessoas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         Button_listar_funcionarios.setText("Listar todos funcionarios");
+        Button_listar_funcionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_listar_funcionariosActionPerformed(evt);
+            }
+        });
 
         button_funcionario_mes.setText("Funcionario do mês");
 
         button_clientes_cadastrados.setText("Clientes cadastrados");
+        button_clientes_cadastrados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_clientes_cadastradosActionPerformed(evt);
+            }
+        });
 
         button_historico_locacao.setText("historico de locação ");
 
         button_locacoes_atrasadas.setText("Clientes com locações atrasadas");
+        button_locacoes_atrasadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_locacoes_atrasadasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,7 +71,7 @@ public class Frame_pessoas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Pessoas_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textPessoas, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Button_listar_funcionarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -70,7 +86,7 @@ public class Frame_pessoas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Pessoas_textfield)
+                    .addComponent(textPessoas)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Button_listar_funcionarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -86,6 +102,30 @@ public class Frame_pessoas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Button_listar_funcionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_listar_funcionariosActionPerformed
+        String funcionarios = "";
+        for(Usuario funcionario: controle.getFuncionarios()){
+            funcionarios += funcionario.toString();
+        }
+        textPessoas.setText(funcionarios);
+    }//GEN-LAST:event_Button_listar_funcionariosActionPerformed
+
+    private void button_clientes_cadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_clientes_cadastradosActionPerformed
+        String clientes = "";
+        for(Usuario cliente: controle.getClientes()){
+            clientes += cliente.toString();
+        }
+        textPessoas.setText(clientes);
+    }//GEN-LAST:event_button_clientes_cadastradosActionPerformed
+
+    private void button_locacoes_atrasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_locacoes_atrasadasActionPerformed
+        String clientes = "";
+        for(Usuario cliente: controle.clientesAtrasados()){
+            clientes += cliente.toString();
+        }
+        textPessoas.setText(clientes);
+    }//GEN-LAST:event_button_locacoes_atrasadasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,11 +164,11 @@ public class Frame_pessoas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_listar_funcionarios;
-    private javax.swing.JTextField Pessoas_textfield;
     private javax.swing.JButton button_clientes_cadastrados;
     private javax.swing.JButton button_funcionario_mes;
     private javax.swing.JButton button_historico_locacao;
     private javax.swing.JButton button_locacoes_atrasadas;
     private javax.swing.JButton jButton2;
+    private javax.swing.JTextField textPessoas;
     // End of variables declaration//GEN-END:variables
 }

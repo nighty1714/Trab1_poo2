@@ -26,7 +26,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Veiculos_cadastrados_text_field" min="-2" pref="262" max="-2" attributes="0"/>
+              <Component id="textVeiculos" min="-2" pref="262" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="Veiculos_button_veiculos_disponiveis" max="32767" attributes="0"/>
@@ -46,7 +46,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="Veiculos_cadastrados_text_field" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
+                  <Component id="textVeiculos" alignment="1" min="-2" pref="205" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="Veiculos_cadastrados_buttom" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -73,8 +73,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar veiculos cadastrados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_cadastrados_buttomActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Veiculos_cadastrados_text_field">
+    <Component class="javax.swing.JTextField" name="textVeiculos">
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_veiculos_disponiveis">
       <Properties>
@@ -88,26 +91,41 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar veiculos nacionais"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_nacionaisActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_internacionais">
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar veiculos internacionais"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_internacionaisActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_veiculos_alocados">
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar veiculos ja alocados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_veiculos_alocadosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_atraso">
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar veiculos em atraso"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_atrasoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_veiculos_cliente">
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar veiculos de um cliente"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_veiculos_clienteActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
