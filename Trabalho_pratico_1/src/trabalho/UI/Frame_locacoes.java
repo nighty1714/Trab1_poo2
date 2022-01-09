@@ -38,6 +38,10 @@ public class Frame_locacoes extends javax.swing.JFrame {
         Locacoes_button_locaces_finalizadas = new javax.swing.JButton();
         Locacoes_button_locaces_nao_finalizadas = new javax.swing.JButton();
         Locacoes_button_seguros_cadastrados = new javax.swing.JButton();
+        Text_field_ano = new javax.swing.JTextField();
+        Text_field_mes = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -61,6 +65,11 @@ public class Frame_locacoes extends javax.swing.JFrame {
         });
 
         Locacoes_button_locacoes_lucro_mes.setText("Locações e lucro de um mês");
+        Locacoes_button_locacoes_lucro_mes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Locacoes_button_locacoes_lucro_mesActionPerformed(evt);
+            }
+        });
 
         Locacoes_button_locaces_finalizadas.setText("Locações finalizadas");
         Locacoes_button_locaces_finalizadas.addActionListener(new java.awt.event.ActionListener() {
@@ -83,42 +92,64 @@ public class Frame_locacoes extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Ano");
+
+        jLabel2.setText("Mês");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(42, 42, 42)
                 .addComponent(locacoes_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Locacoes_button_seguros_cadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Locacoes_button_locaces_cadastradas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Locacoes_button_locacoes_lucro_mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Locacoes_button_locaces_atraso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Locacoes_button_locaces_finalizadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Locacoes_button_locaces_nao_finalizadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .addComponent(Locacoes_button_locaces_cadastradas, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Locacoes_button_locaces_finalizadas, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Locacoes_button_locaces_nao_finalizadas, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Locacoes_button_seguros_cadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Locacoes_button_locacoes_lucro_mes)
+                    .addComponent(Locacoes_button_locaces_atraso, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Text_field_ano, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Text_field_mes))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel1)
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Locacoes_button_locaces_cadastradas)
-                        .addGap(18, 18, 18)
-                        .addComponent(Locacoes_button_locaces_atraso)
-                        .addGap(18, 18, 18)
-                        .addComponent(Locacoes_button_locacoes_lucro_mes)
-                        .addGap(18, 18, 18)
-                        .addComponent(Locacoes_button_locaces_finalizadas)
-                        .addGap(18, 18, 18)
-                        .addComponent(Locacoes_button_locaces_nao_finalizadas)
-                        .addGap(21, 21, 21)
-                        .addComponent(Locacoes_button_seguros_cadastrados))
-                    .addComponent(locacoes_text_field))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(Locacoes_button_locaces_cadastradas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Locacoes_button_locaces_atraso)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Text_field_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Text_field_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Locacoes_button_locacoes_lucro_mes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Locacoes_button_locaces_finalizadas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Locacoes_button_locaces_nao_finalizadas)
+                .addGap(17, 17, 17)
+                .addComponent(Locacoes_button_seguros_cadastrados)
+                .addGap(23, 23, 23))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(locacoes_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -172,6 +203,13 @@ public class Frame_locacoes extends javax.swing.JFrame {
         locacoes_text_field.setText(seguros);
     }//GEN-LAST:event_Locacoes_button_seguros_cadastradosActionPerformed
 
+    private void Locacoes_button_locacoes_lucro_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Locacoes_button_locacoes_lucro_mesActionPerformed
+        
+        int ano = Integer.parseInt(Text_field_ano.getText());
+        
+        String mes = Text_field_mes.getText();
+    }//GEN-LAST:event_Locacoes_button_locacoes_lucro_mesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -214,7 +252,11 @@ public class Frame_locacoes extends javax.swing.JFrame {
     private javax.swing.JButton Locacoes_button_locaces_nao_finalizadas;
     private javax.swing.JButton Locacoes_button_locacoes_lucro_mes;
     private javax.swing.JButton Locacoes_button_seguros_cadastrados;
+    private javax.swing.JTextField Text_field_ano;
+    private javax.swing.JTextField Text_field_mes;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField locacoes_text_field;
     // End of variables declaration//GEN-END:variables

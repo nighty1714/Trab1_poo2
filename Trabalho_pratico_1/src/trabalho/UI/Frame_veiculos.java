@@ -31,6 +31,7 @@ public class Frame_veiculos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollBar1 = new javax.swing.JScrollBar();
         Veiculos_cadastrados_buttom = new javax.swing.JButton();
         textVeiculos = new javax.swing.JTextField();
         Veiculos_button_veiculos_disponiveis = new javax.swing.JButton();
@@ -39,6 +40,7 @@ public class Frame_veiculos extends javax.swing.JFrame {
         Veiculos_button_veiculos_alocados = new javax.swing.JButton();
         Veiculos_button_atraso = new javax.swing.JButton();
         Veiculos_button_veiculos_cliente = new javax.swing.JButton();
+        Text_field_nome_cliente = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Veiculos cadastrados");
@@ -92,6 +94,12 @@ public class Frame_veiculos extends javax.swing.JFrame {
             }
         });
 
+        Text_field_nome_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_field_nome_clienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,15 +107,20 @@ public class Frame_veiculos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(textVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Veiculos_button_veiculos_disponiveis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Veiculos_cadastrados_buttom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Veiculos_button_nacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Veiculos_button_internacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Veiculos_button_veiculos_alocados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Veiculos_button_atraso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Veiculos_button_veiculos_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Veiculos_button_veiculos_disponiveis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Veiculos_cadastrados_buttom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Veiculos_button_nacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Veiculos_button_internacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Veiculos_button_veiculos_alocados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Veiculos_button_atraso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Veiculos_button_veiculos_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(Text_field_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -115,7 +128,7 @@ public class Frame_veiculos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(textVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Veiculos_cadastrados_buttom)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -128,9 +141,11 @@ public class Frame_veiculos extends javax.swing.JFrame {
                         .addComponent(Veiculos_button_veiculos_alocados)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Veiculos_button_atraso)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(12, 12, 12)
+                        .addComponent(Text_field_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Veiculos_button_veiculos_cliente)))
-                .addContainerGap())
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -197,8 +212,14 @@ public class Frame_veiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_Veiculos_button_atrasoActionPerformed
 
     private void Veiculos_button_veiculos_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_button_veiculos_clienteActionPerformed
-        // TODO add your handling code here:
+        
+        String nome = Text_field_nome_cliente.getText();
+                
     }//GEN-LAST:event_Veiculos_button_veiculos_clienteActionPerformed
+
+    private void Text_field_nome_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_field_nome_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_field_nome_clienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,6 +258,7 @@ public class Frame_veiculos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Text_field_nome_cliente;
     private javax.swing.JButton Veiculos_button_atraso;
     private javax.swing.JButton Veiculos_button_internacionais;
     private javax.swing.JButton Veiculos_button_nacionais;
@@ -244,6 +266,7 @@ public class Frame_veiculos extends javax.swing.JFrame {
     private javax.swing.JButton Veiculos_button_veiculos_cliente;
     private javax.swing.JButton Veiculos_button_veiculos_disponiveis;
     private javax.swing.JButton Veiculos_cadastrados_buttom;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField textVeiculos;
     // End of variables declaration//GEN-END:variables
 }
