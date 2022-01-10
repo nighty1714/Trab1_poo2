@@ -244,5 +244,11 @@ public class Controle implements Serializable{
         armazenamento.salvarVeiculos();
         
     }
+    
+    public void salvarConfiguracao(String path){
+        
+        armazenamento.salvarConfiguracoes(path);
+        
+    }
 }
     

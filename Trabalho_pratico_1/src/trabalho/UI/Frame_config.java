@@ -5,7 +5,9 @@
  */
 package trabalho.UI;
 
+import trabalho.armazenamento.Armazenamento;
 import trabalho.modeloDeDados.Configuracao;
+import trabalho.modeloDeDados.Controle;
 
 /**
  *
@@ -150,6 +152,14 @@ public class Frame_config extends javax.swing.JFrame {
         String arquivo_seguros = Text_seguros.getText();
         
         Configuracao config = new Configuracao(arquivo_locacoes, arquivo_veiculos, arquivo_clientes,arquivo_funcionarios, arquivo_seguros);
+        
+        Armazenamento a = new Armazenamento(config);
+        
+        Controle control = new Controle();
+        
+        control.setConfiguracoes(config);
+        
+        control.salvarConfiguracao("C:/conf.data");
         
         //Configuracao(String arquivoLocacoes, String arquivoVeiculos, String arquivoClientes, String arquivoFuncionarios, String arquivoSeguros) {
       
