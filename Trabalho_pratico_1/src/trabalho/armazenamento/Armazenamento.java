@@ -96,23 +96,49 @@ public class Armazenamento {
     }
     
     public void adicionarCliente(Cliente cliente){
-        this.clientes.add(cliente);
+        for(Usuario antigoCliente:clientes){
+            //verifica se o codigo de cliente ja existe
+            if(antigoCliente.getCodigoUsuario() != cliente.getCodigoUsuario()){
+                //verifica se o cliente ja nao possui uma conta
+                if(antigoCliente.getRG() != cliente.getRG()){
+                    this.clientes.add(cliente);
+                }
+            }
+        }
     }
     
     public void adicionarVeiculo(Veiculo veiculo){
-        this.veiculos.add(veiculo);
+        for(Veiculo antigoVeiculo: veiculos){
+            //verifica se o veiculo ja esta na lista
+            if(antigoVeiculo.getCodigoVeiculo() != veiculo.getCodigoVeiculo()){
+                this.veiculos.add(veiculo);
+            }
+        }
     }
     
     public void adicionarLocacao(Locacao locacao){
-        this.locacoes.add(locacao);
+        for(Locacao antigaLocacao: locacoes){
+            //verifica se a locacao ja existe
+            if(antigaLocacao.getCodigoLocacao() != locacao.getCodigoLocacao()){
+                this.locacoes.add(locacao);
+            }
+        }
     }
     
     public void adicionarFuncionario(Funcionario funcionario){
-        this.funcionarios.add(funcionario);
+        for(Usuario antigoFuncionario: funcionarios){
+            if(antigoFuncionario.getCodigoUsuario() != funcionario.getCodigoUsuario()){
+                this.funcionarios.add(funcionario);
+            }
+        }
     }
     
     public void adicionarSeguro(Seguro seguro){
-        this.seguros.add(seguro);
+        for(Seguro antigoSeguro: seguros){
+            if(antigoSeguro.getCodigoSeguro() != seguro.getCodigoSeguro()){
+                this.seguros.add(seguro);
+            }
+        }
     }
     
     public ArrayList<Usuario> clientesAtrasados(){
