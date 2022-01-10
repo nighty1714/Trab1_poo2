@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import trabalho.armazenamento.Armazenamento;
 import trabalho.modeloDeDados.Configuracao;
 import trabalho.modeloDeDados.Controle;
 import trabalho.modeloDeDados.VeiculoImportado;
@@ -299,8 +300,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
         String montadora = Cadastro_veiculo_nacional_Montadora.getText();
         int ano_fab = Integer.parseInt(Cadastro_veiculo_nacional_ano_fabricacao.getText());
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Calendar data_mod = Calendar.getInstance();
         int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
         boolean alugado = false;
         if (CheckBox_alugado.isSelected()){

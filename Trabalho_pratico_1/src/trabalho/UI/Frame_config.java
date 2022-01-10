@@ -153,8 +153,6 @@ public class Frame_config extends javax.swing.JFrame {
         
         Configuracao config = new Configuracao(arquivo_locacoes, arquivo_veiculos, arquivo_clientes,arquivo_funcionarios, arquivo_seguros);
         
-        Armazenamento a = new Armazenamento(config);
-        
         Controle control = new Controle();
         
         control.setConfiguracoes(config);

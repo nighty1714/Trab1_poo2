@@ -340,8 +340,6 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
                 ouro = true;
             }
             
-            System.out.println(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + ouro);
-            
             Cadastro_cliente_text_resultado.setText(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + ouro);
             
             //(String categoriaCNH, String numeroCNH, Calendar vencimentoCNH, boolean clienteOuro, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email)
@@ -353,6 +351,8 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             config_cliente.setArquivoClientes(teste.toString());
             
             Controle controle_cliente = new Controle();
+            
+            System.out.println(teste.toString());
             
             controle_cliente.adicionarCliente(teste);
             
