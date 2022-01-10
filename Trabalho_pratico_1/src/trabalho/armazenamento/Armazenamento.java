@@ -33,6 +33,11 @@ public class Armazenamento {
     }
     
     public Armazenamento() {
+        this.locacoes = new ArrayList();
+        this.veiculos = new ArrayList();
+        this.clientes = new ArrayList();
+        this.funcionarios = new ArrayList();
+        this.seguros = new ArrayList();
         this.configuracoes = new Configuracao();
     }
     
