@@ -31,8 +31,15 @@ public class Armazenamento {
     public Armazenamento(Configuracao configuracoes) {
         this.configuracoes = configuracoes;
     }
-
+    
+    public Armazenamento() {
+        this.configuracoes = new Configuracao();
+    }
+    
     public static Armazenamento getInstance() {
+        if(instance == null){
+            instance = new Armazenamento();
+        }
         return instance;
     }
 
