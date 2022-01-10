@@ -46,7 +46,7 @@ public class Frame_config extends javax.swing.JFrame {
 
         jTextField5.setText("jTextField5");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Caminho Clientes");
 
