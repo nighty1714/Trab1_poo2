@@ -41,7 +41,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -51,7 +50,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         Cadastro_veiculo_nacional_codigo = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_Montadora = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_ano_fabricacao = new javax.swing.JTextField();
-        Cadastro_veiculo_nacional_ano_modelo = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_diaria = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_categoria = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_placa = new javax.swing.JTextField();
@@ -80,8 +78,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         jLabel3.setText("Montadora:");
 
         jLabel4.setText("Ano de fabricação:");
-
-        jLabel5.setText("Ano do modelo:");
 
         jLabel6.setText("Placa:");
 
@@ -135,25 +131,25 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Cadastro_veiculo_nacional_imposto_estadual, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Cadastro_veiculo_nacional_imposto_estadual, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel17))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Text_field_lucro)
-                                    .addComponent(Cadastro_veiculo_nacional_codigo)
-                                    .addComponent(Cadastro_veiculo_nacional_modelo)
-                                    .addComponent(Cadastro_veiculo_nacional_Montadora)
-                                    .addComponent(Cadastro_veiculo_nacional_ano_fabricacao)
-                                    .addComponent(Cadastro_veiculo_nacional_ano_modelo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))))
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(Cadastro_veiculo_nacional_codigo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                                        .addComponent(Cadastro_veiculo_nacional_modelo)
+                                        .addComponent(Cadastro_veiculo_nacional_Montadora)
+                                        .addComponent(Cadastro_veiculo_nacional_ano_fabricacao))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                                .addComponent(Text_field_lucro, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -238,15 +234,11 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
                     .addComponent(Cadastro_veiculo_nacional_placa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Cadastro_veiculo_nacional_ano_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(Cadastro_veiculo_nacional_fipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Text_field_lucro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                    .addComponent(Cadastro_veiculo_nacional_fipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(Text_field_lucro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13))
@@ -273,125 +265,64 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
 
     private void Cadastro_veiculo_nacional_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_veiculo_nacional_buttonActionPerformed
        
-        try {
-            String modelo = Cadastro_veiculo_nacional_modelo.getText();
+        String modelo = Cadastro_veiculo_nacional_modelo.getText();
+        int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
+        String montadora = Cadastro_veiculo_nacional_Montadora.getText();
+        int ano_fab = Integer.parseInt(Cadastro_veiculo_nacional_ano_fabricacao.getText());
+        int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
+        boolean alugado = false;
+        if (CheckBox_alugado.isSelected()){
             
-            int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
+            alugado = true;
             
-            String montadora = Cadastro_veiculo_nacional_Montadora.getText();
-            
-            int ano_fab = Integer.parseInt(Cadastro_veiculo_nacional_ano_fabricacao.getText());
-            
-            String ano_mod = Cadastro_veiculo_nacional_ano_modelo.getText();
-            
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            
-            Calendar data_mod = Calendar.getInstance();
-            
-            data_mod.setTime(sdf.parse(ano_mod));
-            
-            int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
-            
-            boolean alugado = false;
-            
-            if (CheckBox_alugado.isSelected()){
-                
-                alugado = true;
-                
-            }
-            
-            String categoria = Cadastro_veiculo_nacional_categoria.getText();
-            
-            String placa = Cadastro_veiculo_nacional_placa.getText();
-            
-            float fipe = Float.parseFloat( Cadastro_veiculo_nacional_fipe.getText());
-            
-            float imposto_estadual = Float.parseFloat(Cadastro_veiculo_nacional_imposto_estadual.getText());
-            
-            float lucro = Float.parseFloat(Text_field_lucro.getText());
-            
-            //VeiculoNacional(float taxaImposto, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro)
-            
-            VeiculoNacional teste = new VeiculoNacional(imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
-            
-            Configuracao veiculo_nacional = new Configuracao();
-            
-            veiculo_nacional.setArquivoVeiculos(teste.toString());
-            
-            Controle controle_veiculo = new Controle();
-            
-            controle_veiculo.adicionarVeiculo(teste);
-            
-            controle_veiculo.setConfiguracoes(veiculo_nacional);
-            
-            controle_veiculo.salvar_veiculo();
-            
-        } catch (ParseException ex) {
-            Logger.getLogger(Frame_cadastro_veiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
+        String categoria = Cadastro_veiculo_nacional_categoria.getText();
+        String placa = Cadastro_veiculo_nacional_placa.getText();
+        float fipe = Float.parseFloat( Cadastro_veiculo_nacional_fipe.getText());
+        float imposto_estadual = Float.parseFloat(Cadastro_veiculo_nacional_imposto_estadual.getText());
+        float lucro = Float.parseFloat(Text_field_lucro.getText());
+        //VeiculoNacional(float taxaImposto, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro)
+        
+        VeiculoNacional teste = new VeiculoNacional(imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
+        Configuracao veiculo_nacional = new Configuracao();
+        veiculo_nacional.setArquivoVeiculos(teste.toString());
+        Controle controle_veiculo = new Controle();
+        controle_veiculo.adicionarVeiculo(teste);
+        controle_veiculo.setConfiguracoes(veiculo_nacional);
+        controle_veiculo.salvar_veiculo();
         
     }//GEN-LAST:event_Cadastro_veiculo_nacional_buttonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
-         try {
-            String modelo = Cadastro_veiculo_nacional_modelo.getText();
+        String modelo = Cadastro_veiculo_nacional_modelo.getText();
+        int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
+        String montadora = Cadastro_veiculo_nacional_Montadora.getText();
+        int ano_fab = Integer.parseInt(Cadastro_veiculo_nacional_ano_fabricacao.getText());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar data_mod = Calendar.getInstance();
+        int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
+        boolean alugado = false;
+        if (CheckBox_alugado.isSelected()){
             
-            int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
+            alugado = true;
             
-            String montadora = Cadastro_veiculo_nacional_Montadora.getText();
-            
-            int ano_fab = Integer.parseInt(Cadastro_veiculo_nacional_ano_fabricacao.getText());
-            
-            String ano_mod = Cadastro_veiculo_nacional_ano_modelo.getText();
-            
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            
-            Calendar data_mod = Calendar.getInstance();
-            
-            data_mod.setTime(sdf.parse(ano_mod));
-            
-            int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
-            
-            boolean alugado = false;
-            
-            if (CheckBox_alugado.isSelected()){
-                
-                alugado = true;
-                
-            }
-            
-            String categoria = Cadastro_veiculo_nacional_categoria.getText();
-            
-            String placa = Cadastro_veiculo_nacional_placa.getText();
-            
-            float fipe = Float.parseFloat( Cadastro_veiculo_nacional_fipe.getText());
-            
-            float imposto_estadual = Float.parseFloat(Cadastro_veiculo_nacional_imposto_estadual.getText());
-            
-            float lucro = Float.parseFloat(Text_field_lucro.getText());
-            
-            float Imposto_federal = Float.parseFloat(Cadastro_veiculo_nacional_imposto_federal.getText());
-            
-            //VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
-            
-            VeiculoImportado teste = new VeiculoImportado(Imposto_federal, imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
-            
-            Configuracao veiculo_importado = new Configuracao();
-            
-            veiculo_importado.setArquivoVeiculos(teste.toString());
-            
-            Controle controle_veiculo = new Controle();
-            
-            controle_veiculo.adicionarVeiculo(teste);
-            
-            controle_veiculo.setConfiguracoes(veiculo_importado);
-            
-            controle_veiculo.salvar_veiculo();
-            
-        } catch (ParseException ex) {
-            Logger.getLogger(Frame_cadastro_veiculo.class.getName()).log(Level.SEVERE, null, ex);
         }
+        String categoria = Cadastro_veiculo_nacional_categoria.getText();
+        String placa = Cadastro_veiculo_nacional_placa.getText();
+        float fipe = Float.parseFloat( Cadastro_veiculo_nacional_fipe.getText());
+        float imposto_estadual = Float.parseFloat(Cadastro_veiculo_nacional_imposto_estadual.getText());
+        float lucro = Float.parseFloat(Text_field_lucro.getText());
+        float Imposto_federal = Float.parseFloat(Cadastro_veiculo_nacional_imposto_federal.getText());
+        //VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
+        
+        VeiculoImportado teste = new VeiculoImportado(Imposto_federal, imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
+        Configuracao veiculo_importado = new Configuracao();
+        veiculo_importado.setArquivoVeiculos(teste.toString());
+        Controle controle_veiculo = new Controle();
+        controle_veiculo.adicionarVeiculo(teste);
+        controle_veiculo.setConfiguracoes(veiculo_importado);
+        controle_veiculo.salvar_veiculo();
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -435,7 +366,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cadastro_veiculo_nacional_Montadora;
     private javax.swing.JTextField Cadastro_veiculo_nacional_ano_fabricacao;
-    private javax.swing.JTextField Cadastro_veiculo_nacional_ano_modelo;
     private javax.swing.JButton Cadastro_veiculo_nacional_button;
     private javax.swing.JTextField Cadastro_veiculo_nacional_categoria;
     private javax.swing.JTextField Cadastro_veiculo_nacional_codigo;
@@ -460,7 +390,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
