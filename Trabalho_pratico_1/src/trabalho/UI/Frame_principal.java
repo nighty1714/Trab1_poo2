@@ -37,6 +37,8 @@ public class Frame_principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         menu_locacoes_nao_finalizadas = new javax.swing.JMenuItem();
         menu_criar_locacao = new javax.swing.JMenuItem();
+        Menu_config = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Locadora");
@@ -100,6 +102,23 @@ public class Frame_principal extends javax.swing.JFrame {
         jMenu3.add(menu_criar_locacao);
 
         jMenuBar1.add(jMenu3);
+
+        Menu_config.setText("Configurações");
+        Menu_config.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menu_configActionPerformed(evt);
+            }
+        });
+
+        jMenuItem1.setText("Salvar configuração");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        Menu_config.add(jMenuItem1);
+
+        jMenuBar1.add(Menu_config);
 
         setJMenuBar(jMenuBar1);
 
@@ -167,6 +186,18 @@ public class Frame_principal extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_menu_locacoes_nao_finalizadasActionPerformed
 
+    private void Menu_configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu_configActionPerformed
+        
+    }//GEN-LAST:event_Menu_configActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+       java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_config().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -204,10 +235,12 @@ public class Frame_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Menu_config;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem menu_cadastrar_usuarios;
     private javax.swing.JMenuItem menu_cadastrar_veiculos;
     private javax.swing.JMenuItem menu_criar_locacao;

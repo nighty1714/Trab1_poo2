@@ -7,18 +7,25 @@ package trabalho.UI;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import trabalho.armazenamento.Armazenamento;
 import trabalho.modeloDeDados.Cartao;
+import trabalho.modeloDeDados.Configuracao;
+import trabalho.modeloDeDados.Controle;
 import trabalho.modeloDeDados.Dinheiro;
+import trabalho.modeloDeDados.Locacao;
+import trabalho.modeloDeDados.Veiculo;
 
 /**
  *
  * @author gabri
  */
 public class Frame_criar_locacao extends javax.swing.JFrame {
+    
+    Controle a = new Controle();
 
     /**
      * Creates new form Frame_criar_locacao
@@ -58,7 +65,7 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
         Text_field_bandeira_cartao = new javax.swing.JTextField();
         Finalizada = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        codigo_veiculo = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -93,7 +100,13 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
 
         Finalizada.setText("Finalizada");
 
-        jLabel9.setText("Veiculo selecionado:");
+        jLabel9.setText("Código do veiculo:");
+
+        codigo_veiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigo_veiculoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,9 +144,8 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Text_field_numero_cartao)
-                                        .addComponent(text_field_data_locacao, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
+                                    .addComponent(Text_field_numero_cartao)
+                                    .addComponent(text_field_data_locacao, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
                         .addContainerGap(56, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,8 +170,8 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)
+                        .addComponent(codigo_veiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -198,7 +210,7 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigo_veiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(Finalizada)
@@ -256,7 +268,64 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
             
             //aqui
             
+            int codigocarro = Integer.parseInt(codigo_veiculo.getText());
             
+            
+            
+            ArrayList<Veiculo> ab = new ArrayList();
+            
+            ab = a.getVeiculos();
+            
+            for (int i = 0; i < ab.size(); i++){
+     
+            if(ab.get(i).getCodigoVeiculo() == codigocarro){
+        
+               if(Dinheiro.isSelected()){
+                   
+                   Locacao teste = new Locacao(codigo, codigo_c, codigo_u, data_lo, data_de, valor, d, finalizada, ab.get(i) );
+                   
+                   Configuracao config_loc = new Configuracao();
+            
+                   config_loc.setArquivoVeiculos(teste.toString());
+            
+                   Controle controle_loc = new Controle();
+            
+                   controle_loc.adicionarLocacao(teste);
+            
+                   controle_loc.setConfiguracoes(config_loc);
+            
+                  controle_loc.salvar_veiculo();
+                   
+               }
+               
+               else{
+                   
+                   Locacao teste = new Locacao(codigo, codigo_c, codigo_u, data_lo, data_de, valor, cart, finalizada, ab.get(i) );
+                   
+                   Configuracao config_loc = new Configuracao();
+            
+                   config_loc.setArquivoVeiculos(teste.toString());
+            
+                   Controle controle_loc = new Controle();
+            
+                   controle_loc.adicionarLocacao(teste);
+            
+                   controle_loc.setConfiguracoes(config_loc);
+            
+                  controle_loc.salvar_veiculo();
+               }
+               
+               
+        
+            }
+            
+            else {
+                
+                //imprime carro não disponivel
+                
+            }
+     
+           }
             
             //função para verificar se o veiculo digitado esta disponivel  carregarVeiculos
             
@@ -267,6 +336,10 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
             Logger.getLogger(Frame_criar_locacao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Button_criar_locacaoActionPerformed
+
+    private void codigo_veiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigo_veiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigo_veiculoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -311,6 +384,7 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
     private javax.swing.JTextField Text_field_bandeira_cartao;
     private javax.swing.JTextField Text_field_nome_cartao;
     private javax.swing.JTextField Text_field_numero_cartao;
+    private javax.swing.JTextField codigo_veiculo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -320,7 +394,6 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField text_field_codigo_cliente;
     private javax.swing.JTextField text_field_codigo_funcionario;
