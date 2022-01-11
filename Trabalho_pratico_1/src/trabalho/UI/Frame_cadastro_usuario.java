@@ -10,9 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import trabalho.armazenamento.Armazenamento;
+import trabalho.modeloDeDados.Usuario;
 import trabalho.modeloDeDados.Cliente;
-import trabalho.modeloDeDados.Configuracao;
 import trabalho.modeloDeDados.Controle;
 import trabalho.modeloDeDados.Funcionario;
 
@@ -346,24 +345,17 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             
             Cliente teste = new Cliente(Categoria_CNH_conta_cliente, Numero_CNH_conta_cliente, cal2, ouro, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, cal, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente);
             
-            Configuracao config_cliente = new Configuracao();
-            
-            config_cliente.setArquivoClientes(teste.toString());
-            
             Controle controle_cliente = new Controle();
             
             System.out.println(teste.toString());
             
             controle_cliente.adicionarCliente(teste);
             
-            controle_cliente.setConfiguracoes(config_cliente);
-            
             controle_cliente.salvar_cliente();
             
         } catch (ParseException ex) {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_Button_cadastrar_clienteActionPerformed
 
     private void jCheckBox_simActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_simActionPerformed
@@ -407,15 +399,9 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             
             Funcionario teste = new Funcionario(salario, pis, adimi, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, nascimento, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente  );
             
-            Configuracao config_funcionario = new Configuracao();
-            
-            config_funcionario.setArquivoFuncionarios(teste.toString());
-            
             Controle controle_cliente = new Controle();
             
             controle_cliente.adicionarFuncionario(teste);
-            
-            controle_cliente.setConfiguracoes(config_funcionario);
             
             controle_cliente.salvar_funcionario();
             
