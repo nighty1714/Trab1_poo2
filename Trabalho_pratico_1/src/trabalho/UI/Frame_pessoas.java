@@ -167,9 +167,9 @@ public class Frame_pessoas extends javax.swing.JFrame {
       
         int data_ano = Integer.parseInt(ano.getText());
         
-        String data_mes = Mes.getText();
+        int data_mes = Integer.parseInt(Mes.getText());
         
-        
+        controle.funcionario_do_mes(data_mes, data_ano);
             
         
         
