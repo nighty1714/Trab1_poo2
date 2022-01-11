@@ -180,16 +180,22 @@ public class Armazenamento {
         return listaClientes;
     }
     
-    public Funcionario funcionarioDoMes(int mes, int ano){
+    public Usuario funcionarioDoMes(int mes, int ano){
         Map map = new HashMap();
         for(Usuario funcionario: funcionarios){
-            map.put(funcionario.getCodigoUsuario(), 0);
+            map.put(funcionario.getCodigoUsuario(), (int) 0);
         }
-        
         for(Locacao locacao: locacoesDoMes(mes, ano)){
             map.put(locacao.getCodigoFuncionario(), (int)map.get(locacao.getCodigoFuncionario())+1);
         }
-        Funcionario funcionarioDoMes = ;
+        int maior = 0;
+        Usuario funcionarioDoMes = funcionarios.get(0);
+        for(Usuario funcionario: funcionarios){
+            int temp = (int) map.get(funcionario.getCodigoUsuario());
+            if(temp > maior){
+                funcionarioDoMes = funcionario;
+            }
+        }
         return funcionarioDoMes;
     }
     

@@ -129,6 +129,10 @@ public class Controle implements Serializable{
         return armazenamento.locacoesDoMes(mes, ano);
     }
     
+    public Usuario funcionarioDoMes(int mes, int ano){
+        return armazenamento.funcionarioDoMes(mes, ano);
+    }
+    
     public float controler_locacao_valor_total(int codigo){
         for (Locacao locacao: armazenamento.getLocacoes()){
             if(locacao.getCodigoLocacao() == codigo){
