@@ -209,7 +209,7 @@ public class Controle implements Serializable{
         return "";
     }
      
-    public String controle_usuarios_dados_funcionarios(String codigo){
+    public String dadosFuncionarios(String codigo){
         for (Usuario funcionario: armazenamento.getFuncionarios()){
             if(funcionario.getCPF().equals(codigo)){
                 return funcionario.toString();
@@ -218,7 +218,7 @@ public class Controle implements Serializable{
         return "";
     }
     
-    public String controle_usuarios_dados_seguro(int codigo){
+    public String dadosSeguro(int codigo){
         for (Seguro seguro: armazenamento.getSeguros()){
             if(seguro.getCodigoSeguro() == codigo){
                 return seguro.toString();      
@@ -227,34 +227,24 @@ public class Controle implements Serializable{
         return "";   
     }
     
-    public void salvar_cliente(){
-        
+    public void salvarClientes(){
         armazenamento.salvarClientes();
-        
     }
     
-    public void salvar_funcionario(){
-        
+    public void salvarFuncionarios(){
         armazenamento.salvarFuncionarios();
-        
     }
     
-    public void salvar_veiculo(){
-        
+    public void salvarVeiculos(){
         armazenamento.salvarVeiculos();
-        
     }
     
-    public void salvarConfiguracao(String path){
-        
+    public void salvarConfiguracoes(String path){
         armazenamento.salvarConfiguracoes(path);
-        
     }
     
     public void salvarLocacoes(){
-        
         armazenamento.salvarLocacoes();
-        
     }
 }
     

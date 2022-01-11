@@ -21,7 +21,7 @@ import trabalho.modeloDeDados.VeiculoNacional;
  * @author gabri
  */
 public class Frame_cadastro_veiculo extends javax.swing.JFrame {
-
+    Controle controle_veiculo = new Controle();
     /**
      * Creates new form Frame_cadastro_veiculo_nacional
      */
@@ -55,7 +55,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         Cadastro_veiculo_nacional_categoria = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_placa = new javax.swing.JTextField();
         Cadastro_veiculo_nacional_fipe = new javax.swing.JTextField();
-        Cadastro_veiculo_nacional_button = new javax.swing.JButton();
+        btnCadastroVeiculoNacional = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -64,7 +64,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         Cadastro_veiculo_nacional_imposto_federal = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         CheckBox_alugado = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
+        btnVeiculoInternacional = new javax.swing.JButton();
         Text_field_lucro = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
 
@@ -95,10 +95,10 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
             }
         });
 
-        Cadastro_veiculo_nacional_button.setText("Cadastrar Veículo nacional");
-        Cadastro_veiculo_nacional_button.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastroVeiculoNacional.setText("Cadastrar Veículo nacional");
+        btnCadastroVeiculoNacional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cadastro_veiculo_nacional_buttonActionPerformed(evt);
+                btnCadastroVeiculoNacionalActionPerformed(evt);
             }
         });
 
@@ -112,10 +112,10 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
 
         CheckBox_alugado.setText("Sim");
 
-        jButton1.setText("Cadastrar Veículo Internacional");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVeiculoInternacional.setText("Cadastrar Veículo Internacional");
+        btnVeiculoInternacional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVeiculoInternacionalActionPerformed(evt);
             }
         });
 
@@ -129,9 +129,9 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Cadastro_veiculo_nacional_button)
+                        .addComponent(btnCadastroVeiculoNacional)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnVeiculoInternacional, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -236,8 +236,8 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
                     .addComponent(jLabel16))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cadastro_veiculo_nacional_button)
-                    .addComponent(jButton1))
+                    .addComponent(btnCadastroVeiculoNacional)
+                    .addComponent(btnVeiculoInternacional))
                 .addContainerGap())
         );
 
@@ -248,8 +248,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Cadastro_veiculo_nacional_codigoActionPerformed
 
-    private void Cadastro_veiculo_nacional_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_veiculo_nacional_buttonActionPerformed
-       
+    private void btnCadastroVeiculoNacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroVeiculoNacionalActionPerformed
         String modelo = Cadastro_veiculo_nacional_modelo.getText();
         int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
         String montadora = Cadastro_veiculo_nacional_Montadora.getText();
@@ -257,9 +256,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
         boolean alugado = false;
         if (CheckBox_alugado.isSelected()){
-            
-            alugado = true;
-            
+            alugado = true; 
         }
         String categoria = Cadastro_veiculo_nacional_categoria.getText();
         String placa = Cadastro_veiculo_nacional_placa.getText();
@@ -267,18 +264,12 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         float imposto_estadual = Float.parseFloat(Cadastro_veiculo_nacional_imposto_estadual.getText());
         float lucro = Float.parseFloat(Text_field_lucro.getText());
         //VeiculoNacional(float taxaImposto, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro)
-        
         VeiculoNacional teste = new VeiculoNacional(imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
-        
-        Controle controle_veiculo = new Controle();
-        
         controle_veiculo.adicionarVeiculo(teste);
-        
-        controle_veiculo.salvar_veiculo();
-        
-    }//GEN-LAST:event_Cadastro_veiculo_nacional_buttonActionPerformed
+        controle_veiculo.salvarVeiculos();
+    }//GEN-LAST:event_btnCadastroVeiculoNacionalActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnVeiculoInternacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeiculoInternacionalActionPerformed
         // VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
         String modelo = Cadastro_veiculo_nacional_modelo.getText();
         int codigo = Integer.parseInt(Cadastro_veiculo_nacional_codigo.getText());
@@ -287,9 +278,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         int diaria = Integer.parseInt( Cadastro_veiculo_nacional_diaria.getText());
         boolean alugado = false;
         if (CheckBox_alugado.isSelected()){
-            
             alugado = true;
-            
         }
         String categoria = Cadastro_veiculo_nacional_categoria.getText();
         String placa = Cadastro_veiculo_nacional_placa.getText();
@@ -298,17 +287,10 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         float lucro = Float.parseFloat(Text_field_lucro.getText());
         float Imposto_federal = Float.parseFloat(Cadastro_veiculo_nacional_imposto_federal.getText());
         //VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
-        
         VeiculoImportado teste = new VeiculoImportado(Imposto_federal, imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
-        
-        Controle controle_veiculo = new Controle();
-        
         controle_veiculo.adicionarVeiculo(teste);
-        
-        controle_veiculo.salvar_veiculo();
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        controle_veiculo.salvarVeiculos();
+    }//GEN-LAST:event_btnVeiculoInternacionalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,7 +331,6 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cadastro_veiculo_nacional_Montadora;
     private javax.swing.JTextField Cadastro_veiculo_nacional_ano_fabricacao;
-    private javax.swing.JButton Cadastro_veiculo_nacional_button;
     private javax.swing.JTextField Cadastro_veiculo_nacional_categoria;
     private javax.swing.JTextField Cadastro_veiculo_nacional_codigo;
     private javax.swing.JTextField Cadastro_veiculo_nacional_diaria;
@@ -360,7 +341,8 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
     private javax.swing.JTextField Cadastro_veiculo_nacional_placa;
     private javax.swing.JCheckBox CheckBox_alugado;
     private javax.swing.JTextField Text_field_lucro;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCadastroVeiculoNacional;
+    private javax.swing.JButton btnVeiculoInternacional;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

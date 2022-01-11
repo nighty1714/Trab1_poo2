@@ -40,41 +40,40 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        Text_cadastro_cliente_nome = new javax.swing.JTextField();
+        textNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        Text_cadastro_cliente_CPF = new javax.swing.JTextField();
+        textCPF = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Text_cadastro_cliente_RG = new javax.swing.JTextField();
+        textRG = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        Text_cadastro_cliente_Codigo = new javax.swing.JTextField();
+        textCodigoUsuario = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        Text_cadastro_cliente_data_nascimento = new javax.swing.JTextField();
+        textDataNascimento = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        Text_cadastro_cliente_endereco = new javax.swing.JTextField();
+        textEndereco = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        Text_cadastro_cliente_CEP = new javax.swing.JTextField();
+        textCEP = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        Text_cadastro_cliente_email = new javax.swing.JTextField();
+        textEmail = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        Text_cadastro_cliente_Categoria_CNH = new javax.swing.JTextField();
+        textCategoriaCNH = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        Text_cadastro_cliente_Numero_CNH = new javax.swing.JTextField();
+        textNumeroCNH = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        Text_cadastro_cliente_validade_CNH = new javax.swing.JTextField();
+        textValidadeCNH = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        Button_cadastrar_cliente = new javax.swing.JButton();
-        Cadastro_cliente_text_resultado = new javax.swing.JTextField();
+        btnCadastroCliente = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        Cadastro_usuario_salario = new javax.swing.JTextField();
-        Cadastro_usuario_PIS = new javax.swing.JTextField();
-        Cadastro_usuario_adimicao = new javax.swing.JTextField();
-        button_cadastrar_funcionario = new javax.swing.JButton();
-        jCheckBox_sim = new javax.swing.JCheckBox();
+        textSalario = new javax.swing.JTextField();
+        textPIS = new javax.swing.JTextField();
+        textAdmissao = new javax.swing.JTextField();
+        btnCadastroFuncionario = new javax.swing.JButton();
+        checkBoxOuro = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -98,28 +97,24 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
 
         jLabel10.setText("Número CNH:");
 
-        Text_cadastro_cliente_Numero_CNH.addActionListener(new java.awt.event.ActionListener() {
+        textNumeroCNH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Text_cadastro_cliente_Numero_CNHActionPerformed(evt);
+                textNumeroCNHActionPerformed(evt);
             }
         });
 
         jLabel11.setText("Validade CNH:");
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Dados comuns para o cadastro");
 
         jLabel13.setText("Cliente Ouro?");
 
-        Button_cadastrar_cliente.setText("Cadastrar cliente");
-        Button_cadastrar_cliente.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastroCliente.setText("Cadastrar cliente");
+        btnCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_cadastrar_clienteActionPerformed(evt);
-            }
-        });
-
-        Cadastro_cliente_text_resultado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cadastro_cliente_text_resultadoActionPerformed(evt);
+                btnCadastroClienteActionPerformed(evt);
             }
         });
 
@@ -131,19 +126,19 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
 
         jLabel17.setText("PIS:");
 
-        jLabel18.setText("Data de adimissão:");
+        jLabel18.setText("Data de admissão:");
 
-        button_cadastrar_funcionario.setText("Cadastrar funcionário");
-        button_cadastrar_funcionario.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastroFuncionario.setText("Cadastrar funcionário");
+        btnCadastroFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_cadastrar_funcionarioActionPerformed(evt);
+                btnCadastroFuncionarioActionPerformed(evt);
             }
         });
 
-        jCheckBox_sim.setText("Sim");
-        jCheckBox_sim.addActionListener(new java.awt.event.ActionListener() {
+        checkBoxOuro.setText("Sim");
+        checkBoxOuro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox_simActionPerformed(evt);
+                checkBoxOuroActionPerformed(evt);
             }
         });
 
@@ -152,169 +147,165 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel11))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Text_cadastro_cliente_Categoria_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Text_cadastro_cliente_Numero_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Text_cadastro_cliente_validade_CNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(jCheckBox_sim, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(26, 26, 26)))
-                                        .addGap(82, 82, 82))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel1)
-                                                    .addComponent(jLabel2)
-                                                    .addComponent(jLabel3)
-                                                    .addComponent(jLabel4))
-                                                .addGap(66, 66, 66)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Text_cadastro_cliente_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Text_cadastro_cliente_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Text_cadastro_cliente_RG, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Text_cadastro_cliente_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jLabel14))
-                                        .addGap(48, 48, 48)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(Text_cadastro_cliente_data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(jLabel7)
-                                                .addGap(86, 86, 86)
-                                                .addComponent(Text_cadastro_cliente_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel6)
-                                                    .addComponent(jLabel8))
-                                                .addGap(59, 59, 59)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Text_cadastro_cliente_email, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Text_cadastro_cliente_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(textCategoriaCNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textNumeroCNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(textValidadeCNH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(checkBoxOuro, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(82, 82, 82)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel15)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel16)
                                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel18))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(Cadastro_usuario_salario)
-                                            .addComponent(Cadastro_usuario_PIS)
-                                            .addComponent(Cadastro_usuario_adimicao, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))))
-                            .addComponent(Cadastro_cliente_text_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textPIS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
-                                .addComponent(Button_cadastrar_cliente)
+                                .addComponent(btnCadastroCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(button_cadastrar_funcionario)
-                                .addGap(74, 74, 74))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addComponent(jLabel12)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnCadastroFuncionario)
+                                .addGap(74, 74, 74))
+                            .addComponent(jLabel14)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textNome, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                                    .addComponent(textCPF)
+                                    .addComponent(textRG)
+                                    .addComponent(textCodigoUsuario))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textDataNascimento)
+                                    .addComponent(textEndereco)
+                                    .addComponent(textCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(textEmail))))
+                        .addGap(0, 2, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
                 .addComponent(jLabel12)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(Text_cadastro_cliente_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(Text_cadastro_cliente_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(Text_cadastro_cliente_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(Text_cadastro_cliente_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Text_cadastro_cliente_RG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(Text_cadastro_cliente_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Text_cadastro_cliente_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(Text_cadastro_cliente_data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(textCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(textRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(textCodigoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(textCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(textEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jLabel15))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jLabel16)
-                    .addComponent(Cadastro_usuario_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox_sim))
-                .addGap(8, 8, 8)
+                    .addComponent(textSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkBoxOuro))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(Text_cadastro_cliente_Categoria_CNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textCategoriaCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
-                    .addComponent(Cadastro_usuario_PIS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textPIS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(Text_cadastro_cliente_Numero_CNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textNumeroCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
-                    .addComponent(Cadastro_usuario_adimicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(Text_cadastro_cliente_validade_CNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                    .addComponent(textValidadeCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Button_cadastrar_cliente)
-                    .addComponent(button_cadastrar_funcionario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Cadastro_cliente_text_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastroCliente)
+                    .addComponent(btnCadastroFuncionario))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Text_cadastro_cliente_Numero_CNHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_cadastro_cliente_Numero_CNHActionPerformed
+    private void textNumeroCNHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumeroCNHActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Text_cadastro_cliente_Numero_CNHActionPerformed
+    }//GEN-LAST:event_textNumeroCNHActionPerformed
 
-    private void Button_cadastrar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_cadastrar_clienteActionPerformed
+    private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
           
         try {                                                         
             
-            String nome_conta_cliente = Text_cadastro_cliente_nome.getText();
+            String nome_conta_cliente = textNome.getText();
             
-            String cpf_conta_cliente = Text_cadastro_cliente_CPF.getText();
+            String cpf_conta_cliente = textCPF.getText();
             
-            String rg_conta_cliente = Text_cadastro_cliente_RG.getText();
+            String rg_conta_cliente = textRG.getText();
             
-            int codigo_conta_cliente = Integer.parseInt(Text_cadastro_cliente_Codigo.getText());
+            int codigo_conta_cliente = Integer.parseInt(textCodigoUsuario.getText());
             
-            String data_nascimento_conta_cliente = Text_cadastro_cliente_data_nascimento.getText();
+            String data_nascimento_conta_cliente = textDataNascimento.getText();
             
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             
@@ -322,32 +313,27 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             
             cal.setTime(sdf.parse(data_nascimento_conta_cliente));
             
-            String CEP_conta_cliente = Text_cadastro_cliente_CEP.getText();
+            String CEP_conta_cliente = textCEP.getText();
             
-            String Categoria_CNH_conta_cliente = Text_cadastro_cliente_Categoria_CNH.getText();
+            String Categoria_CNH_conta_cliente = textCategoriaCNH.getText();
             
-            String Numero_CNH_conta_cliente = Text_cadastro_cliente_Numero_CNH.getText();
+            String Numero_CNH_conta_cliente = textNumeroCNH.getText();
             
-            String Validade_CNH_conta_cliente = Text_cadastro_cliente_validade_CNH.getText();
+            String Validade_CNH_conta_cliente = textValidadeCNH.getText();
             
             Calendar cal2 = Calendar.getInstance();
             
             cal2.setTime(sdf.parse(Validade_CNH_conta_cliente));
             
-            String Endereco_conta_cliente = Text_cadastro_cliente_endereco.getText();
+            String Endereco_conta_cliente = textEndereco.getText();
             
-            String Email_conta_cliente = Text_cadastro_cliente_email.getText();
+            String Email_conta_cliente = textEmail.getText();
             
             boolean ouro = false;
             
-            if (jCheckBox_sim.isSelected()){
-                
+            if (checkBoxOuro.isSelected()){
                 ouro = true;
             }
-            
-            Cadastro_cliente_text_resultado.setText(nome_conta_cliente + cpf_conta_cliente + rg_conta_cliente + codigo_conta_cliente + data_nascimento_conta_cliente + CEP_conta_cliente + Categoria_CNH_conta_cliente + Numero_CNH_conta_cliente + Validade_CNH_conta_cliente + Endereco_conta_cliente + Email_conta_cliente + ouro);
-            
-            //(String categoriaCNH, String numeroCNH, Calendar vencimentoCNH, boolean clienteOuro, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email)
             
             Cliente teste = new Cliente(Categoria_CNH_conta_cliente, Numero_CNH_conta_cliente, cal2, ouro, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, cal, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente);
             
@@ -357,69 +343,65 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             
             controle_cliente.adicionarCliente(teste);
             
-            controle_cliente.salvar_cliente();
+            controle_cliente.salvarClientes();
             
         } catch (ParseException ex) {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_Button_cadastrar_clienteActionPerformed
+    }//GEN-LAST:event_btnCadastroClienteActionPerformed
 
-    private void jCheckBox_simActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox_simActionPerformed
+    private void checkBoxOuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxOuroActionPerformed
         
         
-    }//GEN-LAST:event_jCheckBox_simActionPerformed
+    }//GEN-LAST:event_checkBoxOuroActionPerformed
 
-    private void button_cadastrar_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_cadastrar_funcionarioActionPerformed
+    private void btnCadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroFuncionarioActionPerformed
         try {
             //Funcionario(float salario, String pis, Calendar dataAdmissao, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email)
             
-            float salario = Float.parseFloat(Cadastro_usuario_salario.getText());
+            float salario = Float.parseFloat(textSalario.getText());
             
-            String pis = Cadastro_usuario_PIS.getText();
+            String pis = textPIS.getText();
             
-            String adimicao = Cadastro_usuario_adimicao.getText();
+            String adimicao = textAdmissao.getText();
             
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             
-            Calendar adimi = Calendar.getInstance();
+            Calendar admissao = Calendar.getInstance();
             
-            int codigo_conta_cliente = Integer.parseInt(Text_cadastro_cliente_Codigo.getText());
+            int codigo_conta_cliente = Integer.parseInt(textCodigoUsuario.getText());
             
-            String nome_conta_cliente = Text_cadastro_cliente_nome.getText();
+            String nome_conta_cliente = textNome.getText();
             
-            String cpf_conta_cliente = Text_cadastro_cliente_CPF.getText();
+            String cpf_conta_cliente = textCPF.getText();
             
-            String rg_conta_cliente = Text_cadastro_cliente_RG.getText();
+            String rg_conta_cliente = textRG.getText();
             
-            String data_nascimento_conta_cliente = Text_cadastro_cliente_data_nascimento.getText();
+            String data_nascimento_conta_cliente = textDataNascimento.getText();
             
             Calendar nascimento = Calendar.getInstance();
             
             nascimento.setTime(sdf.parse(data_nascimento_conta_cliente));
             
-            String CEP_conta_cliente = Text_cadastro_cliente_CEP.getText();
+            String CEP_conta_cliente = textCEP.getText();
             
-            String Endereco_conta_cliente = Text_cadastro_cliente_endereco.getText();
+            String Endereco_conta_cliente = textEndereco.getText();
             
-            String Email_conta_cliente = Text_cadastro_cliente_email.getText();
+            String Email_conta_cliente = textEmail.getText();
             
-            Funcionario teste = new Funcionario(salario, pis, adimi, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, nascimento, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente  );
+            Funcionario teste = new Funcionario(salario, pis, admissao, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, nascimento, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente  );
             
             Controle controle_cliente = new Controle();
             
             controle_cliente.adicionarFuncionario(teste);
             
-            controle_cliente.salvar_funcionario();
+            controle_cliente.salvarFuncionarios();
             
-            adimi.setTime(sdf.parse(adimicao));
+            admissao.setTime(sdf.parse(adimicao));
         } catch (ParseException ex) {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_button_cadastrar_funcionarioActionPerformed
-
-    private void Cadastro_cliente_text_resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_cliente_text_resultadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Cadastro_cliente_text_resultadoActionPerformed
+    }//GEN-LAST:event_btnCadastroFuncionarioActionPerformed
 
     public static void main(String args[]) {
         
@@ -449,24 +431,9 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_cadastrar_cliente;
-    private javax.swing.JTextField Cadastro_cliente_text_resultado;
-    private javax.swing.JTextField Cadastro_usuario_PIS;
-    private javax.swing.JTextField Cadastro_usuario_adimicao;
-    private javax.swing.JTextField Cadastro_usuario_salario;
-    private javax.swing.JTextField Text_cadastro_cliente_CEP;
-    private javax.swing.JTextField Text_cadastro_cliente_CPF;
-    private javax.swing.JTextField Text_cadastro_cliente_Categoria_CNH;
-    private javax.swing.JTextField Text_cadastro_cliente_Codigo;
-    private javax.swing.JTextField Text_cadastro_cliente_Numero_CNH;
-    private javax.swing.JTextField Text_cadastro_cliente_RG;
-    private javax.swing.JTextField Text_cadastro_cliente_data_nascimento;
-    private javax.swing.JTextField Text_cadastro_cliente_email;
-    private javax.swing.JTextField Text_cadastro_cliente_endereco;
-    private javax.swing.JTextField Text_cadastro_cliente_nome;
-    private javax.swing.JTextField Text_cadastro_cliente_validade_CNH;
-    private javax.swing.JButton button_cadastrar_funcionario;
-    private javax.swing.JCheckBox jCheckBox_sim;
+    private javax.swing.JButton btnCadastroCliente;
+    private javax.swing.JButton btnCadastroFuncionario;
+    private javax.swing.JCheckBox checkBoxOuro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -485,5 +452,19 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField textAdmissao;
+    private javax.swing.JTextField textCEP;
+    private javax.swing.JTextField textCPF;
+    private javax.swing.JTextField textCategoriaCNH;
+    private javax.swing.JTextField textCodigoUsuario;
+    private javax.swing.JTextField textDataNascimento;
+    private javax.swing.JTextField textEmail;
+    private javax.swing.JTextField textEndereco;
+    private javax.swing.JTextField textNome;
+    private javax.swing.JTextField textNumeroCNH;
+    private javax.swing.JTextField textPIS;
+    private javax.swing.JTextField textRG;
+    private javax.swing.JTextField textSalario;
+    private javax.swing.JTextField textValidadeCNH;
     // End of variables declaration//GEN-END:variables
 }

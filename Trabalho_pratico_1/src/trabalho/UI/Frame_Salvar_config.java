@@ -14,7 +14,7 @@ import trabalho.modeloDeDados.Controle;
  * @author gabri
  */
 public class Frame_Salvar_config extends javax.swing.JFrame {
-
+    Controle controle = new Controle();
     /**
      * Creates new form Frame_config
      */
@@ -35,15 +35,15 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Text_clientes = new javax.swing.JTextField();
-        Text_locacoes = new javax.swing.JTextField();
-        Text_veiculos = new javax.swing.JTextField();
+        textClientes = new javax.swing.JTextField();
+        textLocacoes = new javax.swing.JTextField();
+        textVeiculos = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        Text_seguros = new javax.swing.JTextField();
+        textSeguros = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        Text_funcionarios = new javax.swing.JTextField();
-        botao = new javax.swing.JToggleButton();
-        arquivo = new javax.swing.JTextField();
+        textFuncionarios = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JToggleButton();
+        textConfiguracao = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -57,15 +57,15 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
 
         jLabel3.setText("Caminho Veículos");
 
-        Text_locacoes.addActionListener(new java.awt.event.ActionListener() {
+        textLocacoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Text_locacoesActionPerformed(evt);
+                textLocacoesActionPerformed(evt);
             }
         });
 
-        Text_veiculos.addActionListener(new java.awt.event.ActionListener() {
+        textVeiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Text_veiculosActionPerformed(evt);
+                textVeiculosActionPerformed(evt);
             }
         });
 
@@ -73,10 +73,10 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
 
         jLabel5.setText("Caminho funcionários");
 
-        botao.setText("Salvar");
-        botao.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
@@ -96,14 +96,14 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Text_locacoes, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                            .addComponent(Text_clientes))
+                            .addComponent(textLocacoes, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                            .addComponent(textClientes))
                         .addGap(66, 66, 66)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(arquivo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(textConfiguracao, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -113,15 +113,15 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGap(10, 10, 10)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Text_seguros, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Text_veiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(textSeguros, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Text_funcionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(218, 218, 218)
-                        .addComponent(botao))
+                        .addComponent(btnSalvar))
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -131,67 +131,56 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Text_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(Text_veiculos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textVeiculos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(Text_locacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textLocacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
-                        .addComponent(Text_seguros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textSeguros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(Text_funcionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(arquivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textConfiguracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
-                .addComponent(botao)
+                .addComponent(btnSalvar)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Text_veiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_veiculosActionPerformed
+    private void textVeiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textVeiculosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Text_veiculosActionPerformed
+    }//GEN-LAST:event_textVeiculosActionPerformed
 
-    private void botaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoActionPerformed
-        
-        String arquivo_locacoes = Text_locacoes.getText();
-        
-        String arquivo_clientes = Text_clientes.getText();
-         
-        String arquivo_veiculos = Text_veiculos.getText();
-        
-        String arquivo_funcionarios = Text_funcionarios.getText();
-           
-        String arquivo_seguros = Text_seguros.getText();
-        
-        String local = arquivo.getText();
-        
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        String arquivo_locacoes = textLocacoes.getText();
+        String arquivo_clientes = textClientes.getText();
+        String arquivo_veiculos = textVeiculos.getText();
+        String arquivo_funcionarios = textFuncionarios.getText();
+        String arquivo_seguros = textSeguros.getText();
+        String local = textConfiguracao.getText();
         Configuracao config = new Configuracao(arquivo_locacoes, arquivo_veiculos, arquivo_clientes,arquivo_funcionarios, arquivo_seguros);
-        
-        Controle control = new Controle();
-        
-        control.setConfiguracoes(config);
-        
-        control.salvarConfiguracao(local);
-        
+        controle.setConfiguracoes(config);
+        controle.salvarConfiguracoes(local);
         //Configuracao(String arquivoLocacoes, String arquivoVeiculos, String arquivoClientes, String arquivoFuncionarios, String arquivoSeguros) {
       
         
-    }//GEN-LAST:event_botaoActionPerformed
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
-    private void Text_locacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_locacoesActionPerformed
+    private void textLocacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textLocacoesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Text_locacoesActionPerformed
+    }//GEN-LAST:event_textLocacoesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,13 +219,7 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Text_clientes;
-    private javax.swing.JTextField Text_funcionarios;
-    private javax.swing.JTextField Text_locacoes;
-    private javax.swing.JTextField Text_seguros;
-    private javax.swing.JTextField Text_veiculos;
-    private javax.swing.JTextField arquivo;
-    private javax.swing.JToggleButton botao;
+    private javax.swing.JToggleButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -245,5 +228,11 @@ public class Frame_Salvar_config extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField textClientes;
+    private javax.swing.JTextField textConfiguracao;
+    private javax.swing.JTextField textFuncionarios;
+    private javax.swing.JTextField textLocacoes;
+    private javax.swing.JTextField textSeguros;
+    private javax.swing.JTextField textVeiculos;
     // End of variables declaration//GEN-END:variables
 }

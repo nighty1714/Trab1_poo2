@@ -12,7 +12,7 @@ import trabalho.modeloDeDados.Controle;
  * @author gabri
  */
 public class Frame_carregar_config extends javax.swing.JFrame {
-
+    Controle controle = new Controle();
     /**
      * Creates new form Frame_carregar_config
      */
@@ -84,12 +84,8 @@ public class Frame_carregar_config extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarregarActionPerformed
-       
         String caminho_salvo = caminho.getText();
-        
-        Controle control = new Controle();
-        
-        control.salvar(caminho_salvo);
+        controle.carregar(caminho_salvo);
     }//GEN-LAST:event_CarregarActionPerformed
 
     /**
