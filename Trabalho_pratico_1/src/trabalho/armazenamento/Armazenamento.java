@@ -193,6 +193,7 @@ public class Armazenamento {
         for(Usuario funcionario: funcionarios){
             int temp = (int) map.get(funcionario.getCodigoUsuario());
             if(temp > maior){
+                maior = temp;
                 funcionarioDoMes = funcionario;
             }
         }
