@@ -103,13 +103,34 @@ public class Armazenamento {
     public void adicionarCliente(Cliente cliente){
         for(Usuario antigoCliente:clientes){
             //verifica se o codigo de cliente ja existe
-            if(antigoCliente.getCodigoUsuario() != cliente.getCodigoUsuario()){
-                //verifica se o cliente ja nao possui uma conta
-                if(antigoCliente.getRG() != cliente.getRG()){
-                    this.clientes.add(cliente);
-                }
+            if(antigoCliente.getCodigoUsuario() == cliente.getCodigoUsuario()){
+                return;
             }
         }
+        for(Usuario antigoFuncionario: funcionarios){
+            //verifica se o codigo de cliente ja existe em um funcionario
+            if(antigoFuncionario.getCodigoUsuario() == cliente.getCodigoUsuario()){
+                return;
+            }
+        }
+        this.clientes.add(cliente);
+    }
+    
+    public void adicionarFuncionario(Funcionario funcionario){
+        for(Usuario antigoFuncionario:funcionarios){
+            //verifica se o codigo de funcionario ja existe
+            if(antigoFuncionario.getCodigoUsuario() == funcionario.getCodigoUsuario()){
+                return;
+            }
+        }
+        
+        for(Usuario antigoCliente: clientes){
+            //verifica se o codigo do funcionario ja esta em uso
+            if(antigoCliente.getCodigoUsuario() == funcionario.getCodigoUsuario()){
+                return;
+            }
+        }
+        this.funcionarios.add(funcionario);
     }
     
     public void adicionarVeiculo(Veiculo veiculo){
@@ -126,14 +147,6 @@ public class Armazenamento {
             //verifica se a locacao ja existe
             if(antigaLocacao.getCodigoLocacao() != locacao.getCodigoLocacao()){
                 this.locacoes.add(locacao);
-            }
-        }
-    }
-    
-    public void adicionarFuncionario(Funcionario funcionario){
-        for(Usuario antigoFuncionario: funcionarios){
-            if(antigoFuncionario.getCodigoUsuario() != funcionario.getCodigoUsuario()){
-                this.funcionarios.add(funcionario);
             }
         }
     }
