@@ -270,8 +270,6 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
             
             int codigocarro = Integer.parseInt(codigo_veiculo.getText());
             
-            
-            
             ArrayList<Veiculo> ab = new ArrayList();
             
             ab = a.getVeiculos();
@@ -283,36 +281,24 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
                if(Dinheiro.isSelected()){
                    
                    Locacao teste = new Locacao(codigo, codigo_c, codigo_u, data_lo, data_de, valor, d, finalizada, ab.get(i) );
-                   
-                   Configuracao config_loc = new Configuracao();
-            
-                   config_loc.setArquivoVeiculos(teste.toString());
-            
+           
                    Controle controle_loc = new Controle();
             
                    controle_loc.adicionarLocacao(teste);
             
-                   controle_loc.setConfiguracoes(config_loc);
-            
-                  controle_loc.salvar_veiculo();
+                   controle_loc.salvarLocacoes();
                    
                }
                
                else{
                    
                    Locacao teste = new Locacao(codigo, codigo_c, codigo_u, data_lo, data_de, valor, cart, finalizada, ab.get(i) );
-                   
-                   Configuracao config_loc = new Configuracao();
-            
-                   config_loc.setArquivoVeiculos(teste.toString());
             
                    Controle controle_loc = new Controle();
             
                    controle_loc.adicionarLocacao(teste);
             
-                   controle_loc.setConfiguracoes(config_loc);
-            
-                  controle_loc.salvar_veiculo();
+                   controle_loc.salvarLocacoes();
                }
                
                
@@ -326,12 +312,7 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
             }
      
            }
-            
-            //função para verificar se o veiculo digitado esta disponivel  carregarVeiculos
-            
-           
-            
-            
+               
         } catch (ParseException ex) {
             Logger.getLogger(Frame_criar_locacao.class.getName()).log(Level.SEVERE, null, ex);
         }

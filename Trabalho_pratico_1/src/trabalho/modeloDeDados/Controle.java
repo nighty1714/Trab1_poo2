@@ -250,5 +250,11 @@ public class Controle implements Serializable{
         armazenamento.salvarConfiguracoes(path);
         
     }
+    
+    public void salvarLocacoes(){
+        
+        armazenamento.salvarLocacoes();
+        
+    }
 }
     

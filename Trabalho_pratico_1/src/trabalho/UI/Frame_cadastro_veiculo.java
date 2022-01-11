@@ -285,11 +285,11 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         //VeiculoNacional(float taxaImposto, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, boolean alugado, float taxaLucro)
         
         VeiculoNacional teste = new VeiculoNacional(imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
-        Configuracao veiculo_nacional = new Configuracao();
-        veiculo_nacional.setArquivoVeiculos(teste.toString());
+        
         Controle controle_veiculo = new Controle();
+        
         controle_veiculo.adicionarVeiculo(teste);
-        controle_veiculo.setConfiguracoes(veiculo_nacional);
+        
         controle_veiculo.salvar_veiculo();
         
     }//GEN-LAST:event_Cadastro_veiculo_nacional_buttonActionPerformed
@@ -316,11 +316,11 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         //VeiculoImportado(float taxaImpostoEstadual, float taxaImpostoFederal, int codigoVeiculo, String nomeModelo, String montadora, int anoFabricacao, String placa, String categoria, float valorFipe, float valorDiaria, boolean alugado, float taxaLucro) {
         
         VeiculoImportado teste = new VeiculoImportado(Imposto_federal, imposto_estadual, codigo, modelo, montadora, ano_fab, placa, categoria, fipe, alugado, lucro);
-        Configuracao veiculo_importado = new Configuracao();
-        veiculo_importado.setArquivoVeiculos(teste.toString());
+        
         Controle controle_veiculo = new Controle();
+        
         controle_veiculo.adicionarVeiculo(teste);
-        controle_veiculo.setConfiguracoes(veiculo_importado);
+        
         controle_veiculo.salvar_veiculo();
         
         
