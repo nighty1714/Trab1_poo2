@@ -39,6 +39,7 @@ public class Frame_principal extends javax.swing.JFrame {
         menu_criar_locacao = new javax.swing.JMenuItem();
         Menu_config = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Locadora");
@@ -118,6 +119,14 @@ public class Frame_principal extends javax.swing.JFrame {
         });
         Menu_config.add(jMenuItem1);
 
+        jMenuItem2.setText("Carregar configuração");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        Menu_config.add(jMenuItem2);
+
         jMenuBar1.add(Menu_config);
 
         setJMenuBar(jMenuBar1);
@@ -193,10 +202,18 @@ public class Frame_principal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_config().setVisible(true);
+                new Frame_Salvar_config().setVisible(true);
             }
         });
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame_carregar_config().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,6 +258,7 @@ public class Frame_principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem menu_cadastrar_usuarios;
     private javax.swing.JMenuItem menu_cadastrar_veiculos;
     private javax.swing.JMenuItem menu_criar_locacao;
