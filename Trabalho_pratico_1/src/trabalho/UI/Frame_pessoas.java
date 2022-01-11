@@ -50,6 +50,7 @@ public class Frame_pessoas extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Pessoas");
 
         Button_listar_funcionarios.setText("Listar todos funcionários");
         Button_listar_funcionarios.addActionListener(new java.awt.event.ActionListener() {
@@ -189,8 +190,6 @@ public class Frame_pessoas extends javax.swing.JFrame {
         
         controle.funcionarioDoMes(data_mes, data_ano);
             
-        
-        
     }//GEN-LAST:event_button_funcionario_mesActionPerformed
 
     private void button_historico_locacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_historico_locacaoActionPerformed
