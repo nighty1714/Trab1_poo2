@@ -250,11 +250,5 @@ public class Controle implements Serializable{
     public void salvarLocacoes(){
         armazenamento.salvarLocacoes();
     }
-    
-    public Funcionario funcionario_do_mes(int mes, int ano){
-        
-        return armazenamento.funcionarioDoMes(mes, ano);
-        
-    }
 }
     
