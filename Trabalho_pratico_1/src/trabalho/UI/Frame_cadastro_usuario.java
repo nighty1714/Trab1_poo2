@@ -294,57 +294,31 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
     }//GEN-LAST:event_textNumeroCNHActionPerformed
 
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
-          
-        try {                                                         
-            
+        try {
             String nome_conta_cliente = textNome.getText();
-            
             String cpf_conta_cliente = textCPF.getText();
-            
             String rg_conta_cliente = textRG.getText();
-            
             int codigo_conta_cliente = Integer.parseInt(textCodigoUsuario.getText());
-            
             String data_nascimento_conta_cliente = textDataNascimento.getText();
-            
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            
             Calendar cal = Calendar.getInstance();
-            
             cal.setTime(sdf.parse(data_nascimento_conta_cliente));
-            
             String CEP_conta_cliente = textCEP.getText();
-            
             String Categoria_CNH_conta_cliente = textCategoriaCNH.getText();
-            
             String Numero_CNH_conta_cliente = textNumeroCNH.getText();
-            
             String Validade_CNH_conta_cliente = textValidadeCNH.getText();
-            
             Calendar cal2 = Calendar.getInstance();
-            
             cal2.setTime(sdf.parse(Validade_CNH_conta_cliente));
-            
             String Endereco_conta_cliente = textEndereco.getText();
-            
             String Email_conta_cliente = textEmail.getText();
-            
             boolean ouro = false;
-            
             if (checkBoxOuro.isSelected()){
                 ouro = true;
             }
-            
             Cliente teste = new Cliente(Categoria_CNH_conta_cliente, Numero_CNH_conta_cliente, cal2, ouro, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, cal, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente);
-            
             Controle controle_cliente = new Controle();
-            
-            System.out.println(teste.toString());
-            
             controle_cliente.adicionarCliente(teste);
-            
             controle_cliente.salvarClientes();
-            
         } catch (ParseException ex) {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -357,47 +331,33 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
 
     private void btnCadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroFuncionarioActionPerformed
         try {
-            //Funcionario(float salario, String pis, Calendar dataAdmissao, int codigoUsuario, String nome, String cpf, String rg, Calendar data_nascimento, String endereco, String cep, String email)
-            
-            float salario = Float.parseFloat(textSalario.getText());
-            
-            String pis = textPIS.getText();
-            
-            String adimicao = textAdmissao.getText();
-            
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            
-            Calendar admissao = Calendar.getInstance();
-            
+            //adquire a data de admissao
+            Calendar dataAdmissao = Calendar.getInstance();
+            dataAdmissao.setTime(sdf.parse(textAdmissao.getText()));
             int codigo_conta_cliente = Integer.parseInt(textCodigoUsuario.getText());
-            
-            String nome_conta_cliente = textNome.getText();
-            
-            String cpf_conta_cliente = textCPF.getText();
-            
-            String rg_conta_cliente = textRG.getText();
-            
-            String data_nascimento_conta_cliente = textDataNascimento.getText();
-            
+            //cria a data de nascimento
             Calendar nascimento = Calendar.getInstance();
-            
-            nascimento.setTime(sdf.parse(data_nascimento_conta_cliente));
-            
+            nascimento.setTime(sdf.parse(textDataNascimento.getText()));
+            //adquire os dados do funcionario
+            String nome_conta_cliente = textNome.getText();
+            String cpf_conta_cliente = textCPF.getText();
+            String rg_conta_cliente = textRG.getText();
             String CEP_conta_cliente = textCEP.getText();
-            
             String Endereco_conta_cliente = textEndereco.getText();
-            
             String Email_conta_cliente = textEmail.getText();
-            
-            Funcionario teste = new Funcionario(salario, pis, admissao, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, nascimento, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente  );
+            float salario = Float.parseFloat(textSalario.getText()); 
+            String pis = textPIS.getText();
+            //cria o funcionario
+            Funcionario funcionario = new Funcionario(salario, pis, dataAdmissao, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, nascimento, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente  );
             
             Controle controle_cliente = new Controle();
             
-            controle_cliente.adicionarFuncionario(teste);
+            controle_cliente.adicionarFuncionario(funcionario);
             
             controle_cliente.salvarFuncionarios();
             
-            admissao.setTime(sdf.parse(adimicao));
+            
         } catch (ParseException ex) {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
         }

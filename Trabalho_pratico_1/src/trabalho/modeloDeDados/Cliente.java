@@ -64,6 +64,14 @@ public class Cliente extends Usuario{
     //--- metodos ---
     @Override
     public String toString() {
-        return("Código de usuário: " + Integer.toString(codigoUsuario) + "\nNome:" + nome + "\nRG:" + rg + "\nCPF:" + cpf + "\nData de nascimento: " + dataNascimento.get(Calendar.DATE) + "/" + dataNascimento.get(Calendar.MONTH) + "/" + dataNascimento.get(Calendar.YEAR) + "Endereço:" + endereco + "\nCEP:" + cep + "\nEmail:" + email + "\nCategoria CNH:" + categoriaCNH + "\nNumero CNH:" + numeroCNH + "\nValidade CNH:" + vencimentoCNH + "\nCliente ouro: " + Boolean.toString(clienteOuro));
+        String str = "Código de usuário: " + Integer.toString(codigoUsuario) + "\nNome:" + nome + "\nRG:" + rg + "\nCPF:" + cpf + 
+                "\nData de nascimento: " + dataNascimento.get(Calendar.DATE) + "/" + dataNascimento.get(Calendar.MONTH) + "/" + dataNascimento.get(Calendar.YEAR) + 
+                "\nEndereço:" + endereco + "\nCEP:" + cep + "\nEmail:" + email + "\nCategoria CNH:" + categoriaCNH + "\nNumero CNH:" + numeroCNH + "\nValidade CNH:" + vencimentoCNH + "\nCliente ouro: ";
+        if(clienteOuro){
+            str += "Sim\n";
+        }else{
+            str+= "Não\n";
+        }
+        return str;
     }
 }

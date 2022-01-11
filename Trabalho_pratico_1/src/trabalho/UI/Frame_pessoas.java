@@ -108,6 +108,7 @@ public class Frame_pessoas extends javax.swing.JFrame {
         for(Usuario funcionario: controle.getFuncionarios()){
             funcionarios += funcionario.toString();
         }
+        System.out.print(funcionarios);
         textPessoas.setText(funcionarios);
     }//GEN-LAST:event_Button_listar_funcionariosActionPerformed
 

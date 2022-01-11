@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Map;
+import java.util.HashMap;
 /**
  *
  * @author Nozawa
@@ -176,6 +178,19 @@ public class Armazenamento {
             }
         }
         return listaClientes;
+    }
+    
+    public Funcionario funcionarioDoMes(int mes, int ano){
+        Map map = new HashMap();
+        for(Usuario funcionario: funcionarios){
+            map.put(funcionario.getCodigoUsuario(), 0);
+        }
+        
+        for(Locacao locacao: locacoesDoMes(mes, ano)){
+            map.put(locacao.getCodigoFuncionario(), (int)map.get(locacao.getCodigoFuncionario())+1);
+        }
+        Funcionario funcionarioDoMes = ;
+        return funcionarioDoMes;
     }
     
     public ArrayList<Locacao> locacoesDoMes(int mes, int ano){
