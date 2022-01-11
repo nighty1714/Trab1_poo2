@@ -167,17 +167,17 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Codigo loca&#xe7;&#xe3;o:"/>
+        <Property name="text" type="java.lang.String" value="C&#xf3;digo loca&#xe7;&#xe3;o:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Codigo funcionario:"/>
+        <Property name="text" type="java.lang.String" value="C&#xf3;digo funcionario:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Codigo cliente:"/>
+        <Property name="text" type="java.lang.String" value="C&#xf3;digo cliente:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">

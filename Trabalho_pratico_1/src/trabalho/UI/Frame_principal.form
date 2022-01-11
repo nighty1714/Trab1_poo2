@@ -6,12 +6,12 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Veiculos"/>
+            <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menu_verificar_veiculos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Verificar veiculos"/>
+                <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_verificar_veiculosActionPerformed"/>
@@ -19,7 +19,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_veiculos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastrar Veiculos"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar ve&#xed;culos"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_cadastrar_veiculosActionPerformed"/>
@@ -34,7 +34,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menu_verificar_usuarios">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Verificar usuarios"/>
+                <Property name="text" type="java.lang.String" value="Verificar usu&#xe1;rios"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_verificar_usuariosActionPerformed"/>

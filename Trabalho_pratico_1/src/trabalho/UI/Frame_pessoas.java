@@ -40,14 +40,14 @@ public class Frame_pessoas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        Button_listar_funcionarios.setText("Listar todos funcionarios");
+        Button_listar_funcionarios.setText("Listar todos funcionários");
         Button_listar_funcionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_listar_funcionariosActionPerformed(evt);
             }
         });
 
-        button_funcionario_mes.setText("Funcionario do mês");
+        button_funcionario_mes.setText("Funcionário do mês");
 
         button_clientes_cadastrados.setText("Clientes cadastrados");
         button_clientes_cadastrados.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +56,7 @@ public class Frame_pessoas extends javax.swing.JFrame {
             }
         });
 
-        button_historico_locacao.setText("historico de locação ");
+        button_historico_locacao.setText("Histórico de locação ");
 
         button_locacoes_atrasadas.setText("Clientes com locações atrasadas");
         button_locacoes_atrasadas.addActionListener(new java.awt.event.ActionListener() {

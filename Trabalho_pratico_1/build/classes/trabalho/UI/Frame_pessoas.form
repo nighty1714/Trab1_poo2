@@ -73,7 +73,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Button_listar_funcionarios">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Listar todos funcionarios"/>
+        <Property name="text" type="java.lang.String" value="Listar todos funcion&#xe1;rios"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_listar_funcionariosActionPerformed"/>
@@ -81,7 +81,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="button_funcionario_mes">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Funcionario do m&#xea;s"/>
+        <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio do m&#xea;s"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="button_clientes_cadastrados">
@@ -94,7 +94,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="button_historico_locacao">
       <Properties>
-        <Property name="text" type="java.lang.String" value="historico de loca&#xe7;&#xe3;o "/>
+        <Property name="text" type="java.lang.String" value="Hist&#xf3;rico de loca&#xe7;&#xe3;o "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="button_locacoes_atrasadas">

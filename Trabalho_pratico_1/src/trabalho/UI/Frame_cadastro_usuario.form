@@ -232,7 +232,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Codigo:"/>
+        <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Text_cadastro_cliente_Codigo">
@@ -274,7 +274,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Numero CNH:"/>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero CNH:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Text_cadastro_cliente_Numero_CNH">
@@ -308,6 +308,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Cadastro_cliente_text_resultado">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cadastro_cliente_text_resultadoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>
@@ -316,12 +319,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel15">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dados para o cadastro de funcionarios:"/>
+        <Property name="text" type="java.lang.String" value="Dados para o cadastro de funcion&#xe1;rios:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Salario:"/>
+        <Property name="text" type="java.lang.String" value="Sal&#xe1;rio:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel17">
@@ -331,7 +334,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel18">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Data de adimi&#xe7;&#xe3;o:"/>
+        <Property name="text" type="java.lang.String" value="Data de adimiss&#xe3;o:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="Cadastro_usuario_salario">
@@ -342,7 +345,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="button_cadastrar_funcionario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar funcionario"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar funcion&#xe1;rio"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_cadastrar_funcionarioActionPerformed"/>

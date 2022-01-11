@@ -71,11 +71,11 @@ public class Frame_criar_locacao extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar locação");
 
-        jLabel1.setText("Codigo locação:");
+        jLabel1.setText("Código locação:");
 
-        jLabel2.setText("Codigo funcionario:");
+        jLabel2.setText("Código funcionario:");
 
-        jLabel3.setText("Codigo cliente:");
+        jLabel3.setText("Código cliente:");
 
         jLabel4.setText("Data locação");
 

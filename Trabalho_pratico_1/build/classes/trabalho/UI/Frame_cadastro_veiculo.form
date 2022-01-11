@@ -192,12 +192,12 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modelo do veiculo:"/>
+        <Property name="text" type="java.lang.String" value="Modelo do ve&#xed;culo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Codigo do veiculo:"/>
+        <Property name="text" type="java.lang.String" value="Codigo do ve&#xed;culo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -227,7 +227,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Valor diaria:"/>
+        <Property name="text" type="java.lang.String" value="Valor di&#xe1;ria:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">
@@ -256,7 +256,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Cadastro_veiculo_nacional_button">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar Veiculo nacional"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar Ve&#xed;culo nacional"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cadastro_veiculo_nacional_buttonActionPerformed"/>
@@ -269,12 +269,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Somente para veiculos nacionais e internacionais"/>
+        <Property name="text" type="java.lang.String" value="Somente para ve&#xed;culos nacionais e internacionais"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Somente para veiculos internacionais"/>
+        <Property name="text" type="java.lang.String" value="Somente para ve&#xed;culos internacionais"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
@@ -300,7 +300,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar Veiculo Internacional"/>
+        <Property name="text" type="java.lang.String" value="Cadastrar Ve&#xed;culo Internacional"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>

@@ -85,7 +85,7 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
 
         jLabel3.setText("RG:");
 
-        jLabel4.setText("Codigo:");
+        jLabel4.setText("Código:");
 
         jLabel5.setText("Data de nascimento:");
 
@@ -97,7 +97,7 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
 
         jLabel9.setText("Categoria CNH:");
 
-        jLabel10.setText("Numero CNH:");
+        jLabel10.setText("Número CNH:");
 
         Text_cadastro_cliente_Numero_CNH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,17 +118,23 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             }
         });
 
+        Cadastro_cliente_text_resultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadastro_cliente_text_resultadoActionPerformed(evt);
+            }
+        });
+
         jLabel14.setText("Dados para o cadastro de clientes:");
 
-        jLabel15.setText("Dados para o cadastro de funcionarios:");
+        jLabel15.setText("Dados para o cadastro de funcionários:");
 
-        jLabel16.setText("Salario:");
+        jLabel16.setText("Salário:");
 
         jLabel17.setText("PIS:");
 
-        jLabel18.setText("Data de adimição:");
+        jLabel18.setText("Data de adimissão:");
 
-        button_cadastrar_funcionario.setText("Cadastrar funcionario");
+        button_cadastrar_funcionario.setText("Cadastrar funcionário");
         button_cadastrar_funcionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_cadastrar_funcionarioActionPerformed(evt);
@@ -424,6 +430,10 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_button_cadastrar_funcionarioActionPerformed
+
+    private void Cadastro_cliente_text_resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_cliente_text_resultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Cadastro_cliente_text_resultadoActionPerformed
 
     public static void main(String args[]) {
         

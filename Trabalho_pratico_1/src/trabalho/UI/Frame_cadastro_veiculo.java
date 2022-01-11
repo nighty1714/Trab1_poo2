@@ -72,9 +72,9 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de veiculos");
 
-        jLabel1.setText("Modelo do veiculo:");
+        jLabel1.setText("Modelo do veículo:");
 
-        jLabel2.setText("Codigo do veiculo:");
+        jLabel2.setText("Codigo do veículo:");
 
         jLabel3.setText("Montadora:");
 
@@ -86,7 +86,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
 
         jLabel8.setText("Valor Fipe:");
 
-        jLabel9.setText("Valor diaria:");
+        jLabel9.setText("Valor diária:");
 
         jLabel10.setText("Alugado?:");
 
@@ -96,7 +96,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
             }
         });
 
-        Cadastro_veiculo_nacional_button.setText("Cadastrar Veiculo nacional");
+        Cadastro_veiculo_nacional_button.setText("Cadastrar Veículo nacional");
         Cadastro_veiculo_nacional_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Cadastro_veiculo_nacional_buttonActionPerformed(evt);
@@ -105,9 +105,9 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
 
         jLabel11.setText("Dados de cadastro comuns");
 
-        jLabel12.setText("Somente para veiculos nacionais e internacionais");
+        jLabel12.setText("Somente para veículos nacionais e internacionais");
 
-        jLabel13.setText("Somente para veiculos internacionais");
+        jLabel13.setText("Somente para veículos internacionais");
 
         jLabel14.setText("Taxa imposto estadual:");
 
@@ -115,7 +115,7 @@ public class Frame_cadastro_veiculo extends javax.swing.JFrame {
 
         CheckBox_alugado.setText("Sim");
 
-        jButton1.setText("Cadastrar Veiculo Internacional");
+        jButton1.setText("Cadastrar Veículo Internacional");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

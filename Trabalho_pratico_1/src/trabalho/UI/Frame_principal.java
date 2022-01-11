@@ -43,9 +43,9 @@ public class Frame_principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Locadora");
 
-        jMenu1.setText("Veiculos");
+        jMenu1.setText("Veículos");
 
-        menu_verificar_veiculos.setText("Verificar veiculos");
+        menu_verificar_veiculos.setText("Verificar veículos");
         menu_verificar_veiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_verificar_veiculosActionPerformed(evt);
@@ -53,7 +53,7 @@ public class Frame_principal extends javax.swing.JFrame {
         });
         jMenu1.add(menu_verificar_veiculos);
 
-        menu_cadastrar_veiculos.setText("Cadastrar Veiculos");
+        menu_cadastrar_veiculos.setText("Cadastrar veículos");
         menu_cadastrar_veiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_cadastrar_veiculosActionPerformed(evt);
@@ -65,7 +65,7 @@ public class Frame_principal extends javax.swing.JFrame {
 
         jMenu2.setText("Pessoas");
 
-        menu_verificar_usuarios.setText("Verificar usuarios");
+        menu_verificar_usuarios.setText("Verificar usuários");
         menu_verificar_usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_verificar_usuariosActionPerformed(evt);

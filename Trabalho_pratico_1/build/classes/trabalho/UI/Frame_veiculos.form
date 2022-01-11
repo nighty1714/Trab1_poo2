@@ -31,9 +31,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="textVeiculos" min="-2" pref="262" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="Veiculos_button_veiculos_disponiveis" max="32767" attributes="0"/>
                           <Component id="Veiculos_cadastrados_buttom" alignment="0" max="32767" attributes="0"/>
@@ -43,13 +43,16 @@
                           <Component id="Veiculos_button_atraso" max="32767" attributes="0"/>
                           <Component id="Veiculos_button_veiculos_cliente" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace pref="12" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      <Component id="Text_field_nome_cliente" min="-2" pref="110" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="Text_field_nome_cliente" min="-2" pref="117" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -71,9 +74,12 @@
                       <Component id="Veiculos_button_veiculos_alocados" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Veiculos_button_atraso" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="Text_field_nome_cliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Text_field_nome_cliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Component id="Veiculos_button_veiculos_cliente" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -85,7 +91,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="Veiculos_cadastrados_buttom">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar veiculos cadastrados"/>
+        <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos cadastrados"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_cadastrados_buttomActionPerformed"/>
@@ -95,7 +101,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_veiculos_disponiveis">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar veiculos disponiveis para loca&#xe7;&#xe3;o"/>
+        <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos dispon&#xed;veis para loca&#xe7;&#xe3;o"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_veiculos_disponiveisActionPerformed"/>
@@ -103,7 +109,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_nacionais">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar veiculos nacionais"/>
+        <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos nacionais"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_nacionaisActionPerformed"/>
@@ -111,7 +117,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_internacionais">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar veiculos internacionais"/>
+        <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos internacionais"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_internacionaisActionPerformed"/>
@@ -119,7 +125,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_veiculos_alocados">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar veiculos ja alocados"/>
+        <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos j&#xe1; alocados"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_veiculos_alocadosActionPerformed"/>
@@ -127,7 +133,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_atraso">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar veiculos em atraso"/>
+        <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos em atraso"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_atrasoActionPerformed"/>
@@ -135,7 +141,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Veiculos_button_veiculos_cliente">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Verificar veiculos de um cliente"/>
+        <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos de um cliente"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Veiculos_button_veiculos_clienteActionPerformed"/>
@@ -145,6 +151,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Text_field_nome_clienteActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cliente:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
