@@ -150,8 +150,8 @@ public class Locacao implements Serializable{
     public String toString() {
         String str = "Código de locacação: " + Integer.toString(codigoLocacao) + "\nCódigo do cliente: " + Integer.toString(codigoCliente) + 
                 "\nCódigo do Funcionário: " + Integer.toString(codigoFuncionario) + 
-                "\nData de locação: " + dataLocacao.get(Calendar.DATE) + "/" + dataLocacao.get(Calendar.MONTH) + "/" + dataLocacao.get(Calendar.YEAR) + 
-                "\nData de devolução: " + dataDevolucao.get(Calendar.DATE) + "/" + dataDevolucao.get(Calendar.MONTH) + "/" + dataDevolucao.get(Calendar.YEAR) + 
+                "\nData de locação: " + dataLocacao.get(Calendar.DATE) + "/" + Integer.toString(dataLocacao.get(Calendar.MONTH)+1) + "/" + dataLocacao.get(Calendar.YEAR) + 
+                "\nData de devolução: " + dataDevolucao.get(Calendar.DATE) + "/" + Integer.toString(dataDevolucao.get(Calendar.MONTH)+1) + "/" + dataDevolucao.get(Calendar.YEAR) + 
                 "\nValor Total: " + Float.toString(calcularValorTotal()) + "\nForma de pagamento: " + formaPagamento.getTipoPagamento() + "\nSeguros contratados: \n";
         for(Seguro seguro: segurosContratados){
             str += segurosContratados.toString();
@@ -161,7 +161,7 @@ public class Locacao implements Serializable{
             str += "Não\n";
         else
             str += "Sim\n";
-        str += "Veículo: " + veiculo.toString();
+        str += "Veículo: \n" + veiculo.toString() + "\n";
         return str;
     }
     
