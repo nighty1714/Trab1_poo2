@@ -276,7 +276,6 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
             //cria controle data de devolucao
             Calendar dataDE = Calendar.getInstance();
             dataDE.setTime(sdf.parse(dataD));
-            float valor = Float.parseFloat(textValor.getText());
             
             boolean finalizada = false;
             if (Finalizada.isSelected()){
@@ -291,13 +290,13 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
                         String bandeira = textBandeiraCartao.getText();
                         String numero = textNumeroCartao.getText();
                         Cartao cart = new Cartao(nomeC, bandeira, numero);
-                        Locacao locacao = new Locacao(codigoLocacao, codigoCliente, codigoFuncionario, dataLo, dataDE, valor, cart, finalizada, veiculo);
+                        Locacao locacao = new Locacao(codigoLocacao, codigoCliente, codigoFuncionario, dataLo, dataDE, cart, finalizada, veiculo);
                         controle.adicionarLocacao(locacao);
                     }
                     else{
                         //cria uma locacao em dinheiro
                         Dinheiro d = new Dinheiro();
-                        Locacao locacao = new Locacao(codigoLocacao, codigoCliente, codigoFuncionario, dataLo, dataDE, valor, d, finalizada, veiculo);
+                        Locacao locacao = new Locacao(codigoLocacao, codigoCliente, codigoFuncionario, dataLo, dataDE, d, finalizada, veiculo);
                         controle.adicionarLocacao(locacao);
                     }
                 }
