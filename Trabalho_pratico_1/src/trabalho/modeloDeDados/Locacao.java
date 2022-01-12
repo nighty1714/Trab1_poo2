@@ -118,8 +118,10 @@ public class Locacao {
     
     public float calcularValorTotal(){
         float total = 0;
-        for(Seguro seguro:segurosContratados){
-            total += seguro.getValor();
+        if(possuiSeguro()){
+            for(Seguro seguro:segurosContratados){
+                total += seguro.getValor();
+            }
         }
         long diff = dataLocacao.compareTo(dataDevolucao);
         long dias = TimeUnit.MILLISECONDS.toDays(diff);

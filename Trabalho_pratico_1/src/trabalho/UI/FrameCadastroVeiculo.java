@@ -237,8 +237,6 @@ public class FrameCadastroVeiculo extends javax.swing.JFrame {
         VeiculoNacional teste = new VeiculoNacional(impostoEstadual, codigo, modelo, montadora, anoFab, placa, categoria, fipe, alugado, lucro);
         controleVeiculo.adicionarVeiculo(teste);
         controleVeiculo.salvarVeiculos();
-        System.out.println("Teste");
-        System.out.println(controleVeiculo.dadosTodosVeiculos());
     }//GEN-LAST:event_btnCadastroVeiculoNacionalActionPerformed
 
     private void btnVeiculoInternacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeiculoInternacionalActionPerformed
@@ -258,8 +256,6 @@ public class FrameCadastroVeiculo extends javax.swing.JFrame {
         VeiculoImportado teste = new VeiculoImportado(ImpostoFederal, impostoEstadual, codigo, modelo, montadora, anoFab, placa, categoria, fipe, alugado, lucro);
         controleVeiculo.adicionarVeiculo(teste);
         controleVeiculo.salvarVeiculos();
-        System.out.println("Teste");
-        System.out.println(controleVeiculo.dadosTodosVeiculos());
     }//GEN-LAST:event_btnVeiculoInternacionalActionPerformed
 
     /**

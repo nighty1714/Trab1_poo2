@@ -34,7 +34,16 @@ public class VeiculoNacional extends Veiculo{
 
     @Override
     public String toString() {
-        return "VeiculoNacional{" + "codigoVeiculo=" + codigoVeiculo + ", nomeModelo=" + nomeModelo + ", montadora=" + montadora + ", anoFabricacao=" + anoFabricacao + ", placa=" + placa + ", categoria=" + categoria + ", valorFipe=" + valorFipe + ", valorDiaria=" + valorDiaria + ", alugado=" + alugado + "taxaImposto=" + taxaImposto + '}';
+        String str = "Código do Veículo: " + codigoVeiculo + "\nNome do modelo: " + nomeModelo + "\nMontadora: " + montadora + 
+                "\nAno de fabricação: " + anoFabricacao + "\nPlaca: " + placa + "\nCategoria: " + categoria + "\nValor FIPE: " + valorFipe + 
+                "\nValor da diária: " + valorDiaria + "\nAlugado: ";
+        if(alugado){
+            str += "Sim";
+        }else{
+            str += "Não";
+        }
+        str += "\nTaxa de imposto=" + taxaImposto + "\n";
+        return str;
     }
     
 }

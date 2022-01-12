@@ -44,7 +44,16 @@ public class VeiculoImportado extends Veiculo {
 
     @Override
     public String toString() {
-        return "VeiculoInternacional{" + "codigoVeiculo=" + codigoVeiculo + ", nomeModelo=" + nomeModelo + ", montadora=" + montadora + ", anoFabricacao=" + anoFabricacao + ", placa=" + placa + ", categoria=" + categoria + ", valorFipe=" + valorFipe + ", valorDiaria=" + valorDiaria + ", alugado=" + alugado + "taxaImpostoEstadual=" + taxaImpostoEstadual + ", taxaImpostoFederal=" + taxaImpostoFederal + '}';
+        String str = "\nCódigo do Veiculo: " + codigoVeiculo + "\nNome do modelo: " + nomeModelo + "\nMontadora: " + montadora + 
+                "\nAno de fabricação: " + anoFabricacao + "\nPlaca: " + placa + "\nCategoria: " + categoria + "\nValor FIPE: " + valorFipe +
+                "\nValor da diária: " + valorDiaria + "\nAlugado: ";
+        if(alugado){
+            str += "Sim";
+        }else{
+            str += "Não";
+        }
+        str += "\nTaxa de imposto estadual: " + taxaImpostoEstadual + "\nTaxa de imposto federal: " + taxaImpostoFederal + "\n";
+        return str;
     }
     
     
