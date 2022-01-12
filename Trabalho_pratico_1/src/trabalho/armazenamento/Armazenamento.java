@@ -152,6 +152,11 @@ public class Armazenamento {
     }
     
     public void adicionarLocacao(Locacao locacao){
+        for(Locacao antigaLocacao: locacoes){
+            if(antigaLocacao.getCodigoLocacao() == locacao.getCodigoLocacao()){
+                return;
+            }
+        }
         if(locacao.isFinalizada()){
             this.locacoes.add(locacao);
         }else{
@@ -238,7 +243,7 @@ public class Armazenamento {
         for(Locacao locacao: locacoes){
             Calendar data = locacao.getDataLocacao();
             if(data.get(Calendar.YEAR) == ano){
-                if(data.get(Calendar.MONTH) == mes){
+                if(data.get(Calendar.MONTH)+1 == mes){
                     listaLocacoes.add(locacao);
                 }
             }

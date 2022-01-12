@@ -53,8 +53,8 @@ public class Funcionario extends Usuario{
     @Override
     public String toString() {
         return("Código de usuário: " + codigoUsuario + "\nNome:" + nome + "\nRG:" + rg + "\nCPF:" + cpf + 
-                "\nData de nascimento: " + dataNascimento.get(Calendar.DATE) + "/" + dataNascimento.get(Calendar.MONTH) + "/" + dataNascimento.get(Calendar.YEAR) + 
+                "\nData de nascimento: " + dataNascimento.get(Calendar.DATE) + "/" + Integer.toString(dataNascimento.get(Calendar.MONTH)+1) + "/" + dataNascimento.get(Calendar.YEAR) + 
                 "\nEndereço:" + endereco + "\nCEP:" + cep + "\nEmail:" + email + "\nSalário:" + salario + "\nPIS:" + pis + 
-                "\nData de admissão:" + dataAdmissao.get(Calendar.DATE) + "/" + dataAdmissao.get(Calendar.MONTH) + "/" + dataAdmissao.get(Calendar.YEAR)+"\n");
+                "\nData de admissão:" + dataAdmissao.get(Calendar.DATE) + "/" + Integer.toString(dataAdmissao.get(Calendar.MONTH)+1) + "/" + dataAdmissao.get(Calendar.YEAR)+"\n");
     }
 }

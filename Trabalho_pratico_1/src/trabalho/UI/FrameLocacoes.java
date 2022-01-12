@@ -102,6 +102,7 @@ public class FrameLocacoes extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Relatório de locações");
 
+        textAreaRelatorio.setEditable(false);
         textAreaRelatorio.setColumns(20);
         textAreaRelatorio.setRows(5);
         jScrollPane1.setViewportView(textAreaRelatorio);
@@ -210,7 +211,11 @@ public class FrameLocacoes extends javax.swing.JFrame {
         int ano = Integer.parseInt(TextFieldAno.getText());
         int mes = Integer.parseInt(TextFieldMes.getText());
         float lucroDoMes = controle.lucroDoMes(mes, ano);
-        textAreaRelatorio.setText(String.valueOf(lucroDoMes));
+        String str = "";
+        for(Locacao locacao: controle.locacoesDoMes(mes,ano)){
+            str += locacao.toString() + "\n";
+        }
+        textAreaRelatorio.setText(str + "Total: " +String.valueOf(lucroDoMes));
     }//GEN-LAST:event_LocacoesButtonLocacoesLucroMesActionPerformed
 
     /**

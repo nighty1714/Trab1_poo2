@@ -96,6 +96,7 @@ public class FramePessoas extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Relatório de usuários");
 
+        textAreaRelatorio.setEditable(false);
         textAreaRelatorio.setColumns(20);
         textAreaRelatorio.setRows(5);
         jScrollPane1.setViewportView(textAreaRelatorio);

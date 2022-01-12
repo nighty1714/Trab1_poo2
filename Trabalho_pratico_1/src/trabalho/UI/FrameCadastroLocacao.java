@@ -135,6 +135,7 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
         formaPagamento.add(radioDinheiro);
         radioDinheiro.setText("Dinheiro");
 
+        formaPagamento.add(radioCartao);
         radioCartao.setText("Cartão");
         radioCartao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

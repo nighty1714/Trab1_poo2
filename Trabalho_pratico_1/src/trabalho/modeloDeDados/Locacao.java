@@ -121,12 +121,12 @@ public class Locacao implements Serializable{
         float total = 0;
         if(possuiSeguro()){
             for(Seguro seguro:segurosContratados){
-                total += seguro.getValor();
+                total += (float)seguro.getValor();
             }
         }
-        long diff = dataLocacao.compareTo(dataDevolucao);
+        long diff = dataDevolucao.getTimeInMillis()- dataLocacao.getTimeInMillis();
         long dias = TimeUnit.MILLISECONDS.toDays(diff);
-        total += (float)dias*veiculo.getValorDiaria();
+        total += dias*veiculo.getValorDiaria();
         return total;
     }
     
@@ -142,7 +142,7 @@ public class Locacao implements Serializable{
             return false;
         }else{
             Calendar data = Calendar.getInstance();  
-            return data.before(dataDevolucao);
+            return !(data.before(dataDevolucao));
         }
     }
 
@@ -156,11 +156,11 @@ public class Locacao implements Serializable{
         for(Seguro seguro: segurosContratados){
             str += segurosContratados.toString();
         }
-        str += "\nFinalizada: ";
+        str += "Finalizada: ";
         if(finalizada)
-            str += "Não\n";
-        else
             str += "Sim\n";
+        else
+            str += "Não\n";
         str += "Veículo: \n" + veiculo.toString() + "\n";
         return str;
     }

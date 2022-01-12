@@ -46,7 +46,7 @@ public class VeiculoImportado extends Veiculo {
 
     @Override
     public String toString() {
-        String str = "\nCódigo do Veiculo: " + codigoVeiculo + "\nNome do modelo: " + nomeModelo + "\nMontadora: " + montadora + 
+        String str = "Código do Veiculo: " + codigoVeiculo + "\nNome do modelo: " + nomeModelo + "\nMontadora: " + montadora + 
                 "\nAno de fabricação: " + anoFabricacao + "\nPlaca: " + placa + "\nCategoria: " + categoria + "\nValor FIPE: " + valorFipe +
                 "\nValor da diária: " + valorDiaria + "\nAlugado: ";
         if(alugado){

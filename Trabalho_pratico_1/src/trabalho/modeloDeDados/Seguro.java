@@ -68,6 +68,6 @@ public class Seguro implements Serializable{
     
     @Override
     public String toString(){
-        return "Código do seguro: " + Integer.toString(codigoSeguro) + "\nNome: " + nome + "\nTipo: " + tipo + "\nDescrição: " + descricao + "\nValor: " + Float.toString(valor);
+        return "Código do seguro: " + Integer.toString(codigoSeguro) + "\nNome: " + nome + "\nTipo: " + tipo + "\nDescrição: " + descricao + "\nValor: " + Float.toString(valor) + "\n";
     }
 }
