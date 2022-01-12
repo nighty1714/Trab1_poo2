@@ -90,145 +90,77 @@ public class Controle implements Serializable{
     public void adicionarSeguro(Seguro seguro){
         armazenamento.adicionarSeguro(seguro);
     }
-    
-    /*
-    public void setArquivoLocacoes(String path){
-        armazenamento.setArquivoLocacoes(path);
-    }
-    
-    public void setArquivoVeiculos(String path){
-        armazenamento.setArquivoVeiculos(path);
-    }
-    
-    public void setArquivoClientes(String path){
-        armazenamento.setArquivoClientes(path);
-    }
-    
-    public void setArquivoFuncionarios(String path){
-        armazenamento.setArquivoFuncionarios(path);
-    }
-    
-    public void setArquivoSeguros(String path){
-        armazenamento.setArquivoSeguros(path);
-    }
-    */
 
     public Controle(){
         this.armazenamento = Armazenamento.getInstance();
     }
     
-    public ArrayList<Usuario> clientesAtrasados(){
+    public String clientesAtrasados(){
         return armazenamento.clientesAtrasados();
     }
     
-    public ArrayList<Veiculo> veiculosDoUsuario(int codigo){
+    public String veiculosDoUsuario(int codigo){
         return armazenamento.veiculosDoUsuario(codigo);
+    }
+    
+    public String locacoesDoUsuario(int codigo){
+        return armazenamento.locacoesDoUsuario(codigo);
     }
     
     public ArrayList<Locacao> locacoesDoMes(int mes, int ano){
         return armazenamento.locacoesDoMes(mes, ano);
     }
     
-    public Usuario funcionarioDoMes(int mes, int ano){
+    public String funcionarioDoMes(int mes, int ano){
         return armazenamento.funcionarioDoMes(mes, ano);
     }
     
-    public float controler_locacao_valor_total(int codigo){
-        for (Locacao locacao: armazenamento.getLocacoes()){
-            if(locacao.getCodigoLocacao() == codigo){
-                return locacao.getValorTotal();
-            }
-        }
-        return 0;
+    public float valorTotalLocacao(int codigo){
+        return armazenamento.valorTotalLocacao(codigo);
     }
     
-    public boolean controlador_locacao_possui_seguro(int codigo){
-        for (Locacao locacao: armazenamento.getLocacoes()){
-            if(locacao.getCodigoLocacao() == codigo){
-                return locacao.possuiSeguro();
-            }
-        }
-        return false;
+    public boolean verificarSeguroLocacao(int codigo){
+        return armazenamento.verificarSeguroLocacao(codigo);
     }
     
-    public boolean controlador_locacao_verificar_atraso(int codigo){
-        for (Locacao locacao: armazenamento.getLocacoes()){
-            if(locacao.getCodigoLocacao() == codigo){
-                return locacao.verificarAtraso();
-            }
-        }
-        return false;
+    public boolean verificarAtrasoLocacao(int codigo){
+        return armazenamento.verificarAtrasoLocacao(codigo);
     }
     
-    public String controlador_locacao_dados_locacao(int codigo){ 
-        for (Locacao locacao: armazenamento.getLocacoes()){
-            if(locacao.getCodigoLocacao() == codigo){
-                return locacao.toString();
-            }
-        }
-        return "";
+    public String dadosLocacao(int codigo){ 
+        return armazenamento.dadosLocacao(codigo);
+    }
+    
+    public boolean verificarVeiculoAlugado(int codigo){
+        return armazenamento.verificarVeiculoAlugado(codigo);
+    }
+    
+    public String dadosVeiculo(int codigo){
+        return armazenamento.dadosVeiculo(codigo);
     }
      
-    public boolean controle_veiculo_alugado(int codigo){
-        for (Veiculo veiculo: armazenamento.getVeiculos()){
-            if(veiculo.getCodigoVeiculo() == codigo){
-                return veiculo.isAlugado();
-            }
-        }
-        return false;
-    }
-     
-    public void controle_veiculo_alugar(Veiculo veiculo){
-       veiculo.alugar();
+    public void alugarVeiculo(int codigo){
+       armazenamento.alugarVeiculo(codigo);
     }
     
-    public void controle_veiculo_devolver(Veiculo veiculo){
-       veiculo.devolver();
+    public void devolverVeiculo(int codigo){
+       armazenamento.devolverVeiculo(codigo);
     }
     
-    public String controle_veiculo_dados_veiculo(int codigo){
-        for (Veiculo veiculo: armazenamento.getVeiculos()){
-            if(veiculo.getCodigoVeiculo() == codigo){
-                return veiculo.toString();
-            } 
-        }
-        return "";
+    public String dadosCliente(int codigo){
+        return armazenamento.dadosCliente(codigo);
     }
     
-    public float controle_veiculo_calcular_diaria(int codigo){
-        for(Veiculo veiculo: armazenamento.getVeiculos()){
-            if(veiculo.getCodigoVeiculo() == codigo){
-                return veiculo.calcularValorDiaria();
-            }
-        }
-        return 0;
-    }
-    
-     public String controle_usuarios_dados_cliente(String codigo){
-        for (Usuario cliente: armazenamento.getClientes()){
-            if(cliente.getCPF().equals(codigo)){
-                return cliente.toString();
-            } 
-        }
-        return "";
+    public float valorDiariaVeiculo(int codigo){
+        return armazenamento.valorDiariaVeiculo(codigo);
     }
      
     public String dadosFuncionarios(String codigo){
-        for (Usuario funcionario: armazenamento.getFuncionarios()){
-            if(funcionario.getCPF().equals(codigo)){
-                return funcionario.toString();
-            }
-        }
-        return "";
+        return armazenamento.dadosFuncionarios(codigo);
     }
     
     public String dadosSeguro(int codigo){
-        for (Seguro seguro: armazenamento.getSeguros()){
-            if(seguro.getCodigoSeguro() == codigo){
-                return seguro.toString();      
-            }
-        }
-        return "";   
+        return armazenamento.dadosSeguro(codigo);   
     }
     
     public void salvarClientes(){
@@ -249,6 +181,26 @@ public class Controle implements Serializable{
     
     public void salvarLocacoes(){
         armazenamento.salvarLocacoes();
+    }
+    
+    public void setArquivoLocacoes(String path){
+        armazenamento.setArquivoLocacoes(path);
+    }
+    
+    public void setArquivoVeiculos(String path){
+        armazenamento.setArquivoVeiculos(path);
+    }
+    
+    public void setArquivoClientes(String path){
+        armazenamento.setArquivoClientes(path);
+    }
+    
+    public void setArquivoFuncionarios(String path){
+        armazenamento.setArquivoFuncionarios(path);
+    }
+    
+    public void setArquivoSeguros(String path){
+        armazenamento.setArquivoSeguros(path);
     }
 }
     

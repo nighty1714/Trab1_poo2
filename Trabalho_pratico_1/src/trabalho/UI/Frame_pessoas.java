@@ -143,9 +143,9 @@ public class Frame_pessoas extends javax.swing.JFrame {
                             .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(button_clientes_cadastrados)
-                        .addGap(18, 18, 18)
+                        .addGap(30, 30, 30)
                         .addComponent(button_historico_locacao)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addComponent(text_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,27 +175,19 @@ public class Frame_pessoas extends javax.swing.JFrame {
     }//GEN-LAST:event_button_clientes_cadastradosActionPerformed
 
     private void button_locacoes_atrasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_locacoes_atrasadasActionPerformed
-        String clientes = "";
-        for(Usuario cliente: controle.clientesAtrasados()){
-            clientes += cliente.toString();
-        }
+        String clientes = controle.clientesAtrasados();
         textPessoas.setText(clientes);
     }//GEN-LAST:event_button_locacoes_atrasadasActionPerformed
 
     private void button_funcionario_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_funcionario_mesActionPerformed
-      
-        int data_ano = Integer.parseInt(ano.getText());
-        
-        int data_mes = Integer.parseInt(Mes.getText());
-        
-        controle.funcionarioDoMes(data_mes, data_ano);
-            
+        int dataAno = Integer.parseInt(ano.getText());
+        int dataMes = Integer.parseInt(Mes.getText());
+        textPessoas.setText(controle.funcionarioDoMes(dataMes, dataAno));
     }//GEN-LAST:event_button_funcionario_mesActionPerformed
 
     private void button_historico_locacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_historico_locacaoActionPerformed
-        
-        String nome_cliente = text_cliente.getText();
-        
+        int codigoCliente = Integer.parseInt(text_cliente.getText());
+        textPessoas.setText(controle.locacoesDoUsuario(codigoCliente));
     }//GEN-LAST:event_button_historico_locacaoActionPerformed
 
     /**

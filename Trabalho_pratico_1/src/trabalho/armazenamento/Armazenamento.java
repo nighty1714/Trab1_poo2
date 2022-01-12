@@ -161,9 +161,9 @@ public class Armazenamento {
         }
     }
     
-    public ArrayList<Usuario> clientesAtrasados(){
+    public String clientesAtrasados(){
         ArrayList<Integer> listaAtrasos = new ArrayList();
-        ArrayList<Usuario> listaClientes = new ArrayList();
+        String listaClientes = "";
         for(Locacao locacao: locacoes){
             if(locacao.verificarAtraso()){
                 int codigo = locacao.getCodigoCliente();
@@ -171,7 +171,7 @@ public class Armazenamento {
                     listaAtrasos.add(codigo);
                     for(Usuario cliente: clientes){
                         if(cliente.getCodigoUsuario() == codigo){
-                            listaClientes.add(cliente);
+                            listaClientes += cliente.toString();
                         }
                     }
                 }
@@ -180,7 +180,7 @@ public class Armazenamento {
         return listaClientes;
     }
     
-    public Usuario funcionarioDoMes(int mes, int ano){
+    public String funcionarioDoMes(int mes, int ano){
         Map map = new HashMap();
         for(Usuario funcionario: funcionarios){
             map.put(funcionario.getCodigoUsuario(), (int) 0);
@@ -197,7 +197,8 @@ public class Armazenamento {
                 funcionarioDoMes = funcionario;
             }
         }
-        return funcionarioDoMes;
+        String funcionario = funcionarioDoMes.toString();
+        return funcionario;
     }
     
     public ArrayList<Locacao> locacoesDoMes(int mes, int ano){
@@ -213,14 +214,135 @@ public class Armazenamento {
         return listaLocacoes;
     }
     
-    public ArrayList<Veiculo> veiculosDoUsuario(int codigo){
-        ArrayList<Veiculo> listaVeiculos = new ArrayList();
+    public String veiculosDoUsuario(int codigo){
+        String listaVeiculos = "";
         for(Locacao locacao: locacoes){
             if(locacao.getCodigoCliente() == codigo){
-                listaVeiculos.add(locacao.getVeiculo());
+                listaVeiculos += locacao.toString();
             }
         }
         return listaVeiculos;
+    }
+    
+    public String locacoesDoUsuario(int codigo){
+        String listaLocacao = "";
+        for(Locacao locacao: locacoes){
+            if(locacao.getCodigoCliente() == codigo){
+                listaLocacao += locacao.toString();
+            }
+        }
+        return listaLocacao;
+    }
+    
+    public float valorTotalLocacao(int codigo){
+        for (Locacao locacao: locacoes){
+            if(locacao.getCodigoLocacao() == codigo){
+                return locacao.getValorTotal();
+            }
+        }
+        return 0;
+    }
+    
+    public boolean verificarSeguroLocacao(int codigo){
+        for (Locacao locacao: locacoes){
+            if(locacao.getCodigoLocacao() == codigo){
+                return locacao.possuiSeguro();
+            }
+        }
+        return false;
+    }
+    
+    public boolean verificarAtrasoLocacao(int codigo){
+        for (Locacao locacao: locacoes){
+            if(locacao.getCodigoLocacao() == codigo){
+                return locacao.verificarAtraso();
+            }
+        }
+        return false;
+    }
+    
+    
+    public String dadosLocacao(int codigo){ 
+        for (Locacao locacao: locacoes){
+            if(locacao.getCodigoLocacao() == codigo){
+                return locacao.toString();
+            }
+        }
+        return "";
+    }
+    
+    public boolean verificarVeiculoAlugado(int codigo){
+        for (Veiculo veiculo: veiculos){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo.isAlugado();
+            }
+        }
+        return false;
+    }
+    
+    public void alugarVeiculo(int codigo){
+        for (Veiculo veiculo: veiculos){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                veiculo.setAlugado(true);
+                return;
+            }
+        }
+    }
+    
+    public void devolverVeiculo(int codigo){
+        for (Veiculo veiculo: veiculos){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                veiculo.setAlugado(false);
+                return;
+            }
+        }
+    }
+    
+    public String dadosVeiculo(int codigo){
+        for(Veiculo veiculo: veiculos){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo.toString();
+            } 
+        }
+        return "";
+    }
+    
+    public String dadosCliente(int codigo){
+        for (Usuario cliente: clientes){
+            if(cliente.getCodigoUsuario() == codigo){
+                return cliente.toString();
+            } 
+        }
+        return "";
+    }
+    
+    
+    public float valorDiariaVeiculo(int codigo){
+        for(Veiculo veiculo: veiculos){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo.calcularValorDiaria();
+            }
+        }
+        return 0;
+    }
+    
+    public String dadosFuncionarios(String codigo){
+        for (Usuario funcionario: funcionarios){
+            if(funcionario.getCPF().equals(codigo)){
+                return funcionario.toString();
+            }
+        }
+        return "";
+    }
+    
+    
+    public String dadosSeguro(int codigo){
+        for (Seguro seguro: seguros){
+            if(seguro.getCodigoSeguro() == codigo){
+                return seguro.toString();      
+            }
+        }
+        return "";   
     }
     
     public void salvarLocacoes(){
