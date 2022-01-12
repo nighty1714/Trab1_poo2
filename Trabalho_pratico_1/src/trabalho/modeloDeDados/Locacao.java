@@ -31,7 +31,7 @@ public class Locacao {
         this.veiculo = veiculo;
     }
 
-    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, Calendar dataLocacao, Calendar dataDevolucao, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
+    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, ArrayList<Seguro> segurosContratados,Calendar dataLocacao, Calendar dataDevolucao, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
         this.codigoLocacao = codigoLocacao;
         this.codigoCliente = codigoCliente;
         this.codigoFuncionario = codigoFuncionario;
@@ -39,7 +39,7 @@ public class Locacao {
         this.dataDevolucao = dataDevolucao;
         this.valorTotal = calcularValorTotal();
         this.formaPagamento = formaPagamento;
-        this.segurosContratados = new ArrayList();
+        this.segurosContratados = segurosContratados;
         this.finalizada = finalizada;
         this.veiculo = veiculo;
     }
