@@ -5,6 +5,8 @@
  */
 package trabalho.modeloDeDados;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Nozawa

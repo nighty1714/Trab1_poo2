@@ -5,14 +5,13 @@
  */
 package trabalho.modeloDeDados;
 import trabalho.armazenamento.Armazenamento;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 /**
  *
  * @author Nozawa
  */
-public class Controle implements Serializable{
+public class Controle{
     private Armazenamento armazenamento;
     
     public ArrayList<Locacao> getLocacoes() {

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package trabalho.modeloDeDados;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author Nozawa
  */
-public class Locacao {
+public class Locacao implements Serializable{
     private int codigoLocacao;
     private int codigoCliente;
     private int codigoFuncionario;
@@ -31,17 +32,17 @@ public class Locacao {
         this.veiculo = veiculo;
     }
 
-    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, ArrayList<Seguro> segurosContratados,Calendar dataLocacao, Calendar dataDevolucao, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
+    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, ArrayList<Seguro> segurosContratados, Calendar dataLocacao, Calendar dataDevolucao, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
         this.codigoLocacao = codigoLocacao;
         this.codigoCliente = codigoCliente;
         this.codigoFuncionario = codigoFuncionario;
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
-        this.valorTotal = calcularValorTotal();
         this.formaPagamento = formaPagamento;
         this.segurosContratados = segurosContratados;
         this.finalizada = finalizada;
         this.veiculo = veiculo;
+        this.valorTotal = calcularValorTotal();
     }
 
     public int getCodigoLocacao() {
@@ -130,7 +131,7 @@ public class Locacao {
     }
     
     public boolean possuiSeguro(){
-        if(segurosContratados.size() < 1)
+        if(segurosContratados != null)
             return false;
         else
             return true;

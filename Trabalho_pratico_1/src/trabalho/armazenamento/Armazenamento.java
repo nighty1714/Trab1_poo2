@@ -46,6 +46,7 @@ public class Armazenamento {
         this.funcionarios = new ArrayList();
         this.seguros = new ArrayList();
         this.configuracoes = new Configuracao();
+        salvarConfiguracoes("./conf.data");
     }
     
     public static Armazenamento getInstance() {
