@@ -143,36 +143,33 @@ public class Armazenamento {
     public void adicionarVeiculo(Veiculo veiculo){
         for(Veiculo antigoVeiculo: veiculos){
             //verifica se o veiculo ja esta na lista
-            if(antigoVeiculo.getCodigoVeiculo() != veiculo.getCodigoVeiculo()){
-                this.veiculos.add(veiculo);
+            if(antigoVeiculo.getCodigoVeiculo() == veiculo.getCodigoVeiculo()){
+                return;
             }
         }
+        this.veiculos.add(veiculo);
     }
     
     public void adicionarLocacao(Locacao locacao){
-        for(Locacao antigaLocacao: locacoes){
-            //verifica se a locacao ja existe
-            if(antigaLocacao.getCodigoLocacao() != locacao.getCodigoLocacao()){
-                Veiculo veiculo = locacao.getVeiculo();
-                //se a locacao nao estiver finalizada, verifica se o carro nao esta alugado
-                if(!locacao.isFinalizada()){
-                    if(!veiculo.isAlugado()){
-                        alugarVeiculo(veiculo.getCodigoVeiculo());
-                        this.locacoes.add(locacao);
-                    }
-                }else{
-                    this.locacoes.add(locacao);
-                }
+        if(locacao.isFinalizada()){
+            this.locacoes.add(locacao);
+        }else{
+            Veiculo veiculo = locacao.getVeiculo();
+            if(veiculo.isAlugado()){
+                return;
             }
+            alugarVeiculo(veiculo.getCodigoVeiculo());
+            this.locacoes.add(locacao);
         }
     }
     
     public void adicionarSeguro(Seguro seguro){
         for(Seguro antigoSeguro: seguros){
-            if(antigoSeguro.getCodigoSeguro() != seguro.getCodigoSeguro()){
-                this.seguros.add(seguro);
+            if(antigoSeguro.getCodigoSeguro() == seguro.getCodigoSeguro()){
+                return;
             }
         }
+        this.seguros.add(seguro);
     }
     
     public String locacoesAtrasadas(){

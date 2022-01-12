@@ -232,11 +232,13 @@ public class FrameCadastroVeiculo extends javax.swing.JFrame {
         String categoria = CadastroVeiculoCacionalCategoria.getText();
         String placa = CadastroVeiculoNacionalPlaca.getText();
         float fipe = Float.parseFloat( CadastroVeiculoNacionalFipe.getText());
-        float impostoEstadual = Float.parseFloat(CadastroVeiculoNacionalImpostoEstadual.getText());
-        float lucro = Float.parseFloat(TextFieldLucro.getText());
+        float impostoEstadual = Float.parseFloat(CadastroVeiculoNacionalImpostoEstadual.getText())/100.0f;
+        float lucro = Float.parseFloat(TextFieldLucro.getText())/100.0f;
         VeiculoNacional teste = new VeiculoNacional(impostoEstadual, codigo, modelo, montadora, anoFab, placa, categoria, fipe, alugado, lucro);
         controleVeiculo.adicionarVeiculo(teste);
         controleVeiculo.salvarVeiculos();
+        System.out.println("Teste");
+        System.out.println(controleVeiculo.dadosTodosVeiculos());
     }//GEN-LAST:event_btnCadastroVeiculoNacionalActionPerformed
 
     private void btnVeiculoInternacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeiculoInternacionalActionPerformed
@@ -256,6 +258,8 @@ public class FrameCadastroVeiculo extends javax.swing.JFrame {
         VeiculoImportado teste = new VeiculoImportado(ImpostoFederal, impostoEstadual, codigo, modelo, montadora, anoFab, placa, categoria, fipe, alugado, lucro);
         controleVeiculo.adicionarVeiculo(teste);
         controleVeiculo.salvarVeiculos();
+        System.out.println("Teste");
+        System.out.println(controleVeiculo.dadosTodosVeiculos());
     }//GEN-LAST:event_btnVeiculoInternacionalActionPerformed
 
     /**
