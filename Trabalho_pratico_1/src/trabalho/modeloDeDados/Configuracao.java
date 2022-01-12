@@ -19,11 +19,11 @@ public class Configuracao implements Serializable{
     private String arquivoSeguros;
     
     public Configuracao() {
-        this.arquivoLocacoes = "";
-        this.arquivoVeiculos = "";
-        this.arquivoClientes = "";
-        this.arquivoFuncionarios = "";
-        this.arquivoSeguros = "";
+        this.arquivoLocacoes = "./locacoes.data";
+        this.arquivoVeiculos = "./veiculos.data";
+        this.arquivoClientes = "./clientes.data";
+        this.arquivoFuncionarios = "./funcionarios.data";
+        this.arquivoSeguros = "./seguros.data";
     }
 
     public Configuracao(String arquivoLocacoes, String arquivoVeiculos, String arquivoClientes, String arquivoFuncionarios, String arquivoSeguros) {
