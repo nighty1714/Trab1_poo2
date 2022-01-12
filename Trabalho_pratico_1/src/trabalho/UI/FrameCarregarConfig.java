@@ -30,7 +30,7 @@ public class FrameCarregarConfig extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        caminho = new javax.swing.JTextField();
+        textCaminho = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Carregar = new javax.swing.JButton();
 
@@ -56,10 +56,10 @@ public class FrameCarregarConfig extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addContainerGap()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(caminho))
+                        .addGap(31, 31, 31)
+                        .addComponent(textCaminho))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -74,7 +74,7 @@ public class FrameCarregarConfig extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(caminho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textCaminho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Carregar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -84,8 +84,8 @@ public class FrameCarregarConfig extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarregarActionPerformed
-        String caminho_salvo = caminho.getText();
-        controle.carregar(caminho_salvo);
+        String caminho = textCaminho.getText();
+        controle.carregar(caminho);
     }//GEN-LAST:event_CarregarActionPerformed
 
     /**
@@ -126,8 +126,8 @@ public class FrameCarregarConfig extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Carregar;
-    private javax.swing.JTextField caminho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField textCaminho;
     // End of variables declaration//GEN-END:variables
 }
