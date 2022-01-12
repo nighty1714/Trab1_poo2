@@ -13,12 +13,12 @@ import trabalho.modeloDeDados.VeiculoImportado;
  *
  * @author gabri
  */
-public class Frame_veiculos extends javax.swing.JFrame {
+public class FrameVeiculos extends javax.swing.JFrame {
     Controle controle = new Controle();
     /**
      * Creates new form Frame_veiculos_cadastrados
      */
-    public Frame_veiculos() {
+    public FrameVeiculos() {
         initComponents();
     }
 
@@ -32,72 +32,72 @@ public class Frame_veiculos extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
-        Veiculos_cadastrados_buttom = new javax.swing.JButton();
+        VeiculosCadastradosButtom = new javax.swing.JButton();
         textVeiculos = new javax.swing.JTextField();
-        Veiculos_button_veiculos_disponiveis = new javax.swing.JButton();
-        Veiculos_button_nacionais = new javax.swing.JButton();
-        Veiculos_button_internacionais = new javax.swing.JButton();
-        Veiculos_button_veiculos_alocados = new javax.swing.JButton();
-        Veiculos_button_atraso = new javax.swing.JButton();
-        Veiculos_button_veiculos_cliente = new javax.swing.JButton();
-        Text_field_nome_cliente = new javax.swing.JTextField();
+        VeiculosButtonVeiculosDisponiveis = new javax.swing.JButton();
+        VeiculosButtonNacionais = new javax.swing.JButton();
+        VeiculosButtonInternacionais = new javax.swing.JButton();
+        VeiculosButtonVeiculosAlocados = new javax.swing.JButton();
+        VeiculosButtonAtraso = new javax.swing.JButton();
+        VeiculosButtonVeiculosCliente = new javax.swing.JButton();
+        TextFieldNomeCliente = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Veiculos cadastrados");
 
-        Veiculos_cadastrados_buttom.setText("Verificar veículos cadastrados");
-        Veiculos_cadastrados_buttom.addActionListener(new java.awt.event.ActionListener() {
+        VeiculosCadastradosButtom.setText("Verificar veículos cadastrados");
+        VeiculosCadastradosButtom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Veiculos_cadastrados_buttomActionPerformed(evt);
+                VeiculosCadastradosButtomActionPerformed(evt);
             }
         });
 
-        Veiculos_button_veiculos_disponiveis.setText("Verificar veículos disponíveis para locação");
-        Veiculos_button_veiculos_disponiveis.addActionListener(new java.awt.event.ActionListener() {
+        VeiculosButtonVeiculosDisponiveis.setText("Verificar veículos disponíveis para locação");
+        VeiculosButtonVeiculosDisponiveis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Veiculos_button_veiculos_disponiveisActionPerformed(evt);
+                VeiculosButtonVeiculosDisponiveisActionPerformed(evt);
             }
         });
 
-        Veiculos_button_nacionais.setText("Verificar veículos nacionais");
-        Veiculos_button_nacionais.addActionListener(new java.awt.event.ActionListener() {
+        VeiculosButtonNacionais.setText("Verificar veículos nacionais");
+        VeiculosButtonNacionais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Veiculos_button_nacionaisActionPerformed(evt);
+                VeiculosButtonNacionaisActionPerformed(evt);
             }
         });
 
-        Veiculos_button_internacionais.setText("Verificar veículos internacionais");
-        Veiculos_button_internacionais.addActionListener(new java.awt.event.ActionListener() {
+        VeiculosButtonInternacionais.setText("Verificar veículos internacionais");
+        VeiculosButtonInternacionais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Veiculos_button_internacionaisActionPerformed(evt);
+                VeiculosButtonInternacionaisActionPerformed(evt);
             }
         });
 
-        Veiculos_button_veiculos_alocados.setText("Verificar veículos já alocados");
-        Veiculos_button_veiculos_alocados.addActionListener(new java.awt.event.ActionListener() {
+        VeiculosButtonVeiculosAlocados.setText("Verificar veículos já alocados");
+        VeiculosButtonVeiculosAlocados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Veiculos_button_veiculos_alocadosActionPerformed(evt);
+                VeiculosButtonVeiculosAlocadosActionPerformed(evt);
             }
         });
 
-        Veiculos_button_atraso.setText("Verificar veículos em atraso");
-        Veiculos_button_atraso.addActionListener(new java.awt.event.ActionListener() {
+        VeiculosButtonAtraso.setText("Verificar veículos em atraso");
+        VeiculosButtonAtraso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Veiculos_button_atrasoActionPerformed(evt);
+                VeiculosButtonAtrasoActionPerformed(evt);
             }
         });
 
-        Veiculos_button_veiculos_cliente.setText("Verificar veículos de um cliente");
-        Veiculos_button_veiculos_cliente.addActionListener(new java.awt.event.ActionListener() {
+        VeiculosButtonVeiculosCliente.setText("Verificar veículos de um cliente");
+        VeiculosButtonVeiculosCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Veiculos_button_veiculos_clienteActionPerformed(evt);
+                VeiculosButtonVeiculosClienteActionPerformed(evt);
             }
         });
 
-        Text_field_nome_cliente.addActionListener(new java.awt.event.ActionListener() {
+        TextFieldNomeCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Text_field_nome_clienteActionPerformed(evt);
+                TextFieldNomeClienteActionPerformed(evt);
             }
         });
 
@@ -114,19 +114,19 @@ public class Frame_veiculos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Veiculos_button_veiculos_disponiveis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Veiculos_cadastrados_buttom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Veiculos_button_nacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Veiculos_button_internacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Veiculos_button_veiculos_alocados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Veiculos_button_atraso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Veiculos_button_veiculos_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(VeiculosButtonVeiculosDisponiveis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VeiculosCadastradosButtom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VeiculosButtonNacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VeiculosButtonInternacionais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VeiculosButtonVeiculosAlocados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VeiculosButtonAtraso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(VeiculosButtonVeiculosCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(12, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Text_field_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(41, 41, 41))))
         );
         layout.setVerticalGroup(
@@ -136,30 +136,30 @@ public class Frame_veiculos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(textVeiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Veiculos_cadastrados_buttom)
+                        .addComponent(VeiculosCadastradosButtom)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Veiculos_button_veiculos_disponiveis)
+                        .addComponent(VeiculosButtonVeiculosDisponiveis)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Veiculos_button_nacionais)
+                        .addComponent(VeiculosButtonNacionais)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Veiculos_button_internacionais)
+                        .addComponent(VeiculosButtonInternacionais)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Veiculos_button_veiculos_alocados)
+                        .addComponent(VeiculosButtonVeiculosAlocados)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Veiculos_button_atraso)
+                        .addComponent(VeiculosButtonAtraso)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Text_field_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
                         .addGap(13, 13, 13)
-                        .addComponent(Veiculos_button_veiculos_cliente)))
+                        .addComponent(VeiculosButtonVeiculosCliente)))
                 .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Veiculos_button_veiculos_disponiveisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_button_veiculos_disponiveisActionPerformed
+    private void VeiculosButtonVeiculosDisponiveisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiculosButtonVeiculosDisponiveisActionPerformed
         String veiculos = "";
         for(Veiculo veiculo: controle.getVeiculos()){
             if(!veiculo.isAlugado()){
@@ -167,17 +167,17 @@ public class Frame_veiculos extends javax.swing.JFrame {
             }
         }
         textVeiculos.setText(veiculos);
-    }//GEN-LAST:event_Veiculos_button_veiculos_disponiveisActionPerformed
+    }//GEN-LAST:event_VeiculosButtonVeiculosDisponiveisActionPerformed
 
-    private void Veiculos_cadastrados_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_cadastrados_buttomActionPerformed
+    private void VeiculosCadastradosButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiculosCadastradosButtomActionPerformed
         String veiculos = "";
         for(Veiculo veiculo: controle.getVeiculos()){
             veiculos += veiculo.toString();
         }
         textVeiculos.setText(veiculos);
-    }//GEN-LAST:event_Veiculos_cadastrados_buttomActionPerformed
+    }//GEN-LAST:event_VeiculosCadastradosButtomActionPerformed
 
-    private void Veiculos_button_nacionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_button_nacionaisActionPerformed
+    private void VeiculosButtonNacionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiculosButtonNacionaisActionPerformed
         String veiculos = "";
         for(Veiculo veiculo: controle.getVeiculos()){
             if(veiculo instanceof VeiculoNacional){
@@ -185,9 +185,9 @@ public class Frame_veiculos extends javax.swing.JFrame {
             }
         }
         textVeiculos.setText(veiculos);
-    }//GEN-LAST:event_Veiculos_button_nacionaisActionPerformed
+    }//GEN-LAST:event_VeiculosButtonNacionaisActionPerformed
 
-    private void Veiculos_button_internacionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_button_internacionaisActionPerformed
+    private void VeiculosButtonInternacionaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiculosButtonInternacionaisActionPerformed
         String veiculos = "";
         for(Veiculo veiculo: controle.getVeiculos()){
             if(veiculo instanceof VeiculoImportado){
@@ -195,9 +195,9 @@ public class Frame_veiculos extends javax.swing.JFrame {
             }
         }
         textVeiculos.setText(veiculos);
-    }//GEN-LAST:event_Veiculos_button_internacionaisActionPerformed
+    }//GEN-LAST:event_VeiculosButtonInternacionaisActionPerformed
 
-    private void Veiculos_button_veiculos_alocadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_button_veiculos_alocadosActionPerformed
+    private void VeiculosButtonVeiculosAlocadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiculosButtonVeiculosAlocadosActionPerformed
         String veiculos = "";
         for(Veiculo veiculo: controle.getVeiculos()){
             if(veiculo.isAlugado()){
@@ -205,9 +205,9 @@ public class Frame_veiculos extends javax.swing.JFrame {
             }
         }
         textVeiculos.setText(veiculos);
-    }//GEN-LAST:event_Veiculos_button_veiculos_alocadosActionPerformed
+    }//GEN-LAST:event_VeiculosButtonVeiculosAlocadosActionPerformed
 
-    private void Veiculos_button_atrasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_button_atrasoActionPerformed
+    private void VeiculosButtonAtrasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiculosButtonAtrasoActionPerformed
         String veiculos = "";
         for(Locacao locacao: controle.getLocacoes()){
             if(!locacao.isFinalizada()){
@@ -217,17 +217,17 @@ public class Frame_veiculos extends javax.swing.JFrame {
             }
         }
         textVeiculos.setText(veiculos);
-    }//GEN-LAST:event_Veiculos_button_atrasoActionPerformed
+    }//GEN-LAST:event_VeiculosButtonAtrasoActionPerformed
 
-    private void Veiculos_button_veiculos_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Veiculos_button_veiculos_clienteActionPerformed
+    private void VeiculosButtonVeiculosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiculosButtonVeiculosClienteActionPerformed
         
-        String nome = Text_field_nome_cliente.getText();
+        String nome = TextFieldNomeCliente.getText();
                 
-    }//GEN-LAST:event_Veiculos_button_veiculos_clienteActionPerformed
+    }//GEN-LAST:event_VeiculosButtonVeiculosClienteActionPerformed
 
-    private void Text_field_nome_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_field_nome_clienteActionPerformed
+    private void TextFieldNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldNomeClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Text_field_nome_clienteActionPerformed
+    }//GEN-LAST:event_TextFieldNomeClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,34 +246,36 @@ public class Frame_veiculos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_veiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_veiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_veiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_veiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameVeiculos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_veiculos().setVisible(true);
+                new FrameVeiculos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Text_field_nome_cliente;
-    private javax.swing.JButton Veiculos_button_atraso;
-    private javax.swing.JButton Veiculos_button_internacionais;
-    private javax.swing.JButton Veiculos_button_nacionais;
-    private javax.swing.JButton Veiculos_button_veiculos_alocados;
-    private javax.swing.JButton Veiculos_button_veiculos_cliente;
-    private javax.swing.JButton Veiculos_button_veiculos_disponiveis;
-    private javax.swing.JButton Veiculos_cadastrados_buttom;
+    private javax.swing.JTextField TextFieldNomeCliente;
+    private javax.swing.JButton VeiculosButtonAtraso;
+    private javax.swing.JButton VeiculosButtonInternacionais;
+    private javax.swing.JButton VeiculosButtonNacionais;
+    private javax.swing.JButton VeiculosButtonVeiculosAlocados;
+    private javax.swing.JButton VeiculosButtonVeiculosCliente;
+    private javax.swing.JButton VeiculosButtonVeiculosDisponiveis;
+    private javax.swing.JButton VeiculosCadastradosButtom;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField textVeiculos;

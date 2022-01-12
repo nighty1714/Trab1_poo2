@@ -4,53 +4,53 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="MenuVeiculos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_verificar_veiculos">
+            <MenuItem class="javax.swing.JMenuItem" name="menuVerificarVeiculos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Verificar ve&#xed;culos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_verificar_veiculosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuVerificarVeiculosActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_veiculos">
+            <MenuItem class="javax.swing.JMenuItem" name="menuCadastrarVeiculos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastrar ve&#xed;culos"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_cadastrar_veiculosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuCadastrarVeiculosActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="MenuPessoas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pessoas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_verificar_usuarios">
+            <MenuItem class="javax.swing.JMenuItem" name="menuVerificarUsuarios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Verificar usu&#xe1;rios"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_verificar_usuariosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuVerificarUsuariosActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menu_cadastrar_usuarios">
+            <MenuItem class="javax.swing.JMenuItem" name="menuCadastrarUsuarios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cadastrar usu&#xe1;rio"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_cadastrar_usuariosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuCadastrarUsuariosActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
+        <Menu class="javax.swing.JMenu" name="MenuLocacoes">
           <Properties>
             <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
           </Properties>
@@ -73,28 +73,28 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="Menu_config">
+        <Menu class="javax.swing.JMenu" name="MenuConfig">
           <Properties>
             <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Menu_configActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuConfigActionPerformed"/>
           </Events>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuSalvarConfig">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salvar configura&#xe7;&#xe3;o"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuSalvarConfigActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuCarregaConfig">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Carregar configura&#xe7;&#xe3;o"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuCarregaConfigActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

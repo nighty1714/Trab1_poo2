@@ -12,12 +12,12 @@ import trabalho.modeloDeDados.Usuario;
  *
  * @author gabri
  */
-public class Frame_pessoas extends javax.swing.JFrame {
+public class FramePessoas extends javax.swing.JFrame {
     Controle controle = new Controle();
     /**
      * Creates new form Frame_pessoas
      */
-    public Frame_pessoas() {
+    public FramePessoas() {
         initComponents();
     }
 
@@ -33,16 +33,16 @@ public class Frame_pessoas extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         textPessoas = new javax.swing.JTextField();
-        Button_listar_funcionarios = new javax.swing.JButton();
-        button_funcionario_mes = new javax.swing.JButton();
-        button_clientes_cadastrados = new javax.swing.JButton();
-        button_historico_locacao = new javax.swing.JButton();
-        button_locacoes_atrasadas = new javax.swing.JButton();
+        ButtonListarFuncionarios = new javax.swing.JButton();
+        buttonFuncionarioMes = new javax.swing.JButton();
+        buttonClientesCadastrados = new javax.swing.JButton();
+        buttonHistoricoLocacao = new javax.swing.JButton();
+        buttonLocacoesAtrasadas = new javax.swing.JButton();
         Mes = new javax.swing.JTextField();
         ano = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        text_cliente = new javax.swing.JTextField();
+        textCliente = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
@@ -52,38 +52,38 @@ public class Frame_pessoas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Pessoas");
 
-        Button_listar_funcionarios.setText("Listar todos funcionários");
-        Button_listar_funcionarios.addActionListener(new java.awt.event.ActionListener() {
+        ButtonListarFuncionarios.setText("Listar todos funcionários");
+        ButtonListarFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_listar_funcionariosActionPerformed(evt);
+                ButtonListarFuncionariosActionPerformed(evt);
             }
         });
 
-        button_funcionario_mes.setText("Funcionário do mês");
-        button_funcionario_mes.addActionListener(new java.awt.event.ActionListener() {
+        buttonFuncionarioMes.setText("Funcionário do mês");
+        buttonFuncionarioMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_funcionario_mesActionPerformed(evt);
+                buttonFuncionarioMesActionPerformed(evt);
             }
         });
 
-        button_clientes_cadastrados.setText("Clientes cadastrados");
-        button_clientes_cadastrados.addActionListener(new java.awt.event.ActionListener() {
+        buttonClientesCadastrados.setText("Clientes cadastrados");
+        buttonClientesCadastrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_clientes_cadastradosActionPerformed(evt);
+                buttonClientesCadastradosActionPerformed(evt);
             }
         });
 
-        button_historico_locacao.setText("Histórico de locação de um cliente");
-        button_historico_locacao.addActionListener(new java.awt.event.ActionListener() {
+        buttonHistoricoLocacao.setText("Histórico de locação de um cliente");
+        buttonHistoricoLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_historico_locacaoActionPerformed(evt);
+                buttonHistoricoLocacaoActionPerformed(evt);
             }
         });
 
-        button_locacoes_atrasadas.setText("Clientes com locações atrasadas");
-        button_locacoes_atrasadas.addActionListener(new java.awt.event.ActionListener() {
+        buttonLocacoesAtrasadas.setText("Clientes com locações atrasadas");
+        buttonLocacoesAtrasadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_locacoes_atrasadasActionPerformed(evt);
+                buttonLocacoesAtrasadasActionPerformed(evt);
             }
         });
 
@@ -104,11 +104,11 @@ public class Frame_pessoas extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Button_listar_funcionarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button_funcionario_mes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button_clientes_cadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button_historico_locacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button_locacoes_atrasadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonListarFuncionarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonFuncionarioMes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonClientesCadastrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonHistoricoLocacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(buttonLocacoesAtrasadas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -117,7 +117,7 @@ public class Frame_pessoas extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(text_cliente)))
+                            .addComponent(textCliente)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addComponent(jLabel3)))
@@ -130,9 +130,9 @@ public class Frame_pessoas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textPessoas)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Button_listar_funcionarios)
+                        .addComponent(ButtonListarFuncionarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(button_funcionario_mes)
+                        .addComponent(buttonFuncionarioMes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -142,53 +142,53 @@ public class Frame_pessoas extends javax.swing.JFrame {
                             .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(button_clientes_cadastrados)
+                        .addComponent(buttonClientesCadastrados)
                         .addGap(30, 30, 30)
-                        .addComponent(button_historico_locacao)
+                        .addComponent(buttonHistoricoLocacao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                        .addComponent(text_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(button_locacoes_atrasadas)))
+                        .addComponent(buttonLocacoesAtrasadas)))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Button_listar_funcionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_listar_funcionariosActionPerformed
+    private void ButtonListarFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListarFuncionariosActionPerformed
         String funcionarios = "";
         for(Usuario funcionario: controle.getFuncionarios()){
             funcionarios += funcionario.toString();
         }
         System.out.print(funcionarios);
         textPessoas.setText(funcionarios);
-    }//GEN-LAST:event_Button_listar_funcionariosActionPerformed
+    }//GEN-LAST:event_ButtonListarFuncionariosActionPerformed
 
-    private void button_clientes_cadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_clientes_cadastradosActionPerformed
+    private void buttonClientesCadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClientesCadastradosActionPerformed
         String clientes = "";
         for(Usuario cliente: controle.getClientes()){
             clientes += cliente.toString();
         }
         textPessoas.setText(clientes);
-    }//GEN-LAST:event_button_clientes_cadastradosActionPerformed
+    }//GEN-LAST:event_buttonClientesCadastradosActionPerformed
 
-    private void button_locacoes_atrasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_locacoes_atrasadasActionPerformed
+    private void buttonLocacoesAtrasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLocacoesAtrasadasActionPerformed
         String clientes = controle.clientesAtrasados();
         textPessoas.setText(clientes);
-    }//GEN-LAST:event_button_locacoes_atrasadasActionPerformed
+    }//GEN-LAST:event_buttonLocacoesAtrasadasActionPerformed
 
-    private void button_funcionario_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_funcionario_mesActionPerformed
+    private void buttonFuncionarioMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFuncionarioMesActionPerformed
         int dataAno = Integer.parseInt(ano.getText());
         int dataMes = Integer.parseInt(Mes.getText());
         textPessoas.setText(controle.funcionarioDoMes(dataMes, dataAno));
-    }//GEN-LAST:event_button_funcionario_mesActionPerformed
+    }//GEN-LAST:event_buttonFuncionarioMesActionPerformed
 
-    private void button_historico_locacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_historico_locacaoActionPerformed
-        int codigoCliente = Integer.parseInt(text_cliente.getText());
+    private void buttonHistoricoLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHistoricoLocacaoActionPerformed
+        int codigoCliente = Integer.parseInt(textCliente.getText());
         textPessoas.setText(controle.locacoesDoUsuario(codigoCliente));
-    }//GEN-LAST:event_button_historico_locacaoActionPerformed
+    }//GEN-LAST:event_buttonHistoricoLocacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,38 +207,39 @@ public class Frame_pessoas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_pessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_pessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_pessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_pessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePessoas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_pessoas().setVisible(true);
+                new FramePessoas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_listar_funcionarios;
+    private javax.swing.JButton ButtonListarFuncionarios;
     private javax.swing.JTextField Mes;
     private javax.swing.JTextField ano;
-    private javax.swing.JButton button_clientes_cadastrados;
-    private javax.swing.JButton button_funcionario_mes;
-    private javax.swing.JButton button_historico_locacao;
-    private javax.swing.JButton button_locacoes_atrasadas;
+    private javax.swing.JButton buttonClientesCadastrados;
+    private javax.swing.JButton buttonFuncionarioMes;
+    private javax.swing.JButton buttonHistoricoLocacao;
+    private javax.swing.JButton buttonLocacoesAtrasadas;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField textCliente;
     private javax.swing.JTextField textPessoas;
-    private javax.swing.JTextField text_cliente;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,12 +19,12 @@ import trabalho.modeloDeDados.Funcionario;
  *
  * @author gabri
  */
-public class Frame_cadastro_usuario extends javax.swing.JFrame  {
+public class FrameCadastroUsuario extends javax.swing.JFrame  {
 
     /**
      * Creates new form Frame_cadastro_cliente
      */
-    public Frame_cadastro_usuario() {
+    public FrameCadastroUsuario() {
         initComponents();
         
         this.setTitle("Cadastro de cliente");
@@ -295,32 +295,32 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
 
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
         try {
-            String nome_conta_cliente = textNome.getText();
-            String cpf_conta_cliente = textCPF.getText();
-            String rg_conta_cliente = textRG.getText();
-            int codigo_conta_cliente = Integer.parseInt(textCodigoUsuario.getText());
-            String data_nascimento_conta_cliente = textDataNascimento.getText();
+            String nomeContaCliente = textNome.getText();
+            String cpfContaCliente = textCPF.getText();
+            String rgContaCliente = textRG.getText();
+            int codigoContaCliente = Integer.parseInt(textCodigoUsuario.getText());
+            String dataNascimentoContaCliente = textDataNascimento.getText();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Calendar cal = Calendar.getInstance();
-            cal.setTime(sdf.parse(data_nascimento_conta_cliente));
-            String CEP_conta_cliente = textCEP.getText();
-            String Categoria_CNH_conta_cliente = textCategoriaCNH.getText();
-            String Numero_CNH_conta_cliente = textNumeroCNH.getText();
-            String Validade_CNH_conta_cliente = textValidadeCNH.getText();
+            cal.setTime(sdf.parse(dataNascimentoContaCliente));
+            String CEPContaCliente = textCEP.getText();
+            String CategoriaCNHContaCliente = textCategoriaCNH.getText();
+            String NumeroCNHContaCliente = textNumeroCNH.getText();
+            String ValidadeCNHContaCliente = textValidadeCNH.getText();
             Calendar cal2 = Calendar.getInstance();
-            cal2.setTime(sdf.parse(Validade_CNH_conta_cliente));
-            String Endereco_conta_cliente = textEndereco.getText();
-            String Email_conta_cliente = textEmail.getText();
+            cal2.setTime(sdf.parse(ValidadeCNHContaCliente));
+            String EnderecoContaCliente = textEndereco.getText();
+            String EmailContacliente = textEmail.getText();
             boolean ouro = false;
             if (checkBoxOuro.isSelected()){
                 ouro = true;
             }
-            Cliente teste = new Cliente(Categoria_CNH_conta_cliente, Numero_CNH_conta_cliente, cal2, ouro, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, cal, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente);
-            Controle controle_cliente = new Controle();
-            controle_cliente.adicionarCliente(teste);
-            controle_cliente.salvarClientes();
+            Cliente teste = new Cliente(CategoriaCNHContaCliente, NumeroCNHContaCliente, cal2, ouro, codigoContaCliente, nomeContaCliente, cpfContaCliente, rgContaCliente, cal, EnderecoContaCliente, CEPContaCliente, EmailContacliente);
+            Controle controleCliente = new Controle();
+            controleCliente.adicionarCliente(teste);
+            controleCliente.salvarClientes();
         } catch (ParseException ex) {
-            Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrameCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnCadastroClienteActionPerformed
 
@@ -335,31 +335,31 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
             //adquire a data de admissao
             Calendar dataAdmissao = Calendar.getInstance();
             dataAdmissao.setTime(sdf.parse(textAdmissao.getText()));
-            int codigo_conta_cliente = Integer.parseInt(textCodigoUsuario.getText());
+            int codigoContaCliente = Integer.parseInt(textCodigoUsuario.getText());
             //cria a data de nascimento
             Calendar nascimento = Calendar.getInstance();
             nascimento.setTime(sdf.parse(textDataNascimento.getText()));
             //adquire os dados do funcionario
-            String nome_conta_cliente = textNome.getText();
-            String cpf_conta_cliente = textCPF.getText();
-            String rg_conta_cliente = textRG.getText();
-            String CEP_conta_cliente = textCEP.getText();
-            String Endereco_conta_cliente = textEndereco.getText();
-            String Email_conta_cliente = textEmail.getText();
+            String nomeContaCliente = textNome.getText();
+            String cpfContaCliente = textCPF.getText();
+            String rgContaCliente = textRG.getText();
+            String CEPContaCliente = textCEP.getText();
+            String EnderecoContaCliente = textEndereco.getText();
+            String EmailContaCliente = textEmail.getText();
             float salario = Float.parseFloat(textSalario.getText()); 
             String pis = textPIS.getText();
             //cria o funcionario
-            Funcionario funcionario = new Funcionario(salario, pis, dataAdmissao, codigo_conta_cliente, nome_conta_cliente, cpf_conta_cliente, rg_conta_cliente, nascimento, Endereco_conta_cliente, CEP_conta_cliente, Email_conta_cliente  );
+            Funcionario funcionario = new Funcionario(salario, pis, dataAdmissao, codigoContaCliente, nomeContaCliente, cpfContaCliente, rgContaCliente, nascimento, EnderecoContaCliente, CEPContaCliente, EmailContaCliente  );
             
-            Controle controle_cliente = new Controle();
+            Controle controleCliente = new Controle();
             
-            controle_cliente.adicionarFuncionario(funcionario);
+            controleCliente.adicionarFuncionario(funcionario);
             
-            controle_cliente.salvarFuncionarios();
+            controleCliente.salvarFuncionarios();
             
             
         } catch (ParseException ex) {
-            Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrameCadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnCadastroFuncionarioActionPerformed
 
@@ -374,18 +374,18 @@ public class Frame_cadastro_usuario extends javax.swing.JFrame  {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_cadastro_usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCadastroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_cadastro_usuario().setVisible(true);
+                new FrameCadastroUsuario().setVisible(true);
             }
         });
     }

@@ -11,12 +11,12 @@ import trabalho.modeloDeDados.Controle;
  *
  * @author gabri
  */
-public class Frame_carregar_config extends javax.swing.JFrame {
+public class FrameCarregarConfig extends javax.swing.JFrame {
     Controle controle = new Controle();
     /**
      * Creates new form Frame_carregar_config
      */
-    public Frame_carregar_config() {
+    public FrameCarregarConfig() {
         initComponents();
     }
 
@@ -105,20 +105,21 @@ public class Frame_carregar_config extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_carregar_config.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCarregarConfig.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_carregar_config.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCarregarConfig.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_carregar_config.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCarregarConfig.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_carregar_config.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrameCarregarConfig.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_carregar_config().setVisible(true);
+                new FrameCarregarConfig().setVisible(true);
             }
         });
     }

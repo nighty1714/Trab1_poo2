@@ -38,19 +38,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="locacoes_text_field" min="-2" pref="247" max="-2" attributes="0"/>
+              <Component id="locacoesTextField" min="-2" pref="247" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Locacoes_button_locaces_cadastradas" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="Locacoes_button_locaces_finalizadas" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="Locacoes_button_locaces_nao_finalizadas" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="Locacoes_button_seguros_cadastrados" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="Locacoes_button_locacoes_lucro_mes" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="Locacoes_button_locaces_atraso" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="LocacoesButtonLocacesCadastradas" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="LocacoesButtonLocacesFinalizadas" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="LocacoesButtonLocacesNaoFinalizadas" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="LocacoesButtonSegurosCadastrados" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="LocacoesButtonLocacoesLucroMes" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="LocacoesButtonLocacesAtraso" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="Text_field_ano" min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="TextFieldAno" min="-2" pref="81" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Text_field_mes" max="32767" attributes="0"/>
+                      <Component id="TextFieldMes" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -68,11 +68,11 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="12" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="locacoes_text_field" alignment="1" min="-2" pref="268" max="-2" attributes="0"/>
+                  <Component id="locacoesTextField" alignment="1" min="-2" pref="268" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="Locacoes_button_locaces_cadastradas" min="-2" max="-2" attributes="0"/>
+                      <Component id="LocacoesButtonLocacesCadastradas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Locacoes_button_locaces_atraso" min="-2" max="-2" attributes="0"/>
+                      <Component id="LocacoesButtonLocacesAtraso" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -80,17 +80,17 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Text_field_ano" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Text_field_mes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TextFieldAno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TextFieldMes" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Locacoes_button_locacoes_lucro_mes" min="-2" max="-2" attributes="0"/>
+                      <Component id="LocacoesButtonLocacoesLucroMes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Locacoes_button_locaces_finalizadas" min="-2" max="-2" attributes="0"/>
+                      <Component id="LocacoesButtonLocacesFinalizadas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Locacoes_button_locaces_nao_finalizadas" min="-2" max="-2" attributes="0"/>
+                      <Component id="LocacoesButtonLocacesNaoFinalizadas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Component id="Locacoes_button_seguros_cadastrados" min="-2" max="-2" attributes="0"/>
+                      <Component id="LocacoesButtonSegurosCadastrados" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
@@ -99,57 +99,57 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Locacoes_button_locaces_cadastradas">
+    <Component class="javax.swing.JButton" name="LocacoesButtonLocacesCadastradas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es cadastradas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_cadastradasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocacoesButtonLocacesCadastradasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Locacoes_button_locaces_atraso">
+    <Component class="javax.swing.JButton" name="LocacoesButtonLocacesAtraso">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es em atraso"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_atrasoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocacoesButtonLocacesAtrasoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Locacoes_button_locacoes_lucro_mes">
+    <Component class="javax.swing.JButton" name="LocacoesButtonLocacoesLucroMes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es e lucro de um m&#xea;s"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locacoes_lucro_mesActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocacoesButtonLocacoesLucroMesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Locacoes_button_locaces_finalizadas">
+    <Component class="javax.swing.JButton" name="LocacoesButtonLocacesFinalizadas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es finalizadas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_finalizadasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocacoesButtonLocacesFinalizadasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Locacoes_button_locaces_nao_finalizadas">
+    <Component class="javax.swing.JButton" name="LocacoesButtonLocacesNaoFinalizadas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es n&#xe3;o finalizadas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_locaces_nao_finalizadasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocacoesButtonLocacesNaoFinalizadasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Locacoes_button_seguros_cadastrados">
+    <Component class="javax.swing.JButton" name="LocacoesButtonSegurosCadastrados">
       <Properties>
         <Property name="text" type="java.lang.String" value="Seguros cadastrados"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Locacoes_button_seguros_cadastradosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LocacoesButtonSegurosCadastradosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="Text_field_ano">
+    <Component class="javax.swing.JTextField" name="TextFieldAno">
     </Component>
-    <Component class="javax.swing.JTextField" name="Text_field_mes">
+    <Component class="javax.swing.JTextField" name="TextFieldMes">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -161,7 +161,7 @@
         <Property name="text" type="java.lang.String" value="M&#xea;s"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="locacoes_text_field">
+    <Component class="javax.swing.JTextField" name="locacoesTextField">
     </Component>
   </SubComponents>
 </Form>

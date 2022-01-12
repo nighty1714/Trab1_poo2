@@ -43,11 +43,11 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Button_listar_funcionarios" max="32767" attributes="0"/>
-                          <Component id="button_funcionario_mes" max="32767" attributes="0"/>
-                          <Component id="button_clientes_cadastrados" max="32767" attributes="0"/>
-                          <Component id="button_historico_locacao" max="32767" attributes="0"/>
-                          <Component id="button_locacoes_atrasadas" max="32767" attributes="0"/>
+                          <Component id="ButtonListarFuncionarios" max="32767" attributes="0"/>
+                          <Component id="buttonFuncionarioMes" max="32767" attributes="0"/>
+                          <Component id="buttonClientesCadastrados" max="32767" attributes="0"/>
+                          <Component id="buttonHistoricoLocacao" max="32767" attributes="0"/>
+                          <Component id="buttonLocacoesAtrasadas" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="Mes" min="-2" pref="88" max="-2" attributes="0"/>
@@ -59,7 +59,7 @@
                                   <Component id="ano" min="-2" pref="88" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="text_cliente" max="32767" attributes="0"/>
+                          <Component id="textCliente" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -78,9 +78,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="textPessoas" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="Button_listar_funcionarios" min="-2" max="-2" attributes="0"/>
+                      <Component id="ButtonListarFuncionarios" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="button_funcionario_mes" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonFuncionarioMes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -92,15 +92,15 @@
                           <Component id="ano" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="button_clientes_cadastrados" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonClientesCadastrados" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="button_historico_locacao" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonHistoricoLocacao" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="7" max="32767" attributes="0"/>
-                      <Component id="text_cliente" min="-2" max="-2" attributes="0"/>
+                      <Component id="textCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="button_locacoes_atrasadas" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonLocacoesAtrasadas" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -111,44 +111,44 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="textPessoas">
     </Component>
-    <Component class="javax.swing.JButton" name="Button_listar_funcionarios">
+    <Component class="javax.swing.JButton" name="ButtonListarFuncionarios">
       <Properties>
         <Property name="text" type="java.lang.String" value="Listar todos funcion&#xe1;rios"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Button_listar_funcionariosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonListarFuncionariosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="button_funcionario_mes">
+    <Component class="javax.swing.JButton" name="buttonFuncionarioMes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Funcion&#xe1;rio do m&#xea;s"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_funcionario_mesActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonFuncionarioMesActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="button_clientes_cadastrados">
+    <Component class="javax.swing.JButton" name="buttonClientesCadastrados">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clientes cadastrados"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_clientes_cadastradosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonClientesCadastradosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="button_historico_locacao">
+    <Component class="javax.swing.JButton" name="buttonHistoricoLocacao">
       <Properties>
         <Property name="text" type="java.lang.String" value="Hist&#xf3;rico de loca&#xe7;&#xe3;o de um cliente"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_historico_locacaoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonHistoricoLocacaoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="button_locacoes_atrasadas">
+    <Component class="javax.swing.JButton" name="buttonLocacoesAtrasadas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clientes com loca&#xe7;&#xf5;es atrasadas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_locacoes_atrasadasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLocacoesAtrasadasActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Mes">
@@ -165,7 +165,7 @@
         <Property name="text" type="java.lang.String" value="Ano:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="text_cliente">
+    <Component class="javax.swing.JTextField" name="textCliente">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
