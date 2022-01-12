@@ -95,6 +95,10 @@ public class Controle implements Serializable{
         this.armazenamento = Armazenamento.getInstance();
     }
     
+    public Veiculo buscarVeiculo(int codigo){
+        return this.armazenamento.buscarVeiculo(codigo);
+    }
+    
     public String clientesAtrasados(){
         return armazenamento.clientesAtrasados();
     }

@@ -31,6 +31,11 @@ public class Armazenamento {
     private static Armazenamento instance;
 
     public Armazenamento(Configuracao configuracoes) {
+        this.locacoes = new ArrayList();
+        this.veiculos = new ArrayList();
+        this.clientes = new ArrayList();
+        this.funcionarios = new ArrayList();
+        this.seguros = new ArrayList();
         this.configuracoes = configuracoes;
     }
     
@@ -148,7 +153,16 @@ public class Armazenamento {
         for(Locacao antigaLocacao: locacoes){
             //verifica se a locacao ja existe
             if(antigaLocacao.getCodigoLocacao() != locacao.getCodigoLocacao()){
-                this.locacoes.add(locacao);
+                Veiculo veiculo = locacao.getVeiculo();
+                //se a locacao nao estiver finalizada, verifica se o carro nao esta alugado
+                if(!locacao.isFinalizada()){
+                    if(!veiculo.isAlugado()){
+                        alugarVeiculo(veiculo.getCodigoVeiculo());
+                        this.locacoes.add(locacao);
+                    }
+                }else{
+                    this.locacoes.add(locacao);
+                }
             }
         }
     }
@@ -261,6 +275,14 @@ public class Armazenamento {
         return false;
     }
     
+    public Veiculo buscarVeiculo(int codigo){
+        for(Veiculo veiculo: veiculos){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo;
+            } 
+        }
+        return null;
+    }
     
     public String dadosLocacao(int codigo){ 
         for (Locacao locacao: locacoes){

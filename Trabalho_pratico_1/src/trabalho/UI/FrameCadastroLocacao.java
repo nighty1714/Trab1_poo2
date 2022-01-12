@@ -25,7 +25,7 @@ import trabalho.modeloDeDados.Veiculo;
  */
 public class FrameCadastroLocacao extends javax.swing.JFrame {
     
-    Controle a = new Controle();
+    Controle controle = new Controle();
 
     /**
      * Creates new form Frame_criar_locacao
@@ -43,6 +43,7 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        formaPagamento = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,24 +52,23 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
         textFieldCodigoLocacao = new javax.swing.JTextField();
         textFieldCodigoFuncionario = new javax.swing.JTextField();
         textFieldDataDevolucao = new javax.swing.JTextField();
-        textFieldCodigoCliente = new javax.swing.JTextField();
-        textFieldDataLocacao = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        textCodigoCliente = new javax.swing.JTextField();
+        textDataLocacao = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        textFieldValor = new javax.swing.JTextField();
         ButtonCriarLocacao = new javax.swing.JButton();
-        Cartao = new javax.swing.JCheckBox();
-        Dinheiro = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
-        TextFieldNomeCartao = new javax.swing.JTextField();
-        TextFieldNumeroCartao = new javax.swing.JTextField();
-        TextieldBandeiraCartao = new javax.swing.JTextField();
+        textNomeCartao = new javax.swing.JTextField();
+        textNumeroCartao = new javax.swing.JTextField();
+        textBandeiraCartao = new javax.swing.JTextField();
         Finalizada = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
-        codigoVeiculo = new javax.swing.JTextField();
+        textCodigoVeiculo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        radioDinheiro = new javax.swing.JRadioButton();
+        radioCartao = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar locação");
@@ -79,11 +79,15 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
 
         jLabel3.setText("Código cliente:");
 
-        jLabel4.setText("Data locação");
+        jLabel4.setText("Data locação:");
 
         jLabel5.setText("Data devolução:");
 
-        jLabel6.setText("Valor total:");
+        textFieldCodigoFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldCodigoFuncionarioActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Forma pagamento:");
 
@@ -94,27 +98,42 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
             }
         });
 
-        Cartao.setText("Cartão");
-
-        Dinheiro.setText("Dinheiro");
-
         jLabel8.setText("Para o cartão:");
 
-        Finalizada.setText("Finalizada");
+        Finalizada.setText("Finalizada?");
+        Finalizada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FinalizadaActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Código do veiculo:");
 
-        codigoVeiculo.addActionListener(new java.awt.event.ActionListener() {
+        textCodigoVeiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigoVeiculoActionPerformed(evt);
+                textCodigoVeiculoActionPerformed(evt);
             }
         });
 
         jLabel10.setText("Nome:");
 
-        jLabel11.setText("Bandeira");
+        jLabel11.setText("Bandeira:");
 
-        jLabel12.setText("Numero:");
+        jLabel12.setText("Número:");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Dados da locação");
+
+        formaPagamento.add(radioDinheiro);
+        radioDinheiro.setText("Dinheiro");
+
+        radioCartao.setText("Cartão");
+        radioCartao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioCartaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,124 +143,119 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textFieldCodigoFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                                    .addComponent(textFieldCodigoLocacao))
-                                .addGap(10, 10, 10))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(textFieldCodigoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(radioDinheiro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(radioCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(202, 202, 202)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(163, 163, 163))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textCodigoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(Finalizada))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textNomeCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textBandeiraCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(textNumeroCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ButtonCriarLocacao))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(textFieldCodigoLocacao)
+                                            .addComponent(textFieldCodigoFuncionario)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textFieldDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(TextFieldNumeroCartao)
-                                    .addComponent(textFieldDataLocacao, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
-                        .addContainerGap(56, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel10)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Dinheiro)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(Cartao)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                                .addComponent(jLabel12)
-                                .addGap(88, 88, 88))))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Finalizada)
-                            .addComponent(ButtonCriarLocacao)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(TextFieldNomeCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(TextieldBandeiraCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(codigoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(textDataLocacao)
+                                    .addComponent(textFieldDataDevolucao))))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(textFieldCodigoLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(textFieldDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(jLabel13)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(textFieldCodigoLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(textFieldCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel4)
+                                .addComponent(textDataLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(textCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(textFieldCodigoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)
-                        .addComponent(textFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(textFieldCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(textFieldDataLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel5)
+                        .addComponent(textFieldDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(Dinheiro)
-                    .addComponent(Cartao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                    .addComponent(radioDinheiro)
+                    .addComponent(radioCartao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel12)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(TextFieldNomeCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TextieldBandeiraCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TextFieldNumeroCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(codigoVeiculo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addComponent(Finalizada)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonCriarLocacao)
-                .addContainerGap())
+                        .addComponent(textNomeCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textBandeiraCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textNumeroCartao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(textCodigoVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Finalizada)
+                    .addComponent(ButtonCriarLocacao))
+                .addGap(62, 62, 62))
         );
 
         pack();
@@ -249,103 +263,66 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
 
     private void ButtonCriarLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCriarLocacaoActionPerformed
         try {
-            // Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, Calendar dataLocacao, Calendar dataDevolucao, float valorTotal, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
-            
-            int codigo = Integer.parseInt(textFieldCodigoLocacao.getText());
-            
-            int codigoU = Integer.parseInt(textFieldCodigoFuncionario.getText());
-            
-            int codigoC = Integer.parseInt(textFieldCodigoCliente.getText());
-            
-            String dataL = textFieldDataLocacao.getText();
-            
+            int codigoLocacao = Integer.parseInt(textFieldCodigoLocacao.getText());
+            int codigoFuncionario = Integer.parseInt(textFieldCodigoFuncionario.getText());
+            int codigoCliente = Integer.parseInt(textCodigoCliente.getText());
+            int codigoVeiculo = Integer.parseInt(textCodigoVeiculo.getText());
+            //cria controle data de locacao
+            String dataL = textDataLocacao.getText();
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            
             Calendar dataLo = Calendar.getInstance();
-            
             dataLo.setTime(sdf.parse(dataL));
-            
             String dataD = textFieldDataDevolucao.getText();
-            
+            //cria controle data de devolucao
             Calendar dataDE = Calendar.getInstance();
-            
             dataDE.setTime(sdf.parse(dataD));
-            
-            float valor = Float.parseFloat(textFieldValor.getText());
+            float valor = Float.parseFloat(textValor.getText());
             
             boolean finalizada = false;
-            
             if (Finalizada.isSelected()){
-                
                 finalizada = true;
-                
             }
-            
-            String nomeC = TextFieldNomeCartao.getText();
-            
-            String bandeira = TextieldBandeiraCartao.getText();
-            
-            String numero = TextFieldNumeroCartao.getText();
-            
-            Dinheiro d = new Dinheiro();
-            
-            Cartao cart = new Cartao(nomeC, bandeira, numero);
-            
-            //aqui
-            
-            int codigocarro = Integer.parseInt(codigoVeiculo.getText());
-            
-            ArrayList<Veiculo> ab = new ArrayList();
-            
-            ab = a.getVeiculos();
-            
-            for (int i = 0; i < ab.size(); i++){
-     
-            if(ab.get(i).getCodigoVeiculo() == codigocarro){
-        
-               if(Dinheiro.isSelected()){
-                   
-                   Locacao teste = new Locacao(codigo, codigoC, codigoU, dataLo, dataDE, valor, d, finalizada, ab.get(i) );
-           
-                   Controle controleLoc = new Controle();
-            
-                   controleLoc.adicionarLocacao(teste);
-            
-                   controleLoc.salvarLocacoes();
-                   
-               }
-               
-               else{
-                   
-                   Locacao teste = new Locacao(codigo, codigoC, codigoU, dataLo, dataDE, valor, cart, finalizada, ab.get(i) );
-            
-                   Controle controleLoc = new Controle();
-            
-                   controleLoc.adicionarLocacao(teste);
-            
-                   controleLoc.salvarLocacoes();
-               }
-               
-               
-        
+            Veiculo veiculo = controle.buscarVeiculo(codigoVeiculo);
+            if(veiculo != null){
+                if(!veiculo.isAlugado()){
+                    if(radioCartao.isSelected()){
+                        //cria uma locacao em cartao
+                        String nomeC = textNomeCartao.getText();
+                        String bandeira = textBandeiraCartao.getText();
+                        String numero = textNumeroCartao.getText();
+                        Cartao cart = new Cartao(nomeC, bandeira, numero);
+                        Locacao locacao = new Locacao(codigoLocacao, codigoCliente, codigoFuncionario, dataLo, dataDE, valor, cart, finalizada, veiculo);
+                        controle.adicionarLocacao(locacao);
+                    }
+                    else{
+                        //cria uma locacao em dinheiro
+                        Dinheiro d = new Dinheiro();
+                        Locacao locacao = new Locacao(codigoLocacao, codigoCliente, codigoFuncionario, dataLo, dataDE, valor, d, finalizada, veiculo);
+                        controle.adicionarLocacao(locacao);
+                    }
+                }
             }
-            
-            else {
-                
-                //imprime carro não disponivel
-                
-            }
-     
-           }
-               
+            controle.salvarLocacoes();
         } catch (ParseException ex) {
             Logger.getLogger(FrameCadastroLocacao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_ButtonCriarLocacaoActionPerformed
 
-    private void codigoVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoVeiculoActionPerformed
+    private void textCodigoVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodigoVeiculoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_codigoVeiculoActionPerformed
+    }//GEN-LAST:event_textCodigoVeiculoActionPerformed
+
+    private void textFieldCodigoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCodigoFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldCodigoFuncionarioActionPerformed
+
+    private void FinalizadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinalizadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FinalizadaActionPerformed
+
+    private void radioCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCartaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioCartaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,30 +364,30 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCriarLocacao;
-    private javax.swing.JCheckBox Cartao;
-    private javax.swing.JCheckBox Dinheiro;
     private javax.swing.JCheckBox Finalizada;
-    private javax.swing.JTextField TextFieldNomeCartao;
-    private javax.swing.JTextField TextFieldNumeroCartao;
-    private javax.swing.JTextField TextieldBandeiraCartao;
-    private javax.swing.JTextField codigoVeiculo;
+    private javax.swing.ButtonGroup formaPagamento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField textFieldCodigoCliente;
+    private javax.swing.JRadioButton radioCartao;
+    private javax.swing.JRadioButton radioDinheiro;
+    private javax.swing.JTextField textBandeiraCartao;
+    private javax.swing.JTextField textCodigoCliente;
+    private javax.swing.JTextField textCodigoVeiculo;
+    private javax.swing.JTextField textDataLocacao;
     private javax.swing.JTextField textFieldCodigoFuncionario;
     private javax.swing.JTextField textFieldCodigoLocacao;
     private javax.swing.JTextField textFieldDataDevolucao;
-    private javax.swing.JTextField textFieldDataLocacao;
-    private javax.swing.JTextField textFieldValor;
+    private javax.swing.JTextField textNomeCartao;
+    private javax.swing.JTextField textNumeroCartao;
     // End of variables declaration//GEN-END:variables
 }
