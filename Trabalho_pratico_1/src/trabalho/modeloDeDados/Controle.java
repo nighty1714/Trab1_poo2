@@ -99,16 +99,24 @@ public class Controle implements Serializable{
         return this.armazenamento.buscarVeiculo(codigo);
     }
     
+    public String locacoesAtrasados(){
+        return armazenamento.locacoesAtrasadas();
+    }
+    
     public String clientesAtrasados(){
         return armazenamento.clientesAtrasados();
     }
     
-    public String veiculosDoUsuario(int codigo){
-        return armazenamento.veiculosDoUsuario(codigo);
+    public String veiculosAtrasados(){
+        return armazenamento.veiculosAtrasados();
     }
     
-    public String locacoesDoUsuario(int codigo){
-        return armazenamento.locacoesDoUsuario(codigo);
+    public String veiculosDoCliente(int codigo){
+        return armazenamento.veiculosDoCliente(codigo);
+    }
+    
+    public String locacoesDoCliente(int codigo){
+        return armazenamento.locacoesDoCliente(codigo);
     }
     
     public ArrayList<Locacao> locacoesDoMes(int mes, int ano){
@@ -117,6 +125,10 @@ public class Controle implements Serializable{
     
     public String funcionarioDoMes(int mes, int ano){
         return armazenamento.funcionarioDoMes(mes, ano);
+    }
+    
+    public float lucroDoMes(int mes, int ano){
+        return armazenamento.lucroDoMes(mes, ano);
     }
     
     public float valorTotalLocacao(int codigo){
@@ -131,12 +143,32 @@ public class Controle implements Serializable{
         return armazenamento.verificarAtrasoLocacao(codigo);
     }
     
-    public String dadosLocacao(int codigo){ 
-        return armazenamento.dadosLocacao(codigo);
-    }
-    
     public boolean verificarVeiculoAlugado(int codigo){
         return armazenamento.verificarVeiculoAlugado(codigo);
+    }
+    
+    public String dadosTodosFuncionarios(){
+        return armazenamento.dadosTodosFuncionarios();
+    }
+    
+    public String dadosTodosClientes(){
+        return armazenamento.dadosTodosClientes();
+    }
+    
+    public String dadosTodasLocacoes(){
+        return armazenamento.dadosTodasLocacoes();
+    }
+    
+    public String dadosTodosVeiculos(){
+        return armazenamento.dadosTodosVeiculos();
+    }
+    
+    public String dadosTodosSeguros(){
+        return armazenamento.dadosTodosSeguros();
+    }
+    
+    public String dadosLocacao(int codigo){ 
+        return armazenamento.dadosLocacao(codigo);
     }
     
     public String dadosVeiculo(int codigo){
@@ -165,6 +197,14 @@ public class Controle implements Serializable{
     
     public String dadosSeguro(int codigo){
         return armazenamento.dadosSeguro(codigo);   
+    }
+    
+    public String veiculosAlugados(){
+        return armazenamento.veiculosAlugados();
+    }
+    
+    public String veiculosDisponiveis(){
+        return armazenamento.veiculosDisponiveis();
     }
     
     public void salvarClientes(){

@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 package trabalho.UI;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import trabalho.modeloDeDados.Controle;
-import trabalho.modeloDeDados.Usuario;
 /**
  *
  * @author gabri
@@ -32,7 +29,6 @@ public class FramePessoas extends javax.swing.JFrame {
 
         jButton2 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
-        textPessoas = new javax.swing.JTextField();
         ButtonListarFuncionarios = new javax.swing.JButton();
         buttonFuncionarioMes = new javax.swing.JButton();
         buttonClientesCadastrados = new javax.swing.JButton();
@@ -45,6 +41,8 @@ public class FramePessoas extends javax.swing.JFrame {
         textCliente = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaRelatorio = new javax.swing.JTextArea();
 
         jButton2.setText("jButton2");
 
@@ -98,6 +96,10 @@ public class FramePessoas extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Relatório de usuários");
 
+        textAreaRelatorio.setColumns(20);
+        textAreaRelatorio.setRows(5);
+        jScrollPane1.setViewportView(textAreaRelatorio);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,8 +109,8 @@ public class FramePessoas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(textPessoas, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel3)
@@ -135,8 +137,7 @@ public class FramePessoas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textPessoas)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ButtonListarFuncionarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -158,45 +159,35 @@ public class FramePessoas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 42, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonListarFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonListarFuncionariosActionPerformed
-        String funcionarios = "";
-        for(Usuario funcionario: controle.getFuncionarios()){
-            funcionarios += funcionario.toString();
-        }
-        System.out.print(funcionarios);
-        textPessoas.setText(funcionarios);
+        textAreaRelatorio.setText(controle.dadosTodosFuncionarios());
     }//GEN-LAST:event_ButtonListarFuncionariosActionPerformed
 
     private void buttonClientesCadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonClientesCadastradosActionPerformed
-        String clientes = "";
-        for(Usuario cliente: controle.getClientes()){
-            clientes += cliente.toString();
-        }
-        textPessoas.setText(clientes);
+        textAreaRelatorio.setText(controle.dadosTodosClientes());
     }//GEN-LAST:event_buttonClientesCadastradosActionPerformed
 
     private void buttonLocacoesAtrasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLocacoesAtrasadasActionPerformed
-        String clientes = controle.clientesAtrasados();
-        textPessoas.setText(clientes);
+        textAreaRelatorio.setText(controle.clientesAtrasados());
     }//GEN-LAST:event_buttonLocacoesAtrasadasActionPerformed
 
     private void buttonFuncionarioMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFuncionarioMesActionPerformed
         int dataAno = Integer.parseInt(ano.getText());
         int dataMes = Integer.parseInt(Mes.getText());
-        textPessoas.setText(controle.funcionarioDoMes(dataMes, dataAno));
+        textAreaRelatorio.setText(controle.funcionarioDoMes(dataMes, dataAno));
     }//GEN-LAST:event_buttonFuncionarioMesActionPerformed
 
     private void buttonHistoricoLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHistoricoLocacaoActionPerformed
         int codigoCliente = Integer.parseInt(textCliente.getText());
-        textPessoas.setText(controle.locacoesDoUsuario(codigoCliente));
+        textAreaRelatorio.setText(controle.locacoesDoCliente(codigoCliente));
     }//GEN-LAST:event_buttonHistoricoLocacaoActionPerformed
 
     /**
@@ -248,8 +239,9 @@ public class FramePessoas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextArea textAreaRelatorio;
     private javax.swing.JTextField textCliente;
-    private javax.swing.JTextField textPessoas;
     // End of variables declaration//GEN-END:variables
 }

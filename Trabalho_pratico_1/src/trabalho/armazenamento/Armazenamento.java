@@ -175,6 +175,16 @@ public class Armazenamento {
         }
     }
     
+    public String locacoesAtrasadas(){
+        String listaLocacoes = "";
+        for(Locacao locacao: locacoes){
+            if(locacao.verificarAtraso()){
+                listaLocacoes += locacao.toString() + "\n";
+            }
+        }
+        return listaLocacoes;
+    }
+    
     public String clientesAtrasados(){
         ArrayList<Integer> listaAtrasos = new ArrayList();
         String listaClientes = "";
@@ -185,13 +195,23 @@ public class Armazenamento {
                     listaAtrasos.add(codigo);
                     for(Usuario cliente: clientes){
                         if(cliente.getCodigoUsuario() == codigo){
-                            listaClientes += cliente.toString();
+                            listaClientes += cliente.toString() + "\n";
                         }
                     }
                 }
             }
         }
         return listaClientes;
+    }
+    
+    public String veiculosAtrasados(){
+        String listaVeiculos = "";
+        for(Locacao locacao: locacoes){
+            if(locacao.verificarAtraso()){
+                listaVeiculos += locacao.getVeiculo().toString() + "\n";
+            }
+        }
+        return listaVeiculos;
     }
     
     public String funcionarioDoMes(int mes, int ano){
@@ -228,7 +248,15 @@ public class Armazenamento {
         return listaLocacoes;
     }
     
-    public String veiculosDoUsuario(int codigo){
+    public float lucroDoMes(int mes, int ano){
+        float total = 0;
+        for(Locacao locacao: locacoesDoMes(mes, ano)){
+            total += locacao.getValorTotal();
+        }
+        return total;
+    }
+    
+    public String veiculosDoCliente(int codigo){
         String listaVeiculos = "";
         for(Locacao locacao: locacoes){
             if(locacao.getCodigoCliente() == codigo){
@@ -238,7 +266,7 @@ public class Armazenamento {
         return listaVeiculos;
     }
     
-    public String locacoesDoUsuario(int codigo){
+    public String locacoesDoCliente(int codigo){
         String listaLocacao = "";
         for(Locacao locacao: locacoes){
             if(locacao.getCodigoCliente() == codigo){
@@ -320,6 +348,46 @@ public class Armazenamento {
         }
     }
     
+    public String dadosTodosFuncionarios(){
+        String str = "";
+        for(Usuario funcionario: funcionarios){
+            str += funcionario.toString() + "\n";
+        }
+        return str;
+    }
+    
+    public String dadosTodosClientes(){
+        String str = "";
+        for(Usuario cliente: clientes){
+            str += cliente.toString() + "\n";
+        }
+        return str;
+    }
+    
+    public String dadosTodasLocacoes(){
+        String str = "";
+        for(Locacao locacao: locacoes){
+            str += locacao.toString() + "\n";
+        }
+        return str;
+    }
+    
+    public String dadosTodosVeiculos(){
+        String str = "";
+        for(Veiculo veiculo: veiculos){
+            str += veiculo.toString() + "\n";
+        }
+        return str;
+    }
+    
+    public String dadosTodosSeguros(){
+        String str = "";
+        for(Seguro seguro: seguros){
+            str += seguro.toString() + "\n";
+        }
+        return str;
+    }
+    
     public String dadosVeiculo(int codigo){
         for(Veiculo veiculo: veiculos){
             if(veiculo.getCodigoVeiculo() == codigo){
@@ -336,16 +404,6 @@ public class Armazenamento {
             } 
         }
         return "";
-    }
-    
-    
-    public float valorDiariaVeiculo(int codigo){
-        for(Veiculo veiculo: veiculos){
-            if(veiculo.getCodigoVeiculo() == codigo){
-                return veiculo.calcularValorDiaria();
-            }
-        }
-        return 0;
     }
     
     public String dadosFuncionarios(String codigo){
@@ -365,6 +423,35 @@ public class Armazenamento {
             }
         }
         return "";   
+    }
+    
+    public float valorDiariaVeiculo(int codigo){
+        for(Veiculo veiculo: veiculos){
+            if(veiculo.getCodigoVeiculo() == codigo){
+                return veiculo.calcularValorDiaria();
+            }
+        }
+        return 0;
+    }
+    
+    public String veiculosAlugados(){
+        String str = "";
+        for(Veiculo veiculo: veiculos){
+            if(veiculo.isAlugado()){
+                str += veiculo.toString() + "\n";
+            }
+        }
+        return str;
+    }
+    
+    public String veiculosDisponiveis(){
+        String str = "";
+        for(Veiculo veiculo: veiculos){
+            if(!veiculo.isAlugado()){
+                str += veiculo.toString() + "\n";
+            }
+        }
+        return str;
     }
     
     public void salvarLocacoes(){
@@ -523,6 +610,7 @@ public class Armazenamento {
             this.locacoes = (ArrayList<Locacao>) ois.readObject();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            this.locacoes = new ArrayList();
         } catch (IOException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -546,6 +634,7 @@ public class Armazenamento {
             this.veiculos = (ArrayList<Veiculo>) ois.readObject();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            this.veiculos = new ArrayList();
         } catch (IOException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -569,6 +658,7 @@ public class Armazenamento {
             this.clientes = (ArrayList<Usuario>) ois.readObject();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            this.clientes = new ArrayList();
         } catch (IOException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -592,6 +682,7 @@ public class Armazenamento {
             this.funcionarios = (ArrayList<Usuario>) ois.readObject();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            this.funcionarios = new ArrayList();
         } catch (IOException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
@@ -615,6 +706,7 @@ public class Armazenamento {
             this.seguros = (ArrayList<Seguro>) ois.readObject();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
+            this.seguros = new ArrayList();
         } catch (IOException ex) {
             Logger.getLogger(Armazenamento.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

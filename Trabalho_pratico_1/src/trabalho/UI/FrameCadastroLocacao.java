@@ -11,9 +11,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import trabalho.armazenamento.Armazenamento;
 import trabalho.modeloDeDados.Cartao;
-import trabalho.modeloDeDados.Configuracao;
+import trabalho.modeloDeDados.Seguro;
 import trabalho.modeloDeDados.Controle;
 import trabalho.modeloDeDados.Dinheiro;
 import trabalho.modeloDeDados.Locacao;
@@ -32,6 +31,11 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
      */
     public FrameCadastroLocacao() {
         initComponents();
+        initComponents();
+        ArrayList<Seguro> lista = controle.getSeguros();
+        for (Seguro seguro: lista){
+            comboSeguros.addItem(seguro.getNome());
+        }
     }
 
     /**
@@ -69,6 +73,8 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         radioDinheiro = new javax.swing.JRadioButton();
         radioCartao = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        comboSeguros = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar locação");
@@ -135,6 +141,8 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setText("Seguro:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -199,9 +207,11 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(comboSeguros, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(textDataLocacao)
                                     .addComponent(textFieldDataDevolucao))))
                         .addContainerGap())))
@@ -227,7 +237,9 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(textCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(textCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(comboSeguros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
                         .addComponent(textFieldDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -364,6 +376,7 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonCriarLocacao;
     private javax.swing.JCheckBox Finalizada;
+    private javax.swing.JComboBox<String> comboSeguros;
     private javax.swing.ButtonGroup formaPagamento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -374,6 +387,7 @@ public class FrameCadastroLocacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

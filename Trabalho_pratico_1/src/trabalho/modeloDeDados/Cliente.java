@@ -66,7 +66,9 @@ public class Cliente extends Usuario{
     public String toString() {
         String str = "Código de usuário: " + Integer.toString(codigoUsuario) + "\nNome:" + nome + "\nRG:" + rg + "\nCPF:" + cpf + 
                 "\nData de nascimento: " + dataNascimento.get(Calendar.DATE) + "/" + dataNascimento.get(Calendar.MONTH) + "/" + dataNascimento.get(Calendar.YEAR) + 
-                "\nEndereço:" + endereco + "\nCEP:" + cep + "\nEmail:" + email + "\nCategoria CNH:" + categoriaCNH + "\nNumero CNH:" + numeroCNH + "\nValidade CNH:" + vencimentoCNH + "\nCliente ouro: ";
+                "\nEndereço:" + endereco + "\nCEP:" + cep + "\nEmail:" + email + "\nCategoria CNH:" + categoriaCNH + "\nNumero CNH:" + numeroCNH + 
+                "\nValidade CNH:" + vencimentoCNH.get(Calendar.DATE) + "/" + vencimentoCNH.get(Calendar.MONTH) + "/" + vencimentoCNH.get(Calendar.YEAR) + 
+                "\nCliente ouro: ";
         if(clienteOuro){
             str += "Sim\n";
         }else{
