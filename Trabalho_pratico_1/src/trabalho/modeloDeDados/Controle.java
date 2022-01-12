@@ -202,5 +202,11 @@ public class Controle implements Serializable{
     public void setArquivoSeguros(String path){
         armazenamento.setArquivoSeguros(path);
     }
+    
+    public void salvarseguros(){
+        
+        armazenamento.salvarSeguros();
+        
+    }
 }
     

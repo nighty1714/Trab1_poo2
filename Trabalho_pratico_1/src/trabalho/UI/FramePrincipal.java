@@ -37,6 +37,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         MenuLocacoes = new javax.swing.JMenu();
         menu_locacoes_nao_finalizadas = new javax.swing.JMenuItem();
         menu_criar_locacao = new javax.swing.JMenuItem();
+        CadastrarSeguro = new javax.swing.JMenuItem();
         MenuConfig = new javax.swing.JMenu();
         MenuSalvarConfig = new javax.swing.JMenuItem();
         MenuCarregaConfig = new javax.swing.JMenuItem();
@@ -101,6 +102,14 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
         MenuLocacoes.add(menu_criar_locacao);
+
+        CadastrarSeguro.setText("Cadastrar seguro");
+        CadastrarSeguro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarSeguroActionPerformed(evt);
+            }
+        });
+        MenuLocacoes.add(CadastrarSeguro);
 
         jMenuBar1.add(MenuLocacoes);
 
@@ -215,6 +224,14 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_MenuCarregaConfigActionPerformed
 
+    private void CadastrarSeguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarSeguroActionPerformed
+       java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrameCadastroSeguro().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_CadastrarSeguroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -254,6 +271,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem CadastrarSeguro;
     private javax.swing.JMenuItem MenuCarregaConfig;
     private javax.swing.JMenu MenuConfig;
     private javax.swing.JMenu MenuLocacoes;
