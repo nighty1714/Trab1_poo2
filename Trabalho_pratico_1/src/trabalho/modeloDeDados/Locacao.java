@@ -31,7 +31,7 @@ public class Locacao {
         this.veiculo = veiculo;
     }
 
-    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, Calendar dataLocacao, Calendar dataDevolucao, float valorTotal, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
+    public Locacao(int codigoLocacao, int codigoCliente, int codigoFuncionario, ArrayList<Seguro> segurosContratados,Calendar dataLocacao, Calendar dataDevolucao, Pagamento formaPagamento, boolean finalizada, Veiculo veiculo) {
         this.codigoLocacao = codigoLocacao;
         this.codigoCliente = codigoCliente;
         this.codigoFuncionario = codigoFuncionario;
@@ -39,7 +39,7 @@ public class Locacao {
         this.dataDevolucao = dataDevolucao;
         this.valorTotal = calcularValorTotal();
         this.formaPagamento = formaPagamento;
-        this.segurosContratados = new ArrayList();
+        this.segurosContratados = segurosContratados;
         this.finalizada = finalizada;
         this.veiculo = veiculo;
     }
@@ -145,16 +145,21 @@ public class Locacao {
 
     @Override
     public String toString() {
-        String retorno = "Código de locacação: " + Integer.toString(codigoLocacao) + "\nCódigo do cliente: " + Integer.toString(codigoCliente) + "\nCódigo do Funcionário: " + Integer.toString(codigoFuncionario) + "\nData de locação: " + dataLocacao.get(Calendar.DATE) + "/" + dataLocacao.get(Calendar.MONTH) + "/" + dataLocacao.get(Calendar.YEAR) + "\nData de devolução: " + dataDevolucao.get(Calendar.DATE) + "/" + dataDevolucao.get(Calendar.MONTH) + "/" + dataDevolucao.get(Calendar.YEAR) + "\nValor Total: " + Float.toString(calcularValorTotal()) + "\nForma de pagamento: " + formaPagamento.getTipoPagamento() + "\nSeguros contratados: \n";
+        String str = "Código de locacação: " + Integer.toString(codigoLocacao) + "\nCódigo do cliente: " + Integer.toString(codigoCliente) + 
+                "\nCódigo do Funcionário: " + Integer.toString(codigoFuncionario) + 
+                "\nData de locação: " + dataLocacao.get(Calendar.DATE) + "/" + dataLocacao.get(Calendar.MONTH) + "/" + dataLocacao.get(Calendar.YEAR) + 
+                "\nData de devolução: " + dataDevolucao.get(Calendar.DATE) + "/" + dataDevolucao.get(Calendar.MONTH) + "/" + dataDevolucao.get(Calendar.YEAR) + 
+                "\nValor Total: " + Float.toString(calcularValorTotal()) + "\nForma de pagamento: " + formaPagamento.getTipoPagamento() + "\nSeguros contratados: \n";
         for(Seguro seguro: segurosContratados){
-            retorno += segurosContratados.toString();
+            str += segurosContratados.toString();
         }
-        retorno += "\nFinalizada: ";
+        str += "\nFinalizada: ";
         if(finalizada)
-            retorno += "Não";
+            str += "Não\n";
         else
-            retorno += "Sim";
-        return retorno;
+            str += "Sim\n";
+        str += "Veículo: " + veiculo.toString();
+        return str;
     }
     
 }
